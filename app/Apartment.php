@@ -29,4 +29,9 @@ class Apartment extends Model
 
     return $this->belongsTo(User::class);
   }
+
+  function sponsoreds() {
+
+    return $this->belongsToMany(Sponsored::class);
+  }
 }

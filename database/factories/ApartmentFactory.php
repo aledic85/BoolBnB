@@ -20,6 +20,5 @@ $factory->define(App\Apartment::class, function (Faker $faker) {
         'pool' => $faker->boolean(),
         'sauna' => $faker->boolean(),
         'active' => $faker->boolean(),
-        'sponsored' => $faker->boolean()
     ];
 });
