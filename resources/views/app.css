@@ -1,6 +1,5 @@
-import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
-  height: 80px;
-  padding: 0 25px;
+@import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,8 +7,8 @@ import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
 
 div.navbar div.navbar-left {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
 }
 
 div.navbar div.navbar-left h1 {
@@ -28,7 +27,6 @@ div.navbar div.navbar-left input {
 div.navbar div.navbar-right div.navbar-right > span {
   margin: auto;
   color: #7d7d7d;
-  padding: 0 10px;
 }
 
 div.navbar div.navbar-right div.navbar-right > span:hover {
