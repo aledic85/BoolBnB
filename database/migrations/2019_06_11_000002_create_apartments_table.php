@@ -15,6 +15,7 @@ class CreateApartmentsTable extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->string('title');
             $table->smallInteger('rooms');
             $table->smallInteger('beds');
@@ -28,8 +29,6 @@ class CreateApartmentsTable extends Migration
             $table->string('pool')->nullable();
             $table->string('sauna')->nullable();
             $table->string('active');
-            $table->string('sponsored');
-            $table->bigInteger('user_id')->unsigned()->index();
             $table->timestamps();
         });
     }
