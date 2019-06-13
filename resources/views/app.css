@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
+import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
   height: 80px;
   padding: 0 25px;
   display: flex;
@@ -39,4 +39,3 @@ div.navbar div.navbar-right span#circle {
   border-radius: 50%;
   background: yellow;
 }
-
