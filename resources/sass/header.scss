@@ -1,29 +1,15 @@
 
 div.navbar {
 
-    padding: 0 20px;
-    @include flexNavbar;
-    border-bottom: 1px solid rgb(228, 228, 228);
+    padding: $padding_navbar_footer;
+    @include flexNavbarAndFooter;
 
     div.navbar-left {
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
       h1 {
 
         color: $Logo_font_color;
         margin: 10px;
-      }
-
-      input {
-
-          height: 30px;
-          background: white;
-          box-shadow: 5px 5px 5px lightgrey;
-          border: white;
-          margin: 10px;
       }
     }
 
@@ -31,16 +17,7 @@ div.navbar {
 
       span {
 
-          margin: auto;
-          color: $Span_font_color;
-          padding: 20px;
-
-          &:hover {
-
-            border-bottom: 1px solid $Logo_font_color;
-            color: $Logo_font_color;
-          }
+            @include navbar-right_span;
        }
-
     }
 }

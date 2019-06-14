@@ -1,10 +1,14 @@
 div.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  @include flexNavbarAndFooter;
+  border-top: 1px solid $Span_font_color;
+  padding: $padding_navbar_footer;
 
   div.footer-left {
 
+    a {
+        margin-left: 8px;
+    }
   }
 
   .footer-rigth {
@@ -12,7 +16,9 @@ div.footer {
     color: $Logo_font_color;
 
       i.fab {
+
         color: $Logo_font_color;
+        margin-left: 8px;
       }
   }
 }

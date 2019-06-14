@@ -1,40 +1,59 @@
 
-div.main {
+div.container {
 
-    padding: 100px;
+  div.search {
 
-    div.title {
-
-      h2 {
-
-        color: $Span_font_color;
-        text-align: center;
-      }
-    }
-
-    div.featured_apartments {
-
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-
-    padding: 18px;
-    border-bottom: 1px solid rgb(228, 228, 228);
-
-    div.apartament-container {
-
-      width: calc(100% / 3);
-      margin: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      margin-top: $search_margin_top;
+      position: relative;
+      color: $Span_font_color;
 
       img {
-        width: 100%;
+
+        @include search_image;
       }
-    }
+
+      div.search-items {
+
+        @include search_items_position;
+
+        input {
+
+          @include input;
+         }
+
+        i {
+          position: absolute;
+          left: 10px;
+          top: 40%;
+        }
+      }
+  }
+
+  div.main {
+
+    padding:  $main_padding;
+
+      div.title {
+
+        h2 {
+
+          color: $Span_font_color;
+          text-align: center;
+        }
+      }
+
+      div.featured_apartments {
+
+          @include featured_apartments;
+
+          div.apartament-container {
+
+              @include appartments_container;
+
+              img {
+                    width: 100%;
+              }
+          }
+      }
   }
 }

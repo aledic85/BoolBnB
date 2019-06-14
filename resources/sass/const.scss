@@ -1,18 +1,73 @@
-
 $Logo_font_color : rgb(255, 90, 95);
 $Span_font_color : rgb(125, 125, 125);
+$color_white : white;
+$color_light_grey: rgb(228, 228, 228);
+
+$padding_navbar_footer: 0 20px;
+$search_margin_top: 8px;
+$main_padding: 100px;
 
 
-@mixin flexNavbar {
+@mixin flexNavbarAndFooter {
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-@mixin flexNavbarLeft {
+@mixin navbar-right_span {
+
+  margin: auto;
+  color: $Span_font_color;
+  padding: 20px;
+  border-radius: 5px;
+
+  &:hover {
+
+    background: $color_light_grey;
+    color: $Logo_font_color;
+  }
+}
+
+@mixin search_items_position {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin search_image {
+
+  width: 100%;
+  height: 575px;
+}
+
+@mixin input {
+
+  height: 50px;
+  width: 370px;
+  border-radius: 5px;
+  position: relative;
+  text-indent: 40px;
+}
+
+@mixin featured_apartments {
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding: 18px;
+}
+
+@mixin appartments_container {
+
+  width: calc(100% / 3);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
