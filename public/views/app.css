@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
+  height: 80px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.navbar div.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.navbar div.navbar-left h1 {
+  color: #ff5a5f;
+  margin: 10px;
+}
+
+div.navbar div.navbar-left input {
+  height: 30px;
+  background: white;
+  box-shadow: 5px 5px 5px lightgrey;
+  border: white;
+  margin: 10px;
+}
+
+div.navbar div.navbar-right div.navbar-right span {
+  margin: auto;
+  color: #7d7d7d;
+  padding: 0 20px;
+}
+
+div.navbar div.navbar-right div.navbar-right span:hover {
+  border-bottom: 1px solid #7d7d7d;
+}
+
+div.navbar div.navbar-right span#circle {
+  border-radius: 50%;
+  background: yellow;
+}

@@ -1,0 +1,40 @@
+
+div.main {
+
+    padding: 100px;
+
+    div.title {
+
+      h2 {
+
+        color: $Span_font_color;
+        text-align: center;
+      }
+    }
+
+    div.featured_apartments {
+
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    padding: 18px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+
+    div.apartament-container {
+
+      width: calc(100% / 3);
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,5 +1,3 @@
-var $ = $("jquery");
-
 function init() {
 
 }

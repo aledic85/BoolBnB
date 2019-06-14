@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);div.navbar {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+div.navbar div.navbar-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.navbar div.navbar-left h1 {
+  color: #ff5a5f;
+  margin: 10px;
+}
+
+div.navbar div.navbar-left input {
+  height: 30px;
+  background: white;
+  box-shadow: 5px 5px 5px lightgrey;
+  border: white;
+  margin: 10px;
+}
+
+div.navbar div.navbar-right span {
+  margin: auto;
+  color: #7d7d7d;
+  padding: 20px;
+}
+
+div.navbar div.navbar-right span:hover {
+  border-bottom: 1px solid #ff5a5f;
+  color: #ff5a5f;
+}
+
+div.main {
+  padding: 100px;
+}
+
+div.main div.title h2 {
+  color: #7d7d7d;
+  text-align: center;
+}
+
+div.main div.featured_apartments {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 18px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+div.main div.featured_apartments div.apartament-container {
+  width: calc(100% / 3);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.main div.featured_apartments div.apartament-container img {
+  width: 100%;
+}
+
+div.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
