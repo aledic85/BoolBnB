@@ -3,6 +3,7 @@ div.navbar {
 
     padding: 0 20px;
     @include flexNavbar;
+    border-bottom: 1px solid rgb(228, 228, 228);
 
     div.navbar-left {
 
@@ -28,21 +29,18 @@ div.navbar {
 
     div.navbar-right {
 
-      div.navbar-right  > span {
+      span {
 
           margin: auto;
           color: $Span_font_color;
+          padding: 20px;
 
           &:hover {
 
-            border-bottom: 1px solid $Span_font_color;
+            border-bottom: 1px solid $Logo_font_color;
+            color: $Logo_font_color;
           }
        }
 
-      span#circle {
-
-        border-radius: 50%;
-        background: yellow;
-       }
     }
 }

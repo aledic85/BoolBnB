@@ -1,0 +1,18 @@
+div.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div.footer-left {
+
+  }
+
+  .footer-rigth {
+
+    color: $Logo_font_color;
+
+      i.fab {
+        color: $Logo_font_color;
+      }
+  }
+}
