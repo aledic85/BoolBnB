@@ -36762,7 +36762,18 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-function init() {}
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+function trimString(titleText) {
+  var length = 3;
+  var trimmedString = titleText.substring(0, length);
+}
+
+function init() {
+  var title = $(".appartments_container > h3");
+  var titleText = title.text();
+  trimString(titleText);
+}
 
 $(document).ready(init);
 

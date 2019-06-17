@@ -1,10 +1,10 @@
 
-div.navbar {
+div.nav-bar {
 
     padding: $padding_navbar_footer;
     @include flexNavbarAndFooter;
 
-    div.navbar-left {
+    div.nav-bar-left {
 
       h1 {
 
@@ -13,11 +13,23 @@ div.navbar {
       }
     }
 
-    div.navbar-right {
+    div.nav-bar-right {
+
+      @include navbar-right;
 
       span {
 
             @include navbar-right_span;
        }
+
+      a.nav-link {
+
+        @include navbar-right_span;
+      }
+
+      #long {
+        width: 140px;
+        padding:20px 0;
+      }
     }
 }

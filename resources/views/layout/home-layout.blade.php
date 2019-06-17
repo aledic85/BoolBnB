@@ -8,12 +8,12 @@
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
      <title>@yield('title', 'BoolBnB')</title>
    </head>
-   <body>
-     <div class="navbar">
-         <div class="navbar-left">
+
+     <div class="nav-bar">
+         <div class="nav-bar-left">
              <h1>BoolBnB</h1>
          </div>
-         <div class="navbar-right">
+         <div class="nav-bar-right">
              <a href=""></a>
              <span>Salvati</span>
              <span>Viaggi</span>
@@ -22,7 +22,7 @@
              @guest
                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                @if (Route::has('register'))
-                 <a class="nav-link" href="{{ route('register') }}">{{ __('Diventa un Host') }}</a>
+                 <a id="long" class="nav-link" href="{{ route('register') }}">{{ __('Diventa un Host') }}</a>
                @endif
              @else
                <li class="nav-item dropdown">
@@ -46,8 +46,8 @@
          </div>
      </div>
 
-      <div class="container mt-5 p-5 h-100">
-        <div class="row h-100 w-100 flex-column align-items-center justify-content-center mt-5">
+      <div class="container-fluid mx-auto  h-100 p-0">
+        <div class="row  mx-auto h-100 w-100 flex-column align-items-center justify-content-center">
           @if ($errors->any())
             <div class="alert alert-danger">
               <ul>
@@ -69,7 +69,7 @@
       </div>
       <div class="footer">
           <div class="footer-left">
-              <h5>© 2019 BoolBnB.com, Inc.<a href="#">Terms and Conditions</a><a href="#">Privacy</a></h5>
+              <p class ="footer">© 2019 BoolBnB.com, Inc.<a href="#">Terms and Conditions</a><a href="#">Privacy</a></p>
           </div>
           <div class="footer-rigth">
               <i class="fab fa-facebook"></i>

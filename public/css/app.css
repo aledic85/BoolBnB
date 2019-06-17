@@ -10650,28 +10650,60 @@ a.text-dark:focus {
   }
 }
 
-div.navbar {
+div.nav-bar {
   padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 80px;
 }
 
-div.navbar div.navbar-left h1 {
+div.nav-bar div.nav-bar-left h1 {
   color: #ff5a5f;
   margin: 10px;
 }
 
-div.navbar div.navbar-right span {
+div.nav-bar div.nav-bar-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+div.nav-bar div.nav-bar-right span {
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
   margin: auto;
   color: #7d7d7d;
   padding: 20px;
   border-radius: 5px;
 }
 
-div.navbar div.navbar-right span:hover {
+div.nav-bar div.nav-bar-right span:hover {
   background: #e4e4e4;
   color: #ff5a5f;
+}
+
+div.nav-bar div.nav-bar-right a.nav-link {
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  color: #7d7d7d;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+div.nav-bar div.nav-bar-right a.nav-link:hover {
+  background: #e4e4e4;
+  color: #ff5a5f;
+}
+
+div.nav-bar div.nav-bar-right #long {
+  width: 140px;
+  padding: 20px 0;
 }
 
 div.wrapper div.search {
@@ -10681,7 +10713,7 @@ div.wrapper div.search {
 }
 
 div.wrapper div.search img {
-  width: 100%;
+  width: 1340px;
   height: 575px;
 }
 
@@ -10718,19 +10750,20 @@ div.wrapper div.main div.title h2 {
 div.wrapper div.main div.featured_apartments {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 80%;
+  justify-content: space-around;
+  width: 90%;
   margin: auto;
   padding: 18px;
 }
 
 div.wrapper div.main div.featured_apartments div.apartament-container {
-  width: calc(100% / 3);
+  height: 400px;
+  width: 150px;
   margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 div.wrapper div.main div.featured_apartments div.apartament-container img {
@@ -10741,11 +10774,16 @@ div.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 80px;
   border-top: 1px solid #7d7d7d;
   padding: 0 20px;
 }
 
-div.footer div.footer-left a {
+div.footer div.footer-left p.footer {
+  font-size: 12px;
+}
+
+div.footer div.footer-left p.footer a {
   margin-left: 8px;
 }
 
