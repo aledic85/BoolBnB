@@ -35,4 +35,9 @@ class Apartment extends Model
 
     return $this->belongsToMany(Sponsored::class);
   }
+
+  public function scopeActive($query)
+  {
+    return $query->where('active', 1);
+  }
 }

@@ -12,7 +12,7 @@ class GeneralController extends Controller
 
     $sponsoredApartments = Apartment::select('title','img_path', 'description')
                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                          ->where('apartments.active', '=', '1')
+                          ->active()
                           ->take(6)->get();
 
     return view('page.home', compact('sponsoredApartments'));
