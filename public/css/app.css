@@ -10713,7 +10713,7 @@ div.wrapper div.search {
 }
 
 div.wrapper div.search img {
-  width: 100%;
+  width: 1340px;
   height: 575px;
 }
 
@@ -10762,8 +10762,8 @@ div.wrapper div.main div.featured_apartments div.apartament-container {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 div.wrapper div.main div.featured_apartments div.apartament-container img {

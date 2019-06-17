@@ -46,7 +46,7 @@
          </div>
      </div>
 
-      <div class="container-fluid mx-auto  h-100">
+      <div class="container-fluid mx-auto  h-100 p-0">
         <div class="row  mx-auto h-100 w-100 flex-column align-items-center justify-content-center">
           @if ($errors->any())
             <div class="alert alert-danger">

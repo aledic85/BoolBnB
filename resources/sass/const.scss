@@ -51,7 +51,7 @@ $main_padding: 100px;
 
 @mixin search_image {
 
-  width: 100%;
+  width: 1340px;
   height: 575px;
 }
 
@@ -81,6 +81,6 @@ $main_padding: 100px;
   margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }

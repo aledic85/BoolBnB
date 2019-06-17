@@ -15,7 +15,7 @@
         </div>
 
 
-        <div class="featured_apartments">
+        <div class="featured_apartments mt-50">
           @foreach ($sponsoredApartments as $sponsoredApartment)
           <div class="apartament-container">
               <img src="{{$sponsoredApartment->img_path}}">
