@@ -16,20 +16,37 @@ div.nav-bar {
     div.nav-bar-right {
 
       @include navbar-right;
+      margin-right: 8px;
 
       span {
 
             @include navbar-right_span;
        }
 
-      a.nav-link {
+       li {
 
-        @include navbar-right_span;
-      }
+          list-style: none;
+
+         a.nav-link {
+
+           @include navbar-right_span;
+         }
+
+         div.dropdown-menu.dropdown-menu-right {
+
+           position: absolute;
+            transform: translate3d(-60px, 60px, 0px);
+            top: 12px;
+            left: 40px;
+            will-change: transform;
+          }
+         }
+       }
 
       #long {
         width: 140px;
         padding:20px 0;
       }
-    }
+
+      }
 }

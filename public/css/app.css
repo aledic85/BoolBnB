@@ -10667,6 +10667,7 @@ div.nav-bar div.nav-bar-right {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-right: 8px;
 }
 
 div.nav-bar div.nav-bar-right span {
@@ -10685,7 +10686,11 @@ div.nav-bar div.nav-bar-right span:hover {
   color: #ff5a5f;
 }
 
-div.nav-bar div.nav-bar-right a.nav-link {
+div.nav-bar div.nav-bar-right li {
+  list-style: none;
+}
+
+div.nav-bar div.nav-bar-right li a.nav-link {
   height: 60px;
   width: 100px;
   text-align: center;
@@ -10696,9 +10701,14 @@ div.nav-bar div.nav-bar-right a.nav-link {
   border-radius: 5px;
 }
 
-div.nav-bar div.nav-bar-right a.nav-link:hover {
+div.nav-bar div.nav-bar-right li a.nav-link:hover {
   background: #e4e4e4;
   color: #ff5a5f;
+}
+
+div.nav-bar div.nav-bar-right li div.dropdown-menu.dropdown-menu-right {
+  position: relative;
+  left: 50px;
 }
 
 div.nav-bar div.nav-bar-right #long {
