@@ -36764,16 +36764,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-function trimString(titleText) {
-  var length = 3;
-  var trimmedString = titleText.substring(0, length);
-}
+function trimString(titleText) {}
 
-function init() {
-  var title = $(".appartments_container > h3");
-  var titleText = title.text();
-  trimString(titleText);
-}
+function init() {}
 
 $(document).ready(init);
 
