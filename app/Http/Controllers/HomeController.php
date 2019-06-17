@@ -30,7 +30,7 @@ class HomeController extends Controller
 
        $userId = Auth::user()->id;
 
-       $apartments = Apartment::where('user_id', '=', $userId)->get();
+       $apartments = Apartment::where('user_id', $userId)->get();
 
        return view('page.dashboard', compact('apartments'));
      }
