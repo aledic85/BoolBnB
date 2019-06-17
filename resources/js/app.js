@@ -1,4 +1,4 @@
-var $ = $("jquery");
+require('./bootstrap');
 
 function init() {
 
