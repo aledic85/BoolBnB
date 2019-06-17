@@ -38,7 +38,6 @@ class User extends Authenticatable
     ];
 
 
-
     function apartments() {
 
       return $this->hasMany(Apartment::class);
