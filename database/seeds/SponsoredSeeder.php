@@ -11,7 +11,7 @@ class SponsoredSeeder extends Seeder
      */
     public function run()
     {
-      factory(App\Sponsored::class, 4)->create()->each(function($sponsored) {
+      factory(App\Sponsored::class, 8)->create()->each(function($sponsored) {
       $apartment = App\Apartment::inRandomOrder()->take(rand(1, 5))->get();
       $sponsored->apartments()->attach($apartment);
     });

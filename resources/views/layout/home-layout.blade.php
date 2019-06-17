@@ -15,7 +15,6 @@
          </div>
          <div class="navbar-right">
              <a href=""></a>
-             <span>Diventa un host</span>
              <span>Salvati</span>
              <span>Viaggi</span>
              <span>Messaggi</span>
@@ -23,7 +22,7 @@
              @guest
                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                @if (Route::has('register'))
-                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                 <a class="nav-link" href="{{ route('register') }}">{{ __('Diventa un Host') }}</a>
                @endif
              @else
                <li class="nav-item dropdown">

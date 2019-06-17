@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Apartment;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,4 +25,13 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+
+     public function dashboard() {
+
+       $userId = Auth::user()->id;
+
+       $apartments = Apartment::where('user_id', '=', $userId)->get();
+
+       return view('page.dashboard', compact('apartments'));
+     }
 }
