@@ -13,10 +13,22 @@ $main_padding: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 80px;
+}
+
+@mixin navbar-right {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 @mixin navbar-right_span {
 
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
   margin: auto;
   color: $Span_font_color;
   padding: 20px;
@@ -56,15 +68,16 @@ $main_padding: 100px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 80%;
+  justify-content: space-around;
+  width: 90%;
   margin: auto;
   padding: 18px;
 }
 
 @mixin appartments_container {
 
-  width: calc(100% / 3);
+  height: 400px;
+  width: 150px;
   margin: 10px;
   display: flex;
   flex-direction: column;
