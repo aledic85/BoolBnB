@@ -13,37 +13,17 @@
         <div class="title">
             <h2>Appartamenti in Evidenza</h2>
         </div>
+
+
         <div class="featured_apartments">
+          @foreach ($sponsoredApartments as $sponsoredApartment)
           <div class="apartament-container">
-              <img src="https://a0.muscache.com/4ea/air/v2/pictures/3942cea8-f4ba-4856-8626-29e23dfc3cc0.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
-              <h3>Titolo</h3>
+              <img src="{{$sponsoredApartment->img_path}}">
+              <h3>{{$sponsoredApartment->title}}</h3>
           </div>
-          <div class="apartament-container">
-              <img src="https://a0.muscache.com/4ea/air/v2/pictures/3942cea8-f4ba-4856-8626-29e23dfc3cc0.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
-              <h3>Titolo</h3>
-          </div>
-          <div class="apartament-container">
-              <img src="https://a0.muscache.com/4ea/air/v2/pictures/3942cea8-f4ba-4856-8626-29e23dfc3cc0.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
-              <h3>Titolo</h3>
-          </div>
+        @endforeach
         </div>
-        <div class="title">
-            <h2>Le Nostre Proposte</h2>
-        </div>
-        <div class="featured_apartments">
-          <div class="apartament-container">
-              <img src="https://a0.muscache.com/4ea/air/v2/pictures/3942cea8-f4ba-4856-8626-29e23dfc3cc0.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
-              <h3>Titolo</h3>
-          </div>
-          <div class="apartament-container">
-              <img src="https://a0.muscache.com/4ea/air/v2/pictures/3942cea8-f4ba-4856-8626-29e23dfc3cc0.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
-              <h3>Titolo</h3>
-          </div>
-          <div class="apartament-container">
-              <img src="https://a0.muscache.com/4ea/air/v2/pictures/3942cea8-f4ba-4856-8626-29e23dfc3cc0.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
-              <h3>Titolo</h3>
-          </div>
-      </div>
+
     </div>
   </div>
 @endsection

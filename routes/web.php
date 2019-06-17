@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name("home");
-});
+Route::get('/', 'GeneralController@index')->name("home");
 
 Auth::routes();
 
