@@ -8,6 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Apartment::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(),
+        'description' => $faker->sentence(),
         'rooms' => $faker->numberBetween(2, 6),
         'beds' => $faker->numberBetween(1, 5),
         'bathrooms' => $faker->numberBetween(1, 4),
