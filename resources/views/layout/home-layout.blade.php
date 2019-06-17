@@ -14,6 +14,7 @@
              <h1>BoolBnB</h1>
          </div>
          <div class="navbar-right">
+             <a href=""></a>
              <span>Diventa un host</span>
              <span>Salvati</span>
              <span>Viaggi</span>
