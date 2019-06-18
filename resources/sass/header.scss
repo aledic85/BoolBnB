@@ -50,14 +50,14 @@ div.nav-bar {
               border-bottom: none;
             }
           }
-
-          .dropdown-menu.dropdown-menu-right.show {
-
-              position: absolute;
-              top: 12px;
-              left: 40px;
-              will-change: transform;
-           }
        }
+
+       div.dropdown-menu{
+
+            position: absolute;
+            top: 12px;
+            left: 40px;
+            will-change: transform;
+         }
     }
 }

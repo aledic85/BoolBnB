@@ -10713,7 +10713,7 @@ div.nav-bar div.nav-bar-right li a span.caret {
   border-bottom: none;
 }
 
-div.nav-bar div.nav-bar-right li .dropdown-menu.dropdown-menu-right.show {
+div.nav-bar div.nav-bar-right div.dropdown-menu {
   position: absolute;
   top: 12px;
   left: 40px;
