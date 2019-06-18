@@ -18,3 +18,6 @@ Auth::routes();
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 Route::get('/dashboard/new', 'HomeController@createApartment')->name('new.apart');
 Route::post('/dashboard/new', 'HomeController@storeApartment')->name('store.new.apart');
+Route::delete('/dashboard/delete/{id}', 'HomeController@deleteApartment')->name('delete.apart');
+Route::get('/dashboard/edit/{id}', 'HomeController@editApartment')->name('edit.apart');
+Route::post('/dashboard/update/{id}', 'HomeController@updateApartment')->name('update.apart');

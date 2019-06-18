@@ -17,7 +17,7 @@ class Apartment extends Model
     'latitude',
     'longitude',
     'img_path',
-    'wi-fi',
+    'wi_fi',
     'parking_space',
     'pool',
     'sauna',

@@ -25,7 +25,7 @@ class CreateApartmentsTable extends Migration
             $table->integer('latitude');
             $table->integer('longitude');
             $table->string('img_path');
-            $table->string('wi-fi')->nullable();
+            $table->string('wi_fi')->nullable();
             $table->string('parking_space')->nullable();
             $table->string('pool')->nullable();
             $table->string('sauna')->nullable();

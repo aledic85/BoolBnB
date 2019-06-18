@@ -16,7 +16,7 @@ $factory->define(App\Apartment::class, function (Faker $faker) {
         'latitude' => $faker->latitude(),
         'longitude' => $faker->longitude(),
         'img_path' => $faker->imageUrl(),
-        'wi-fi' => $faker->boolean(),
+        'wi_fi' => $faker->boolean(),
         'parking_space' => $faker->boolean(),
         'pool' => $faker->boolean(),
         'sauna' => $faker->boolean(),
