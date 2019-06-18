@@ -49,11 +49,93 @@ div.wrapper {
           div.apartament-container {
 
               @include appartments_container;
-            
+
               img {
                     width: 100%;
               }
           }
       }
+  }
+  // dashboard utente loggato
+  div.container.dashB {
+    max-width: 1200px;
+
+    button {
+      background: #fc5c63;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 15px;
+      border: none;
+    }
+
+    .boxAddNew {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+    }
+    h2 {
+      text-align: center;
+    }
+
+    .box-apartments {
+      display: flex;
+      flex-wrap: wrap;
+
+      .box-apartment {
+        width: 32%;
+        margin: 6px;
+        border: 1px solid #ddd;
+
+        img {
+          width: 100%;
+        }
+
+        .infoAp {
+
+          p {
+            margin-bottom: 0;
+          }
+
+          span {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+
+          h3 {
+            font-size: 22px;
+          }
+
+          .ed, .del {
+            display: inline-block;
+            width: 49%;
+            margin: auto;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  // nuovo App. utente loggato
+  .boxForm {
+    width: 65%;
+    margin: auto;
+    padding: 50px 0;
+
+    form {
+      text-align: center;
+
+      label {
+        text-align: left;
+        width: 35%;
+      }
+
+      input {
+        width: 62%;
+      }
+    }
   }
 }

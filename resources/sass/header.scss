@@ -6,16 +6,31 @@ div.nav-bar {
 
     div.nav-bar-left {
 
-      h1 {
+      a {
+        text-decoration: none;
 
-        color: $Logo_font_color;
-        margin: 10px;
+        h1 {
+          color: $Logo_font_color;
+          margin: 10px;
+          &:hover {
+            color: darken($Logo_font_color, 20%);
+          }
+
+        }
       }
     }
 
     div.nav-bar-right {
 
       @include navbar-right;
+
+      li.nav-item.dropdown {
+        list-style: none;
+
+        .caret {
+          padding: 0;
+        }
+      }
 
       span {
 

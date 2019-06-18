@@ -16,3 +16,5 @@ Route::get('/', 'GeneralController@index')->name("home");
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::get('/dashboard/new', 'HomeController@createApartment')->name('new.apart');
+Route::post('/dashboard/new', 'HomeController@storeApartment')->name('store.new.apart');

@@ -1,7 +1,7 @@
 @extends('layout.home-layout')
 
 @section('content')
-  <div class="wrapper ">
+  <div class="wrapper">
     <div class="search">
         <img src="http://3.citynews-milanotoday.stgy.ovh/~media/original-hi/68320916180522/milano-panoramica-4.jpg">
         <div class="search-items">
