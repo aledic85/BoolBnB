@@ -21,32 +21,36 @@ div.nav-bar {
       span {
 
             @include navbar-right_span;
+      }
+
+      a.nav-link {
+
+        @include navbar-right_span;
+      }
+
+      #long {
+
+          width: 140px;
+          padding:20px 0;
+
+
+
+
+
        }
 
        li {
 
           list-style: none;
 
-         a.nav-link {
+          div.dropdown-menu.dropdown-menu-right {
 
-           @include navbar-right_span;
-         }
-
-         div.dropdown-menu.dropdown-menu-right {
-
-           position: absolute;
-            transform: translate3d(-60px, 60px, 0px);
-            top: 12px;
-            left: 40px;
-            will-change: transform;
-          }
-         }
+              position: absolute;
+              transform: translate3d(-60px, 60px, 0px);
+              top: 12px;
+              left: 40px;
+              will-change: transform;
+           }
        }
-
-      #long {
-        width: 140px;
-        padding:20px 0;
-      }
-
-      }
+    }
 }
