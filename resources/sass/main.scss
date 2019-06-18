@@ -89,6 +89,7 @@ div.wrapper {
 
         img {
           width: 100%;
+          height: 40%;
         }
 
         .infoAp {
@@ -98,7 +99,6 @@ div.wrapper {
           }
 
           span {
-            display: block;
             margin-bottom: 20px;
             font-size: 14px;
             font-weight: 500;
@@ -115,6 +115,11 @@ div.wrapper {
             margin: auto;
             text-align: center;
           }
+        }
+
+        .char-wrapper {
+
+          margin-bottom: 20px;
         }
       }
     }

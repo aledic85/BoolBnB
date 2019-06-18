@@ -10682,7 +10682,6 @@ div.nav-bar div.nav-bar-right {
   align-items: center;
 }
 
-
 div.nav-bar div.nav-bar-right li.nav-item.dropdown {
   list-style: none;
 }
@@ -10828,6 +10827,7 @@ div.wrapper div.container.dashB .box-apartments .box-apartment {
 
 div.wrapper div.container.dashB .box-apartments .box-apartment img {
   width: 100%;
+  height: 40%;
 }
 
 div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp p {
@@ -10835,7 +10835,6 @@ div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp p {
 }
 
 div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp span {
-  display: block;
   margin-bottom: 20px;
   font-size: 14px;
   font-weight: 500;
@@ -10851,6 +10850,10 @@ div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp .del {
   width: 49%;
   margin: auto;
   text-align: center;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment .char-wrapper {
+  margin-bottom: 20px;
 }
 
 div.wrapper .boxForm {
