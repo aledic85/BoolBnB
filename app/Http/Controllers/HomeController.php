@@ -76,7 +76,7 @@ class HomeController extends Controller
 
        $apartment = Apartment::findORFail($id);
        $apartment->img_path = $image->getFilename().'.'.$ext;
-       $apartment->update();
+       $apartment->update($validatedData);
 
        return redirect('dashboard')->with('success','Appartamento modificato con successo!');
      }
