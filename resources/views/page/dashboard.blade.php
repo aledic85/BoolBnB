@@ -18,7 +18,7 @@
           <div class="infoAp p-2">
             <h3>{{ $apartment -> title }}</h3>
             <p>{{ $apartment -> description }}</p>
-            <span>Via Giuseppe Garibaldi, 11A {{ !$apartment -> latitude }} {{ !$apartment -> longitude }}</span>
+            <span>Via Giuseppe Garibaldi, 11A {{ $apartment -> latitude }} {{ $apartment -> longitude }}</span>
             <ul>
               <li>Numero stanze: {{ $apartment -> rooms }}</li>
               <li>Numero letti: {{ $apartment -> beds }}</li>
