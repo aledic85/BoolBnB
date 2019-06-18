@@ -66,18 +66,19 @@ $main_padding: 100px;
 
 @mixin featured_apartments {
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 90%;
-  margin: 50px auto auto auto;
-  padding: 18px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: 50px auto auto auto;
+      padding: 18px;
+  }
 
 @mixin appartments_container {
 
   height: 400px;
-  width: 150px;
+  width: 288px;
   margin: 10px;
   display: flex;
   flex-direction: column;
