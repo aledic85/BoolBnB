@@ -11,7 +11,7 @@
 
      <div class="nav-bar">
          <div class="nav-bar-left">
-             <h1>BoolBnB</h1>
+             <a href="{{route('home')}}"><h1>BoolBnB</h1></a>  
          </div>
          <div class="nav-bar-right">
              <a href=""></a>

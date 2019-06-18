@@ -5,7 +5,7 @@
     <div class="search">
         <img src="http://3.citynews-milanotoday.stgy.ovh/~media/original-hi/68320916180522/milano-panoramica-4.jpg">
         <div class="search-items">
-            <input type="text" placeholder="Cerca">
+            <input type="text" placeholder="Cerca per città">
             <i class="fas fa-search"></i>
         </div>
       </div>
@@ -14,12 +14,11 @@
             <h2>Appartamenti in Evidenza</h2>
         </div>
 
-
         <div class="featured_apartments mt-50">
           @foreach ($sponsoredApartments as $sponsoredApartment)
           <div class="apartament-container">
               <img src="{{$sponsoredApartment->img_path}}">
-              <h3>{{$sponsoredApartment->title}}</h3>
+              <h6>{{$sponsoredApartment->title}}</h6>
               <p>{{$sponsoredApartment->description}}</p>
           </div>
         @endforeach

@@ -3,6 +3,10 @@ div.nav-bar {
 
     padding: $padding_navbar_footer;
     @include flexNavbarAndFooter;
+    background-color: $color_light_grey;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     div.nav-bar-left {
 
@@ -17,9 +21,14 @@ div.nav-bar {
 
       @include navbar-right;
 
+      li {
+
+        list-style: none;
+      }
+
       span {
 
-            @include navbar-right_span;
+          @include navbar-right_span;
        }
 
       a.nav-link {
