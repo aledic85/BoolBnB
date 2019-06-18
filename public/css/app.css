@@ -10663,9 +10663,17 @@ div.nav-bar {
   z-index: 100;
 }
 
-div.nav-bar div.nav-bar-left h1 {
+div.nav-bar div.nav-bar-left a {
+  text-decoration: none;
+}
+
+div.nav-bar div.nav-bar-left a h1 {
   color: #ff5a5f;
   margin: 10px;
+}
+
+div.nav-bar div.nav-bar-left a h1:hover {
+  color: #f30007;
 }
 
 div.nav-bar div.nav-bar-right {
@@ -10674,8 +10682,13 @@ div.nav-bar div.nav-bar-right {
   align-items: center;
 }
 
-div.nav-bar div.nav-bar-right li {
+
+div.nav-bar div.nav-bar-right li.nav-item.dropdown {
   list-style: none;
+}
+
+div.nav-bar div.nav-bar-right li.nav-item.dropdown .caret {
+  padding: 0;
 }
 
 div.nav-bar div.nav-bar-right span {
@@ -10777,6 +10790,86 @@ div.wrapper div.main div.featured_apartments div.apartament-container {
 
 div.wrapper div.main div.featured_apartments div.apartament-container img {
   width: 100%;
+}
+
+div.wrapper div.container.dashB {
+  max-width: 1200px;
+}
+
+div.wrapper div.container.dashB button {
+  background: #fc5c63;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  border: none;
+}
+
+div.wrapper div.container.dashB .boxAddNew {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+}
+
+div.wrapper div.container.dashB h2 {
+  text-align: center;
+}
+
+div.wrapper div.container.dashB .box-apartments {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment {
+  width: 32%;
+  margin: 6px;
+  border: 1px solid #ddd;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment img {
+  width: 100%;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp p {
+  margin-bottom: 0;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp span {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp h3 {
+  font-size: 22px;
+}
+
+div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp .ed,
+div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp .del {
+  display: inline-block;
+  width: 49%;
+  margin: auto;
+  text-align: center;
+}
+
+div.wrapper .boxForm {
+  width: 65%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+div.wrapper .boxForm form {
+  text-align: center;
+}
+
+div.wrapper .boxForm form label {
+  text-align: left;
+  width: 35%;
+}
+
+div.wrapper .boxForm form input {
+  width: 62%;
 }
 
 div.footer {
