@@ -10656,6 +10656,11 @@ div.nav-bar {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  background-color: #e4e4e4;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 div.nav-bar div.nav-bar-left a {
@@ -10676,6 +10681,7 @@ div.nav-bar div.nav-bar-right {
   justify-content: flex-start;
   align-items: center;
 }
+
 
 div.nav-bar div.nav-bar-right li.nav-item.dropdown {
   list-style: none;
