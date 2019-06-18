@@ -14,24 +14,14 @@ div.wrapper {
 
       div.search-items {
 
-        @include search_items_position;
-
-        input {
-
-          @include input;
-         }
-
-        i {
-          position: absolute;
-          left: 10px;
-          top: 40%;
-        }
+        @include search_items;
       }
   }
 
   div.main {
 
     padding:  $main_padding;
+    margin-top: $main_margin;
 
       div.title {
 
@@ -39,22 +29,19 @@ div.wrapper {
 
           color: $Span_font_color;
           text-align: center;
-        }
-      }
-
+          position: relative;
+          bottom: 50px;
+          }
+       }
+       
       div.featured_apartments {
 
-          @include featured_apartments;
+               @include featured_apartments;
 
-          div.apartament-container {
+               div.apartament-container {
 
-              @include appartments_container;
-
-              img {
-                    width: 100%;
-                    height: 108px;
-              }
-          }
-      }
+                   @include appartments_container;
+                }
+            }
   }
 }

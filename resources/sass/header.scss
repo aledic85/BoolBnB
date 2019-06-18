@@ -43,10 +43,17 @@ div.nav-bar {
 
           list-style: none;
 
-          div.dropdown-menu.dropdown-menu-right {
+          a {
+
+            span.caret {
+
+              border-bottom: none;
+            }
+          }
+
+          .dropdown-menu.dropdown-menu-right.show {
 
               position: absolute;
-              transform: translate3d(-60px, 60px, 0px);
               top: 12px;
               left: 40px;
               will-change: transform;
