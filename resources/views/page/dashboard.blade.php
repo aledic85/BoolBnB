@@ -26,11 +26,11 @@
               <li>Metri quadrati: {{ $apartment -> mq }}</li>
             </ul>
             <div class="char-wrapper">
-              <span>Wi-Fi: {{$apartment->wi_fi}}, </span>
-              <span>Parking space: {{$apartment->parking_space}}, </span>
-              <span>Pool: {{$apartment->pool}}, </span>
-              <span>Sauna: {{$apartment->sauna}}, </span>
-              <span>Annuncio attivo: {{$apartment->active}}</span>
+              <span>Wi-Fi: </span><span>{{$apartment->wi_fi}}</span>
+              <span>Parking space: </span><span>{{$apartment->parking_space}}</span>
+              <span>Pool: </span><span>{{$apartment->pool}}</span>
+              <span>Sauna: </span><span>{{$apartment->sauna}}</span>
+              <span>Annuncio attivo: </span><span>{{$apartment->active}}</span>
             </div>
             <a href="{{route('edit.apart', $apartment->id)}}"><button type="submit" name="edit">MODIFICA</button></a>
             <form class="del" action="{{route('delete.apart', $apartment-> id)}}" method="post">
@@ -47,19 +47,21 @@
 
 <script type="text/javascript">
 
-  var wrap = $('.char-wrapper');
-  var text = wrap.text();
-  console.log(text);
-  wrap.each(function(i) {
+  var wrap = $('.char-wrapper > span');
 
-    if (this.text == 0) {
+  wrap.each(function() {
 
-      this.text = 'no';
-    } else if(this.text == 1){
+    if ($(this).text() == '0') {
 
-      this.text = 'sì';
+      $(this).text('no');
+    } else if ($(this).text() == '1') {
+
+      $(this).text('sì');
     }
+
   });
+
+
 </script>
 
 @stop

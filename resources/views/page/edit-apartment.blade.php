@@ -4,13 +4,14 @@
   <div class="wrapper">
     <div class="container dashB">
       <h2>Modifica appartamento</h2>
+      <p>compila i seguenti campi, inserendo una tua proprietà da mettere in affitto. Inizia a guadagnare da oggi!</p>
 
       <div class="boxForm">
         <form action="{{ route('update.apart', $apartment->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('POST')
           <label for="img_path">Immagine</label>
-          <input type="file" name="img_path" value="{{$apartment->img_path}}"><br>
+          <input type="file" name="img_path" value=""><br>
           <label for="title">Nome Appartamento</label>
           <input type="text" name="title" value="{{$apartment->title}}"><br>
           <label for="description">Descrizione</label>
