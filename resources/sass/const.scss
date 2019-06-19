@@ -84,3 +84,57 @@ $main_padding: 100px;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+@mixin show-apart_img {
+
+  .img-container {
+
+      padding-bottom: 100px;
+
+      img {
+        width: 1350px;
+        height: 575px;
+      }
+   }
+
+
+
+
+
+
+}
+
+@mixin details-middle {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding:100px;
+}
+
+@mixin details-down {
+
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 100px;
+}
+
+@mixin button {
+  
+  button {
+
+    background: $Logo_font_color;
+    color: $color_white;
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+
+    &:hover {
+
+      border : 1px solid $Logo_font_color;
+      color: $Logo_font_color;
+      background: $color_white;
+    }
+  }
+}
