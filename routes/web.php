@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'GeneralController@index')->name("home");
+Route::get('/', 'GeneralController@index')->name('home');
+Route::get('/show/{id}', 'GeneralController@showApartment')->name('show.apart');
 
 Auth::routes();
 
