@@ -13,12 +13,13 @@
 
 Route::get('/', 'GeneralController@index')->name('home');
 Route::get('/show/{id}', 'GeneralController@showApartment')->name('show.apart');
+Route::post('/contactUser/{id}', 'GeneralController@sendMail')->name('send.mail');
 
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
-Route::get('/dashboard/new', 'HomeController@createApartment')->name('new.apart');
-Route::post('/dashboard/new', 'HomeController@storeApartment')->name('store.new.apart');
+Route::get('/dashboard/create', 'HomeController@createApartment')->name('new.apart');
+Route::post('/dashboard/store', 'HomeController@storeApartment')->name('store.new.apart');
 Route::delete('/dashboard/delete/{id}', 'HomeController@deleteApartment')->name('delete.apart');
 Route::get('/dashboard/edit/{id}', 'HomeController@editApartment')->name('edit.apart');
 Route::post('/dashboard/update/{id}', 'HomeController@updateApartment')->name('update.apart');

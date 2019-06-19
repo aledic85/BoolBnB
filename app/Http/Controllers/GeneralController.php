@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailSender;
 
 class GeneralController extends Controller
 {
@@ -23,5 +26,20 @@ class GeneralController extends Controller
     $apartment = Apartment::findORFail($id);
 
     return view('page.show-apart', compact('apartment'));
+  }
+
+  public function sendMail(Request $request, $id) {
+
+    $name = $request->name;
+    $lastname = $request->lastname;
+    $email = $request->email;
+    $title = $request->title;
+    $content = $request->description;
+
+    $user = User::findORFail($id);
+
+    Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content));
+
+    return redirect('/');
   }
 }

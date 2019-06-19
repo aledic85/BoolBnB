@@ -10896,9 +10896,11 @@ div.wrapper div.container.dashB .box-apartments .box-apartment .char-wrapper {
 }
 
 div.wrapper .boxForm {
-  width: 65%;
   margin: auto;
   padding: 50px 0;
+  background-color: #cecece40;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 div.wrapper .boxForm form {
@@ -10907,11 +10909,44 @@ div.wrapper .boxForm form {
 
 div.wrapper .boxForm form label {
   text-align: left;
-  width: 35%;
+  width: 200px;
+  font-weight: 500;
 }
 
 div.wrapper .boxForm form input {
   width: 62%;
+  padding-left: 10px;
+  border: 1px solid #CCC;
+}
+
+div.wrapper .boxForm form input[name=img_path] {
+  background-color: #0001;
+}
+
+div.wrapper .boxForm form #location-output {
+  margin-left: 200px;
+}
+
+div.wrapper .boxForm form span.algolia-places {
+  display: inline !important;
+}
+
+div.wrapper .boxForm form .opt-services {
+  margin: auto;
+  margin-top: 30px;
+}
+
+div.wrapper .boxForm form button.ap-input-icon.ap-icon-pin,
+div.wrapper .boxForm form button.ap-input-icon.ap-icon-clear {
+  display: none;
+}
+
+div.wrapper .boxForm form .ap-input {
+  padding-right: 10px;
+}
+
+div.wrapper .boxForm form .ap-dropdown-menu {
+  margin-top: 20px;
 }
 
 div.details {
