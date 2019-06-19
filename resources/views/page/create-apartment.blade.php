@@ -15,8 +15,8 @@
           <input type="text" name="title" value=""><br>
           <label for="description">Descrizione</label>
           <input type="text" name="description" value=""><br>
-          <label for="indirizzo">Indirizzo</label>
-          <input type="search" id="address-input" name="indirizzo" placeholder="Inserisci indirizzo" />
+          <label for="address">Indirizzo</label>
+          <input type="search" id="address-input" name="address" placeholder="Inserisci indirizzo" />
           <p>Luogo Selezionato: <strong id="address-value">Nessuno</strong></p><br>
           <input id="latval" type="hidden" name="latitude" value="">
           <input id="lonval" type="hidden" name="longitude" value="">

@@ -22,8 +22,9 @@ class CreateApartmentsTable extends Migration
             $table->smallInteger('beds');
             $table->smallInteger('bathrooms');
             $table->integer('mq');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->string('address');
+            $table->float('latitude', 7, 5);
+            $table->float('longitude', 7, 5);
             $table->string('img_path');
             $table->string('wi_fi')->nullable();
             $table->string('parking_space')->nullable();
