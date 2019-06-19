@@ -35,7 +35,7 @@
               <div class="down-right">
                   <h1>Scrivi al Proprietario</h1>
                   <input id="email" type="text"placeholder="Email">
-                  <input id="message" type="text">
+                  <textarea id="message" name="subject" placeholder="Write something.." style="height:200px"></textarea>
                   <button type="button" name="button">Send</button>
               </div>
           </div>

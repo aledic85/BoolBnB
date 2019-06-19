@@ -10962,6 +10962,11 @@ div.details div.details-down {
 }
 
 div.details div.details-down div.down-left {
+  width: 575px;
+  height: 391px;
+}
+
+div.details div.details-down div.down-left {
   border: 1px solid black;
   width: 50%;
   margin-right: 50px;
@@ -10978,7 +10983,7 @@ div.details div.details-down div.down-right h1 {
 }
 
 div.details div.details-down div.down-right #email {
-  width: 150px;
+  width: 250px;
   text-indent: 10px;
   margin-bottom: 20px;
 }
