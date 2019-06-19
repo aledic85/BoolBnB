@@ -173,9 +173,22 @@ div.details {
         text-align: left;
         position: relative;
         right: 85px;
+
+        h4 {
+          color: $Logo_font_color;
+        }
+
+        span, p {
+          color: $Span_font_color;
+        }
       }
 
        div.middle-right {
+
+         li {
+
+             color: $Span_font_color;
+         }
        }
    }
 
@@ -201,6 +214,7 @@ div.details {
       h1 {
 
         margin-bottom: 20px;
+        color: $Logo_font_color;
       }
 
       #email {
@@ -215,6 +229,22 @@ div.details {
         margin-top: 25px;
         height: 180px;
         margin-bottom: 20px;
+      }
+
+      button {
+
+        background: $Logo_font_color;
+        color: $color_white;
+        border: none;
+        height: 50px;
+        border-radius: 5px;
+
+        &:hover {
+
+          border : 1px solid $Logo_font_color;
+          color: $Logo_font_color;
+          background: $color_white;
+        }
       }
     }
   }
