@@ -4,6 +4,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <meta charset="utf-8">
      <meta name="csrf-token" content="{{ csrf_token() }}">
+     <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
      <link rel="stylesheet" href="{{ mix('css/app.css') }}">
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
      <title>@yield('title', 'BoolBnB')</title>
