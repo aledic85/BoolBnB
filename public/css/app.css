@@ -10910,6 +10910,63 @@ div.wrapper .boxForm form .ap-dropdown-menu {
   margin-top: 20px;
 }
 
+div.details .img-container {
+  padding-bottom: 100px;
+}
+
+div.details .img-container img {
+  width: 1350px;
+  height: 575px;
+}
+
+div.details div.details-middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 100px;
+}
+
+div.details div.details-middle div.middle-left {
+  width: 400px;
+  text-align: left;
+  position: relative;
+  right: 85px;
+}
+
+div.details div.details-down {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 100px;
+}
+
+div.details div.details-down div.down-left {
+  border: 1px solid black;
+  width: 50%;
+  margin-right: 50px;
+}
+
+div.details div.details-down div.down-right {
+  display: flex;
+  flex-direction: column;
+}
+
+div.details div.details-down div.down-right h1 {
+  margin-bottom: 20px;
+}
+
+div.details div.details-down div.down-right #email {
+  width: 150px;
+  text-indent: 10px;
+  margin-bottom: 20px;
+}
+
+div.details div.details-down div.down-right #message {
+  margin-top: 25px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
 div.footer {
   display: flex;
   align-items: center;
