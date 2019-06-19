@@ -1,5 +1,7 @@
 div.wrapper {
 
+  background: $color_light_grey;
+
   div.search {
 
       margin-top: $search_margin_top;
@@ -13,24 +15,14 @@ div.wrapper {
 
       div.search-items {
 
-        @include search_items_position;
-
-        input {
-
-          @include input;
-         }
-
-        i {
-          position: absolute;
-          left: 10px;
-          top: 40%;
-        }
+        @include search_items;
       }
   }
 
   div.main {
 
     padding:  $main_padding;
+    margin-top: $main_margin;
 
       div.title {
 
@@ -38,6 +30,8 @@ div.wrapper {
 
           color: $Span_font_color;
           text-align: center;
+          position: relative;
+          bottom: 50px;
         }
       }
 
@@ -47,11 +41,7 @@ div.wrapper {
 
           div.apartament-container {
 
-              @include appartments_container;
-
-              img {
-                    width: 100%;
-              }
+             @include appartments_container;
           }
       }
   }
@@ -183,6 +173,7 @@ div.wrapper {
 div.details {
 
   @include show-apart_img;
+  background: $color_light_grey;
 
   div.details-middle {
 
@@ -219,6 +210,12 @@ div.details {
 
     div.down-left {
 
+      width: 575px;
+      height: 391px;
+    }
+
+    div.down-left {
+
       border: 1px solid black;
       width: 50%;
       margin-right: 50px;
@@ -237,7 +234,7 @@ div.details {
 
       #email {
 
-          width: 150px;
+          width: 250px;
           text-indent: 10px;
           margin-bottom: 20px;
       }

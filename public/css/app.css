@@ -10698,11 +10698,11 @@ div.nav-bar div.nav-bar-right span {
   margin: auto;
   color: #7d7d7d;
   padding: 20px;
-  border-radius: 5px;
 }
 
 div.nav-bar div.nav-bar-right span:hover {
   background: #e4e4e4;
+  border-bottom: 1px solid #ff5a5f;
   color: #ff5a5f;
 }
 
@@ -10714,17 +10714,21 @@ div.nav-bar div.nav-bar-right a.nav-link {
   margin: auto;
   color: #7d7d7d;
   padding: 20px;
-  border-radius: 5px;
 }
 
 div.nav-bar div.nav-bar-right a.nav-link:hover {
   background: #e4e4e4;
+  border-bottom: 1px solid #ff5a5f;
   color: #ff5a5f;
 }
 
 div.nav-bar div.nav-bar-right #long {
   width: 140px;
   padding: 20px 0;
+}
+
+div.wrapper {
+  background: #e4e4e4;
 }
 
 div.wrapper div.search {
@@ -10734,7 +10738,7 @@ div.wrapper div.search {
 }
 
 div.wrapper div.search img {
-  width: 1340px;
+  width: 1349px;
   height: 575px;
 }
 
@@ -10761,34 +10765,69 @@ div.wrapper div.search div.search-items i {
 
 div.wrapper div.main {
   padding: 100px;
+  margin-top: 100px;
 }
 
 div.wrapper div.main div.title h2 {
   color: #7d7d7d;
   text-align: center;
+  position: relative;
+  bottom: 50px;
 }
 
 div.wrapper div.main div.featured_apartments {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 90%;
-  margin: auto;
+  margin: 50px auto auto auto;
   padding: 18px;
 }
 
 div.wrapper div.main div.featured_apartments div.apartament-container {
   height: 400px;
-  width: 150px;
+  width: 288px;
   margin: 10px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 div.wrapper div.main div.featured_apartments div.apartament-container img {
   width: 100%;
+  height: 200px;
+}
+
+div.wrapper div.main div.featured_apartments div.apartament-container h6 {
+  margin-top: 25px;
+}
+
+div.wrapper div.main div.featured_apartments div.apartament-container p {
+  margin-top: 25px;
+}
+
+div.wrapper div.main div.featured_apartments div.apartament-container a {
+  position: absolute;
+  bottom: 0;
+}
+
+div.wrapper div.main div.featured_apartments div.apartament-container a button {
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+}
+
+div.wrapper div.main div.featured_apartments div.apartament-container a button:hover {
+  border: 1px solid #ff5a5f;
+  color: #ff5a5f;
+  background: white;
 }
 
 div.wrapper div.container.dashB {
@@ -10910,6 +10949,10 @@ div.wrapper .boxForm form .ap-dropdown-menu {
   margin-top: 20px;
 }
 
+div.details {
+  background: #e4e4e4;
+}
+
 div.details .img-container {
   padding-bottom: 100px;
 }
@@ -10954,6 +10997,11 @@ div.details div.details-down {
 }
 
 div.details div.details-down div.down-left {
+  width: 575px;
+  height: 391px;
+}
+
+div.details div.details-down div.down-left {
   border: 1px solid black;
   width: 50%;
   margin-right: 50px;
@@ -10970,7 +11018,7 @@ div.details div.details-down div.down-right h1 {
 }
 
 div.details div.details-down div.down-right #email {
-  width: 150px;
+  width: 250px;
   text-indent: 10px;
   margin-bottom: 20px;
 }
@@ -11000,7 +11048,7 @@ div.footer {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  border-top: 1px solid #7d7d7d;
+  border-top: 1px solid #e4e4e4;
   padding: 0 20px;
 }
 
