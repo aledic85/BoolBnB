@@ -4,6 +4,8 @@
 
 div.wrapper {
 
+  background: $color_light_grey;
+
   div.search {
 
       margin-top: $search_margin_top;
@@ -17,18 +19,7 @@ div.wrapper {
 
       div.search-items {
 
-        @include search_items_position;
-
-        input {
-
-          @include input;
-         }
-
-        i {
-          position: absolute;
-          left: 10px;
-          top: 40%;
-        }
+        @include search_items;
       }
   }
 
@@ -51,11 +42,7 @@ div.wrapper {
 
           div.apartament-container {
 
-              @include appartments_container;
-
-              img {
-                    width: 100%;
-              }
+             @include appartments_container;
           }
       }
   }

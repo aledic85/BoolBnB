@@ -1,7 +1,7 @@
 div.footer {
 
   @include flexNavbarAndFooter;
-  border-top: 1px solid $Span_font_color;
+  border-top: 1px solid $color_light_grey;
   padding: $padding_navbar_footer;
 
   div.footer-left {
