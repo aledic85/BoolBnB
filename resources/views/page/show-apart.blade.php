@@ -34,9 +34,21 @@
               </div>
               <div class="down-right">
                   <h1>Scrivi al Proprietario</h1>
-                  <input id="email" type="text"placeholder="Email">
-                  <input id="message" type="text">
-                  <button type="button" name="button">Send</button>
+                  <form class="" action="{{route('send.mail', $apartment->user_id)}}" method="post">
+                    @csrf
+                    @method('POST')
+                    <label for="title">Title:</label><br>
+                    <input type="text" name="title" value=""><br>
+                    <label for="title">Name:</label><br>
+                    <input type="text" name="name" value=""><br>
+                    <label for="title">Lastname:</label><br>
+                    <input type="text" name="lastname" value=""><br>
+                    <label for="title">Email:</label><br>
+                    <input type="text" name="email" value=""><br>
+                    <label for="description">Description:</label><br>
+                    <textarea name="description" rows="8" cols="80"></textarea><br><br>
+                    <button type="submit" name="button">Send</button>
+                  </form>
               </div>
           </div>
       </div>
