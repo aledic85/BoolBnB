@@ -26,6 +26,7 @@ div.wrapper {
   div.main {
 
     padding:  $main_padding;
+    margin-top: $main_margin;
 
       div.title {
 
@@ -33,6 +34,8 @@ div.wrapper {
 
           color: $Span_font_color;
           text-align: center;
+          position: relative;
+          bottom: 50px;
         }
       }
 

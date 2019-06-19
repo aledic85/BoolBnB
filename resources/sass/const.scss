@@ -6,6 +6,8 @@ $color_light_grey: rgb(228, 228, 228);
 $padding_navbar_footer: 0 20px;
 $search_margin_top: 8px;
 $main_padding: 100px;
+$main_margin: 100px;
+
 
 
 @mixin flexNavbarAndFooter {
@@ -91,18 +93,35 @@ $main_padding: 100px;
   height: 400px;
   width: 288px;
   margin: 10px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  position: relative;
 
   img {
+
         width: 100%;
         height: 200px;
   }
 
-  h3, p, button {
+  h6 {
+
     margin-top: 25px;
+  }
+
+  p {
+
+    margin-top: 25px;
+  }
+
+  a {
+
+    @include button;
+    position: absolute;
+    bottom: 0;
   }
 }
 
