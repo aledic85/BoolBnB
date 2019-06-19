@@ -10914,6 +10914,10 @@ div.wrapper .boxForm form input {
   width: 62%;
 }
 
+div.details {
+  background: #e4e4e4;
+}
+
 div.details .img-container {
   padding-bottom: 100px;
 }

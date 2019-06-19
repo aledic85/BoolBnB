@@ -141,6 +141,7 @@ div.wrapper {
 div.details {
 
   @include show-apart_img;
+  background: $color_light_grey;
 
   div.details-middle {
 
