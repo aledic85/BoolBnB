@@ -3,21 +3,24 @@
 
       <div class="details">
           <div class="img-container">
-              <img src="http://3.citynews-milanotoday.stgy.ovh/~media/original-hi/68320916180522/milano-panoramica-4.jpg">
+              <img src="{{$apartment->img_path}}">
           </div>
           <div class="details-middle">
               <div class="middle-left">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <h4>{{$apartment->title}}</h4>
+                <p>{{$apartment->title}}</p>
+                <p>{{$apartment->description}}</p>
               </div>
               <div class="middle-right">
                   <ul>
-                    <li>MMMM</li>
-                    <li>MMMM</li>
-                    <li>MMMM</li>
-                    <li>MMMM</li>
-                    <li>MMMM</li>
-                    <li>MMMM</li>
-                    <li>MMMM</li>
+                    <li>Rooms : {{ $apartment->rooms }}</li>
+                    <li>Mq : {{ $apartment->mq }}</li>
+                    <li>Beds : {{ $apartment->beds }}</li>
+                    <li>Bathroom : {{ $apartment->bathroom }}</li>
+                    <li>Wi-Fi : {{ $apartment->wi_fi }}</li>
+                    <li>Parking Space : {{ $apartment->parking_space }}</li>
+                    <li>Sauna : {{ $apartment->sauna }}</li>
+                    <li>Pool : {{ $apartment->pool }}</li>
                   </ul>
               </div>
           </div>
@@ -31,8 +34,9 @@
               </div>
               <div class="down-right">
                   <h1>Scrivi al Proprietario</h1>
-                  <input id="email" type="text" name="" placeholder="Email">
-                  <input id="message" type="text" name="" placeholder="Messaggio">
+                  <input id="email" type="text"placeholder="Email">
+                  <input id="message" type="text">
+                  <button type="button" name="button">Send</button>
               </div>
           </div>
       </div>

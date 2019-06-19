@@ -152,17 +152,12 @@ div.details {
 
   .img-container {
 
+      padding-bottom: 100px;
+
       img {
         width: 1350px;
-        height: 400px;
-
-
-
-
-
+        height: 575px;
       }
-
-
    }
 
   div.details-middle {
@@ -170,16 +165,17 @@ div.details {
        display: flex;
        align-items: center;
        justify-content: space-around;
-       padding: 50px;
+       padding:100px;
 
        div.middle-left {
 
-         padding: 0 350px 0 10px;
-       }
+        width: 400px;
+        text-align: left;
+        position: relative;
+        right: 85px;
+      }
 
        div.middle-right {
-
-         padding-right: 75px;
        }
    }
 
@@ -202,17 +198,23 @@ div.details {
       display: flex;
       flex-direction: column;
 
+      h1 {
+
+        margin-bottom: 20px;
+      }
+
       #email {
 
           width: 150px;
           text-indent: 10px;
+          margin-bottom: 20px;
       }
 
       #message {
 
         margin-top: 25px;
         height: 180px;
-        text-indent: 10px;
+        margin-bottom: 20px;
       }
     }
   }
