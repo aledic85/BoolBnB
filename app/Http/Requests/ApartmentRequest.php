@@ -27,6 +27,7 @@ class ApartmentRequest extends FormRequest
 
           "title" => "required",
           "description" => "required",
+          "address" => "required",
           "latitude" => "required",
           "longitude" => "required",
           "rooms" => "required",

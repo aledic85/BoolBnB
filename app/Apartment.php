@@ -14,6 +14,7 @@ class Apartment extends Model
     'beds',
     'bathrooms',
     'mq',
+    'address',
     'latitude',
     'longitude',
     'img_path',
