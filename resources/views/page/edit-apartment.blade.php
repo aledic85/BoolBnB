@@ -16,10 +16,11 @@
           <input type="text" name="title" value="{{$apartment->title}}"><br>
           <label for="description">Descrizione</label>
           <input type="text" name="description" value="{{$apartment->description}}"><br>
-          <label for="latitude">Latitudine</label>
-          <input type="text" name="latitude" value="{{$apartment->latitude}}"><br>
-          <label for="">Longitudine</label>
-          <input type="text" name="longitude" value="{{$apartment->longitude}}"><br>
+          <label for="address">Indirizzo</label>
+          <input type="search" id="address-input" name="address" placeholder="Inserisci indirizzo" />
+          <p>Luogo Selezionato: <strong id="address-value">Nessuno</strong></p><br>
+          <input id="latval" type="hidden" name="latitude" value="">
+          <input id="lonval" type="hidden" name="longitude" value="">
           <label for="rooms">Numero stanze</label>
           <input type="text" name="rooms" value="{{$apartment->rooms}}"><br>
           <label for="beds">Numero letti</label>

@@ -20,6 +20,7 @@
               <img src="{{$sponsoredApartment->img_path}}">
               <h6>{{$sponsoredApartment->title}}</h6>
               <p>{{$sponsoredApartment->description}}</p>
+              <a href="{{route('show.apart', $sponsoredApartment->id)}}"><button type="button" name="button">DETTAGLI APPARTAMENTO</button></a>
           </div>
         @endforeach
         </div>
