@@ -182,22 +182,11 @@ div.wrapper {
 
 div.details {
 
-  .img-container {
-
-      padding-bottom: 100px;
-
-      img {
-        width: 1350px;
-        height: 575px;
-      }
-   }
+  @include show-apart_img;
 
   div.details-middle {
 
-       display: flex;
-       align-items: center;
-       justify-content: space-around;
-       padding:100px;
+       @include details-middle;
 
        div.middle-left {
 
@@ -205,18 +194,28 @@ div.details {
         text-align: left;
         position: relative;
         right: 85px;
+
+        h4 {
+          color: $Logo_font_color;
+        }
+
+        span, p {
+          color: $Span_font_color;
+        }
       }
 
        div.middle-right {
+
+         li {
+
+             color: $Span_font_color;
+         }
        }
    }
 
   div.details-down {
 
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 100px;
+    @include details-down;
 
     div.down-left {
 
@@ -233,6 +232,7 @@ div.details {
       h1 {
 
         margin-bottom: 20px;
+        color: $Logo_font_color;
       }
 
       #email {
@@ -248,6 +248,8 @@ div.details {
         height: 180px;
         margin-bottom: 20px;
       }
+
+      @include button;
     }
   }
 }

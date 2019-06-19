@@ -8,7 +8,7 @@
           <div class="details-middle">
               <div class="middle-left">
                 <h4>{{$apartment->title}}</h4>
-                <p>{{$apartment->title}}</p>
+                <span>{{$apartment->title}}</span>
                 <p>{{$apartment->description}}</p>
               </div>
               <div class="middle-right">

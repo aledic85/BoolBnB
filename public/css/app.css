@@ -10933,6 +10933,19 @@ div.details div.details-middle div.middle-left {
   right: 85px;
 }
 
+div.details div.details-middle div.middle-left h4 {
+  color: #ff5a5f;
+}
+
+div.details div.details-middle div.middle-left span,
+div.details div.details-middle div.middle-left p {
+  color: #7d7d7d;
+}
+
+div.details div.details-middle div.middle-right li {
+  color: #7d7d7d;
+}
+
 div.details div.details-down {
   display: flex;
   justify-content: space-around;
@@ -10953,6 +10966,7 @@ div.details div.details-down div.down-right {
 
 div.details div.details-down div.down-right h1 {
   margin-bottom: 20px;
+  color: #ff5a5f;
 }
 
 div.details div.details-down div.down-right #email {
@@ -10965,6 +10979,20 @@ div.details div.details-down div.down-right #message {
   margin-top: 25px;
   height: 180px;
   margin-bottom: 20px;
+}
+
+div.details div.details-down div.down-right button {
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+}
+
+div.details div.details-down div.down-right button:hover {
+  border: 1px solid #ff5a5f;
+  color: #ff5a5f;
+  background: white;
 }
 
 div.footer {
