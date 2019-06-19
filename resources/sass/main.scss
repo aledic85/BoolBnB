@@ -1,7 +1,3 @@
-// .algolia-places {
-//     width: 100%;
-//   }
-
 div.wrapper {
 
   div.search {
@@ -129,20 +125,56 @@ div.wrapper {
   }
   // nuovo App. utente loggato
   .boxForm {
-    width: 65%;
     margin: auto;
     padding: 50px 0;
+    background-color: #cecece40;
+    border-radius: 10px;
+    margin-bottom: 30px;
 
     form {
       text-align: center;
 
       label {
         text-align: left;
-        width: 35%;
+        width: 200px;
+        font-weight: 500;
       }
 
       input {
         width: 62%;
+        padding-left: 10px;
+        border: 1px solid #CCC
+      }
+
+      input[name="img_path"]{
+        background-color: #0001;
+      }
+
+      #location-output{
+        margin-left: 200px;
+      }
+
+      span.algolia-places {
+        display: inline !important;
+      }
+
+      .opt-services{
+        margin: auto;
+        margin-top: 30px;
+      }
+
+      button.ap-input-icon.ap-icon-pin,
+      button.ap-input-icon.ap-icon-clear{
+        display: none;
+      }
+
+      .ap-input{
+
+        padding-right: 10px;
+      }
+
+      .ap-dropdown-menu{
+        margin-top: 20px;
       }
     }
   }

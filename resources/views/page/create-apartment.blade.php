@@ -27,38 +27,40 @@
           <label for="bathrooms">Numero bagni</label>
           <input type="text" name="bathrooms" value=""><br>
           <label for="mq">Metri quadrati</label>
-          <input type="text" name="mq" value=""><br><br>
-          <label for="wi-fi">Wi-Fi</label>
-          <select name="wi_fi">
-            <option value="0">--</option>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-          </select><br>
-          <label for="parking_space">Parking_space</label>
-          <select name="parking_space">
-            <option value="0">--</option>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-          </select><br>
-          <label for="pool">Pool</label>
-          <select name="pool">
-            <option value="0">--</option>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-          </select><br>
-          <label for="sauna">Sauna</label>
-          <select name="sauna">
-            <option value="0">--</option>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-          </select><br>
-          <label for="active">Rendere annuncio attivo?</label>
-          <select name="active">
-            <option value="0">--</option>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-          </select><br>
-          <button type="submit" name="">INSERISCI</button>
+          <input type="text" name="mq" value="">
+          <div class="opt-services">
+            <label for="wi-fi">Wi-Fi</label>
+            <select name="wi_fi">
+              <option value="0">--</option>
+              <option value="0">No</option>
+              <option value="1">Sì</option>
+            </select><br>
+            <label for="parking_space">Parking_space</label>
+            <select name="parking_space">
+              <option value="0">--</option>
+              <option value="0">No</option>
+              <option value="1">Sì</option>
+            </select><br>
+            <label for="pool">Pool</label>
+            <select name="pool">
+              <option value="0">--</option>
+              <option value="0">No</option>
+              <option value="1">Sì</option>
+            </select><br>
+            <label for="sauna">Sauna</label>
+            <select name="sauna">
+              <option value="0">--</option>
+              <option value="0">No</option>
+              <option value="1">Sì</option>
+            </select><br>
+            <label for="active">Rendere annuncio attivo?</label>
+            <select name="active">
+              <option value="0">--</option>
+              <option value="0">No</option>
+              <option value="1">Sì</option>
+            </select><br>
+            <button type="submit" name="">INSERISCI</button>
+          </div>
         </form>
       </div>
     </div>
