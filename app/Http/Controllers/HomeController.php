@@ -51,7 +51,7 @@ class HomeController extends Controller
        $image->storeAs('public/images',$filename);
 
        $apartment = Apartment::make($validatedData);
-       $apartment->img_path = $image->getFilename().'.'.$ext;
+       $apartment->img_path = $filename;
        $user = Auth::user();
        $apartment->user()->associate($user)->save();
 
@@ -75,7 +75,7 @@ class HomeController extends Controller
        $image->storeAs('public/images',$filename);
 
        $apartment = Apartment::findORFail($id);
-       $apartment->img_path = $image->getFilename().'.'.$ext;
+       $apartment->img_path = $filename;
        $apartment->update($validatedData);
 
        return redirect('dashboard')->with('success','Appartamento modificato con successo!');
