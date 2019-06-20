@@ -53,7 +53,7 @@
 
       <div class="container-fluid mx-auto  h-100 p-0">
         <div class="row  mx-auto h-100 w-100 flex-column align-items-center justify-content-center">
-          @if ($errors->any())
+          {{-- @if ($errors->any())
             <div class="alert alert-danger">
               <ul>
                 @foreach ($errors->all() as $error)
@@ -61,7 +61,7 @@
                 @endforeach
               </ul>
             </div>
-          @endif
+          @endif --}}
           @if (session('success'))
             <div class="alert alert-success">
               <div class="container">

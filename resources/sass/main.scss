@@ -136,6 +136,13 @@ div.wrapper {
     form {
       text-align: center;
 
+      label.error {//style jQuery-validation
+        width: 100%;
+        text-align: right;
+        color: red;
+        font-size: 8px;
+      }
+
       label {
         text-align: left;
         width: 35%;

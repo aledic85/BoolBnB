@@ -7,7 +7,7 @@
       <p>compila i seguenti campi, inserendo una tua proprietà da mettere in affitto. Inizia a guadagnare da oggi!</p>
 
       <div class="boxForm">
-        <form action="{{ route('store.new.apart') }}" method="post" enctype="multipart/form-data">
+        <form id="form" action="{{ route('store.new.apart') }}" method="post" enctype="multipart/form-data">
           @csrf
           <label for="img_path">Immagine</label>
           <input type="file" name="img_path" value=""><br>
@@ -60,6 +60,8 @@
           </select><br>
           <button type="submit" name="">INSERISCI</button>
         </form>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.min.js"></script>
       </div>
     </div>
   </div>
