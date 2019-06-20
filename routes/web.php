@@ -14,6 +14,9 @@
 Route::get('/', 'GeneralController@index')->name('home');
 Route::get('/show/{id}', 'GeneralController@showApartment')->name('show.apart');
 Route::post('/contactUser/{id}', 'GeneralController@sendMail')->name('send.mail');
+Route::get('/search', function()
+                      { return view('page.search-form'); })->name('search.apart');
+Route::get('/search/results', 'GeneralController@resultsApartments')->name('search.results');
 
 Auth::routes();
 
