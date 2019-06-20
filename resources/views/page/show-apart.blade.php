@@ -16,11 +16,11 @@
                     <li>Rooms : {{ $apartment->rooms }}</li>
                     <li>Mq : {{ $apartment->mq }}</li>
                     <li>Beds : {{ $apartment->beds }}</li>
-                    <li>Bathroom : {{ $apartment->bathroom }}</li>
-                    <li>Wi-Fi : {{ $apartment->wi_fi }}</li>
-                    <li>Parking Space : {{ $apartment->parking_space }}</li>
-                    <li>Sauna : {{ $apartment->sauna }}</li>
-                    <li>Pool : {{ $apartment->pool }}</li>
+                    <li>Bathroom : {{ $apartment->bathrooms }}</li>
+                    <li>Wi-Fi : <span>{{ $apartment->wi_fi }}</span></li>
+                    <li>Parking Space : <span>{{ $apartment->parking_space }}</span></li>
+                    <li>Sauna : <span>{{ $apartment->sauna }}</span></li>
+                    <li>Pool : <span>{{ $apartment->pool }}</span></li>
                   </ul>
               </div>
           </div>
@@ -76,6 +76,19 @@
                         })
                     }).addTo(map);
               marker.bindPopup("<b>" + title + "</b><br/>" + description);
+
+              var wrap = $('ul > li > span');
+
+              wrap.each(function() {
+
+                if ($(this).text() == '0') {
+
+                  $(this).text('no');
+                } else if ($(this).text() == '1') {
+
+                  $(this).text('sì');
+                }
+              });
       </script>
 
 
