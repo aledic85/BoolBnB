@@ -44,6 +44,14 @@ class GeneralController extends Controller
     return redirect('/');
   }
 
+  public function searchApartments() {
+
+    $lat = Apartment::select('latitude')->get();
+    $long = Apartment::select('longitude')->get();
+
+    return view('page.search-form', compact('lat', 'long'));
+  }
+
   public function resultsApartments() {
 
     $title = Input::get('title');
@@ -67,41 +75,39 @@ class GeneralController extends Controller
       if ($description != null) {
         $query = $query->where('description', 'LIKE', '%'.$description.'%');
       }
-      if ($latitude) {
+      if ($latitude != null) {
         $query = $query->where('latitude', $latitude);
       }
-      if ($longitude) {
+      if ($longitude != null) {
         $query = $query->where('longitude', $longitude);
       }
-      if ($rooms) {
+      if ($rooms != null) {
         $query = $query->where('rooms', $rooms);
       }
-      if ($beds) {
+      if ($beds != null) {
         $query = $query->where('beds', $beds);
       }
-      if ($bathrooms) {
+      if ($bathrooms != null) {
         $query = $query->where('bathrooms', $bathrooms);
       }
-      if ($mq) {
+      if ($mq != null) {
         $query = $query->where('mq', $mq);
       }
-      if ($wi_fi) {
+      if ($wi_fi != null) {
         $query = $query->where('wi_fi', $wi_fi);
       }
-      if ($parking_space) {
+      if ($parking_space != null) {
         $query = $query->where('parking_space', $parking_space);
       }
-      if ($pool) {
+      if ($pool != null) {
         $query = $query->where('pool', $pool);
       }
-      if ($sauna) {
+      if ($sauna != null) {
         $query = $query->where('sauna', $sauna);
       }
 
       $apartments = $query->active()->get();
 
-      return response()->json($apartments);
-
-
+      return view('page.search-results', compact('apartments'));
   }
 }

@@ -1,6 +1,7 @@
 @extends('layout.home-layout')
 
 @section('content')
+
   <div class="wrapper">
     <div class="container dashB">
       <div class="boxForm">
@@ -80,7 +81,6 @@
 
                 latval.val(lat);
                 lonval.val(lon);
-
           }
 
           else {
@@ -95,8 +95,6 @@
       }
     });
   }
-
-
 
   function getQuery() {
 
@@ -124,5 +122,6 @@
   }
   // Fine Funzion tomtom
     getQuery();
+
   </script>
 @endsection
