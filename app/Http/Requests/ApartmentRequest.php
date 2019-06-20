@@ -25,6 +25,7 @@ class ApartmentRequest extends FormRequest
     {
         return [
 
+          "img_path" => "required|image|mimes:jpeg,png,jpg,gif,svg",
           "title" => "required",
           "description" => "required",
           "address" => "required",

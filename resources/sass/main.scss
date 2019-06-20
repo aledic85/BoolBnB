@@ -1,6 +1,6 @@
 div.wrapper {
 
-  background: $color_light_grey;
+  background: transparent;
 
   div.search {
 
@@ -212,6 +212,17 @@ div.details {
 
       width: 575px;
       height: 391px;
+
+      .map-container {
+
+        width: 100%;
+        height: 100%;
+
+        #map {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
 
     div.down-left {
