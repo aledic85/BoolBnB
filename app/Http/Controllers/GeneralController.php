@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Apartment;
 use App\User;
 use Illuminate\Support\Facades\Mail;
@@ -41,5 +42,66 @@ class GeneralController extends Controller
     Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content));
 
     return redirect('/');
+  }
+
+  public function resultsApartments() {
+
+    $title = Input::get('title');
+    $description = Input::get('description');
+    $latitude = Input::get('latitude');
+    $longitude = Input::get('longitude');
+    $rooms = Input::get('rooms');
+    $beds = Input::get('beds');
+    $bathrooms = Input::get('bathrooms');
+    $mq = Input::get('mq');
+    $wi_fi = Input::get('wi_fi');
+    $parking_space = Input::get('parking_space');
+    $pool = Input::get('pool');
+    $sauna = Input::get('sauna');
+
+    $query = Apartment::query();
+
+      if ($title != null) {
+        $query = $query->where('title', 'LIKE','%'.$title.'%');
+      }
+      if ($description != null) {
+        $query = $query->where('description', 'LIKE', '%'.$description.'%');
+      }
+      if ($latitude) {
+        $query = $query->where('latitude', $latitude);
+      }
+      if ($longitude) {
+        $query = $query->where('longitude', $longitude);
+      }
+      if ($rooms) {
+        $query = $query->where('rooms', $rooms);
+      }
+      if ($beds) {
+        $query = $query->where('beds', $beds);
+      }
+      if ($bathrooms) {
+        $query = $query->where('bathrooms', $bathrooms);
+      }
+      if ($mq) {
+        $query = $query->where('mq', $mq);
+      }
+      if ($wi_fi) {
+        $query = $query->where('wi_fi', $wi_fi);
+      }
+      if ($parking_space) {
+        $query = $query->where('parking_space', $parking_space);
+      }
+      if ($pool) {
+        $query = $query->where('pool', $pool);
+      }
+      if ($sauna) {
+        $query = $query->where('sauna', $sauna);
+      }
+
+      $apartments = $query->active()->get();
+
+      return response()->json($apartments);
+
+
   }
 }

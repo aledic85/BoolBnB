@@ -18,11 +18,11 @@
              <a href="{{route('home')}}"><h1>BoolBnB</h1></a>
          </div>
          <div class="nav-bar-right">
-             <a href=""></a>
              <span>Salvati</span>
              <span>Viaggi</span>
              <span>Messaggi</span>
              <span>Aiuto</span>
+             <a href="{{ route('search.apart') }}">Ricerca avanzata</a>
              @guest
                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                @if (Route::has('register'))
