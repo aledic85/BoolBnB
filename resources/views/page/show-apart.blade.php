@@ -27,9 +27,7 @@
           <div class="details-down">
               <div class="down-left">
                   <div class="map-container">
-                     <div class="map">
-
-                     </div>
+                     <div id="map"></div>
                   </div>
               </div>
               <div class="down-right">
@@ -52,5 +50,33 @@
               </div>
           </div>
       </div>
+      <script>
+          tomtom.setProductInfo('BoolBnB', '1.0');
+
+          var lat = {{$apartment->latitude}};
+          var long = {{$apartment->longitude}};
+          var title = "{{$apartment->title}}";
+          var description = "{{$apartment->description}}";
+
+          var myLocation = [lat, long];
+          var map = tomtom.L.map('map', {
+              key: "kvaWo21VAPIFQF2qQjTTzA2brbzqOTRy",
+              basePath: '<sdk>',
+              center: myLocation,
+              zoom: 15
+          });
+
+          var marker = tomtom.L.marker(myLocation, {
+                      title: "Dettagli",
+                      icon: tomtom.L.icon({
+                        iconUrl: "{{asset('img/marker.png')}}",
+                        // iconSize: [50, 75],
+                        iconAnchor: [17, 70],
+                        popupAnchor: [5, -80]
+                        })
+                    }).addTo(map);
+              marker.bindPopup("<b>" + title + "</b><br/>" + description);
+      </script>
+
 
 @stop

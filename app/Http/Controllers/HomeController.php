@@ -60,7 +60,7 @@ class HomeController extends Controller
 
      public function editApartment($id) {
 
-       $apartment = Apartment::findORFail($id);
+       $apartment = Apartment::findOrFail($id);
 
        return view('page.edit-apartment', compact('apartment'));
      }
@@ -74,9 +74,10 @@ class HomeController extends Controller
        $filename = $image->getFilename().'.'.$ext;
        $image->storeAs('public/images',$filename);
 
-       $apartment = Apartment::findORFail($id);
-       $apartment->img_path = $filename;
+       $apartment = Apartment::findOrFail($id);
        $apartment->update($validatedData);
+       $apartment->img_path = $filename;
+       $apartment->save();
 
        return redirect('dashboard')->with('success','Appartamento modificato con successo!');
      }

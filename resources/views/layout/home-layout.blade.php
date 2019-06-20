@@ -6,7 +6,9 @@
      <meta name="csrf-token" content="{{ csrf_token() }}">
      <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
      <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+     <link rel='stylesheet' type='text/css' href='{{ asset('/sdk/map.css') }}'/>
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
+     <script src='{{ asset('/sdk/tomtom.min.js')}}'></script>
      <title>@yield('title', 'BoolBnB')</title>
    </head>
    <body>
