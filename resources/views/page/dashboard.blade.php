@@ -35,6 +35,7 @@
               @method('DELETE')
               <button type="submit" name="delete">ELIMINA</button>
             </form>
+            <a href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
           </div>
         </div>
       @endforeach
