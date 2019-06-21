@@ -10727,29 +10727,35 @@ div.nav-bar div.nav-bar-right #long {
   padding: 20px 0;
 }
 
-div.wrapper {
-  background: transparent;
+.container-fluid {
+  min-height: calc(100vh - 80px);
+  padding: 40px 0 !important;
 }
 
-div.wrapper div.search {
+.container-fluid div.wrapper {
+  background: transparent;
+  width: 100%;
+}
+
+.container-fluid div.wrapper div.search {
   margin-top: 8px;
   position: relative;
-  color: #7d7d7d;
+  color: #ff5a5f;
 }
 
-div.wrapper div.search img {
+.container-fluid div.wrapper div.search img {
   width: 100%;
   height: 575px;
 }
 
-div.wrapper div.search div.search-items {
+.container-fluid div.wrapper div.search div.search-items {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-div.wrapper div.search div.search-items input {
+.container-fluid div.wrapper div.search div.search-items input {
   height: 50px;
   width: 370px;
   border-radius: 5px;
@@ -10757,25 +10763,25 @@ div.wrapper div.search div.search-items input {
   text-indent: 40px;
 }
 
-div.wrapper div.search div.search-items i {
+.container-fluid div.wrapper div.search div.search-items i {
   position: absolute;
   left: 10px;
   top: 40%;
 }
 
-div.wrapper div.main {
+.container-fluid div.wrapper div.main {
   padding: 100px;
   margin-top: 100px;
 }
 
-div.wrapper div.main div.title h2 {
+.container-fluid div.wrapper div.main div.title h2 {
   color: #7d7d7d;
   text-align: center;
   position: relative;
   bottom: 50px;
 }
 
-div.wrapper div.main div.featured_apartments {
+.container-fluid div.wrapper div.main div.featured_apartments {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -10785,7 +10791,7 @@ div.wrapper div.main div.featured_apartments {
   padding: 18px;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container {
   height: 400px;
   width: 288px;
   margin: 10px;
@@ -10798,25 +10804,25 @@ div.wrapper div.main div.featured_apartments div.apartament-container {
   position: relative;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container img {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container img {
   width: 100%;
   height: 200px;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container h6 {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container h6 {
   margin-top: 25px;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container p {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container p {
   margin-top: 25px;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container a {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container a {
   position: absolute;
   bottom: 0;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container a button {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container a button {
   background: #ff5a5f;
   color: white;
   border: none;
@@ -10824,78 +10830,217 @@ div.wrapper div.main div.featured_apartments div.apartament-container a button {
   border-radius: 5px;
 }
 
-div.wrapper div.main div.featured_apartments div.apartament-container a button:hover {
+.container-fluid div.wrapper div.main div.featured_apartments div.apartament-container a button:hover {
   border: 1px solid #ff5a5f;
   color: #ff5a5f;
   background: white;
 }
 
-div.wrapper div.container.dashB {
-  max-width: 1200px;
+.container-fluid div.wrapper div.dashB {
+  padding: 0 50px;
 }
 
-div.wrapper div.container.dashB button {
+.container-fluid div.wrapper div.dashB button {
   background: #fc5c63;
   color: #fff;
-  border-radius: 4px;
-  font-size: 15px;
   border: none;
+  border-radius: 6px;
 }
 
-div.wrapper div.container.dashB .boxAddNew {
+.container-fluid div.wrapper div.dashB .boxAddNew {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 30px 0;
 }
 
-div.wrapper div.container.dashB h2 {
+@media screen and (max-width: 900px) {
+  .container-fluid div.wrapper div.dashB .boxAddNew {
+    flex-direction: column;
+  }
+}
+
+.container-fluid div.wrapper div.dashB .boxAddNew h2 {
   text-align: center;
 }
 
-div.wrapper div.container.dashB .box-apartments {
+@media screen and (max-width: 900px) {
+  .container-fluid div.wrapper div.dashB .boxAddNew h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-div.wrapper div.container.dashB .box-apartments .box-apartment {
-  width: 32%;
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment {
+  width: 400px;
   margin: 6px;
   border: 1px solid #ddd;
+  overflow: hidden;
+  height: 340px;
+  margin-bottom: 30px;
+  transition: all 0.3s;
 }
 
-div.wrapper div.container.dashB .box-apartments .box-apartment img {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment:hover {
+  margin-top: -7px;
+  box-shadow: 2px 2px 15px grey;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image {
   width: 100%;
-  height: 40%;
+  height: 80%;
+  margin-top: -20%;
+  position: relative;
 }
 
-div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp p {
-  margin-bottom: 0;
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image img {
+  width: 100%;
+  height: 100%;
 }
 
-div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp span {
-  margin-bottom: 20px;
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del {
+  position: absolute;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 10px;
   font-size: 14px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del button {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup {
+  position: relative;
+  display: inline-block;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup .popuptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #aaa;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  font-family: "Nunito", sans-serif;
+  border: 1px solid #808080;
+  right: 25px;
+  top: -10px;
+  z-index: 1;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup:hover .popuptext {
+  visibility: visible;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data {
+  width: 100%;
+  height: 50%;
+  padding: 6px;
+  border-top: 3px solid #ff5a5f;
+  position: relative;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data h3 {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data p.descr {
+  margin-bottom: 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data p.addr {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  font-size: 13px;
+  margin: 6px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul li {
+  list-style: none;
+  width: 49%;
+  display: inline-block;
   font-weight: 500;
 }
 
-div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp h3 {
-  font-size: 22px;
-}
-
-div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp .ed,
-div.wrapper div.container.dashB .box-apartments .box-apartment .infoAp .del {
-  display: inline-block;
-  width: 49%;
-  margin: auto;
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper {
+  margin-bottom: 0;
   text-align: center;
 }
 
-div.wrapper div.container.dashB .box-apartments .box-apartment .char-wrapper {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper span {
   margin-bottom: 20px;
+  font-size: 11.5px;
+  font-weight: 500;
 }
 
-div.wrapper .boxForm {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper .activeApp {
+  color: #ff5a5f;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper .activeApp + span {
+  color: #ff5a5f;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .ed {
+  position: absolute;
+  border-radius: 5px;
+  top: 10px;
+  right: 10px;
+  font-size: 13px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .ed button {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup {
+  position: relative;
+  display: inline-block;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup .popuptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #aaa;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  font-family: "Nunito", sans-serif;
+  border: 1px solid #808080;
+  right: 25px;
+  top: -10px;
+  z-index: 1;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup:hover .popuptext {
+  visibility: visible;
+}
+
+.container-fluid div.wrapper .boxForm {
   margin: auto;
   padding: 50px 0;
   background-color: #cecece40;
@@ -10903,56 +11048,58 @@ div.wrapper .boxForm {
   margin-bottom: 30px;
 }
 
-div.wrapper .boxForm label.error {
+.container-fluid div.wrapper .boxForm label.error {
   width: 100%;
   text-align: right;
   color: red;
-  font-size: 8px;
+  font-size: 9px;
+  font-weight: bold;
+  padding-right: 40px;
 }
 
-div.wrapper .boxForm form {
+.container-fluid div.wrapper .boxForm form {
   text-align: center;
 }
 
-div.wrapper .boxForm form label {
+.container-fluid div.wrapper .boxForm form label {
   text-align: left;
   width: 200px;
   font-weight: 500;
 }
 
-div.wrapper .boxForm form input {
+.container-fluid div.wrapper .boxForm form input {
   width: 62%;
   padding-left: 10px;
   border: 1px solid #CCC;
 }
 
-div.wrapper .boxForm form input[name=img_path] {
+.container-fluid div.wrapper .boxForm form input[name=img_path] {
   background-color: #0001;
 }
 
-div.wrapper .boxForm form #location-output {
+.container-fluid div.wrapper .boxForm form #location-output {
   margin-left: 200px;
 }
 
-div.wrapper .boxForm form span.algolia-places {
+.container-fluid div.wrapper .boxForm form span.algolia-places {
   display: inline !important;
 }
 
-div.wrapper .boxForm form .opt-services {
+.container-fluid div.wrapper .boxForm form .opt-services {
   margin: auto;
   margin-top: 30px;
 }
 
-div.wrapper .boxForm form button.ap-input-icon.ap-icon-pin,
-div.wrapper .boxForm form button.ap-input-icon.ap-icon-clear {
+.container-fluid div.wrapper .boxForm form button.ap-input-icon.ap-icon-pin,
+.container-fluid div.wrapper .boxForm form button.ap-input-icon.ap-icon-clear {
   display: none;
 }
 
-div.wrapper .boxForm form .ap-input {
+.container-fluid div.wrapper .boxForm form .ap-input {
   padding-right: 10px;
 }
 
-div.wrapper .boxForm form .ap-dropdown-menu {
+.container-fluid div.wrapper .boxForm form .ap-dropdown-menu {
   margin-top: 20px;
 }
 
