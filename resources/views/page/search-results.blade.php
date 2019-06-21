@@ -10,7 +10,7 @@
     <div class="box-apartments">
       @foreach ($apartments as $apartment)
         <div class="box-apartment rounded-bottom">
-          <img src="{{ URL::to('/storage') }}/images/{{ $apartment->img_path }}">
+          <img src="{{ $apartment->img_path }}">
           <div class="infoAp p-2">
             <h3>{{ $apartment -> title }}</h3>
             <p>{{ $apartment -> description }}</p>

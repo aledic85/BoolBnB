@@ -26,26 +26,26 @@
           <div class="opt-services">
             <label for="wi-fi">Wi-Fi</label>
             <select name="wi_fi">
-              <option value="0">--</option>
+              <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="parking_space">Parking_space</label>
             <select name="parking_space">
-              <option value="0">--</option>
+              <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="pool">Pool</label>
             <select name="pool">
-              <option value="0">--</option>
+              <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="sauna">Sauna</label>
             <select name="sauna">
-              <option value="0">--</option>
-              <option value="0">No</option>
+              <option value="">--</option>
+              <option value="">No</option>
               <option value="1">Sì</option>
             </select><br>
             <button type="submit">Search!</button>
