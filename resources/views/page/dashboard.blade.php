@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="wrapper">
-  <div class="container dashB">
+  <div class="dashB">
     <div class="boxAddNew">
       <h2>Benvenuto nella tua dashboard {{ Auth::user() -> name }}</h2>
       <form class="" action="{{ route('new.apart') }}" method="get">
@@ -14,11 +14,20 @@
     <div class="box-apartments">
       @foreach ($apartments as $apartment)
         <div class="box-apartment rounded-bottom">
-          <img src="{{ URL::to('/storage') }}/images/{{ $apartment->img_path }}">
-          <div class="infoAp p-2">
+          <div class="box-image">
+            <img src="{{ URL::to('/storage') }}/images/{{ $apartment->img_path }}">
+            <form class="del" action="{{route('delete.apart', $apartment-> id)}}" method="post">
+              @csrf
+              @method('DELETE')
+              <button type="submit" name="delete"><i class="far fa-trash-alt popup">
+                <span class="popuptext">elimina appartamento</span>
+              </i></button>
+            </form>
+          </div>
+          <div class="box-data">
             <h3>{{ $apartment -> title }}</h3>
-            <p>{{ $apartment -> description }}</p>
-            <p>{{ $apartment -> address }}</p>
+            <p class="descr">{{ $apartment -> description }}</p>
+            <p class="addr">{{ $apartment -> address }}</p>
             <ul>
               <li>Numero stanze: {{ $apartment -> rooms }}</li>
               <li>Numero letti: {{ $apartment -> beds }}</li>
@@ -26,18 +35,15 @@
               <li>Metri quadrati: {{ $apartment -> mq }}</li>
             </ul>
             <div class="char-wrapper">
-              <span>Wi-Fi: </span><span>{{$apartment->wi_fi}}</span>
-              <span>Parking space: </span><span>{{$apartment->parking_space}}</span>
-              <span>Pool: </span><span>{{$apartment->pool}}</span>
-              <span>Sauna: </span><span>{{$apartment->sauna}}</span>
-              <span>Annuncio attivo: </span><span>{{$apartment->active}}</span>
+              <span>Wi-Fi: </span><span>{{$apartment->wi_fi}} - </span>
+              <span>Parking space: </span><span>{{$apartment->parking_space}} - </span>
+              <span>Pool: </span><span>{{$apartment->pool}} - </span>
+              <span>Sauna: </span><span>{{$apartment->sauna}}&nbsp;&nbsp;</span>
+              <span class="activeApp">Annuncio attivo: </span><span>{{$apartment->active}}</span>
             </div>
-            <a href="{{route('edit.apart', $apartment->id)}}"><button type="submit" name="edit">MODIFICA</button></a>
-            <form class="del" action="{{route('delete.apart', $apartment-> id)}}" method="post">
-              @csrf
-              @method('DELETE')
-              <button type="submit" name="delete">ELIMINA</button>
-            </form>
+            <a class="ed" href="{{route('edit.apart', $apartment->id)}}"><button type="submit" name="edit"><i class="fas fa-edit popup">
+              <span class="popuptext">modifica appartamento</span>
+            </i></button></a>
           </div>
         </div>
       @endforeach
