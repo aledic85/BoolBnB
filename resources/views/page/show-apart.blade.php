@@ -43,8 +43,8 @@
                     <input type="text" name="lastname" value=""><br>
                     <label for="title">Email:</label><br>
                     <input type="text" name="email" value=""><br>
-                    <label for="description">Description:</label><br>
-                    <textarea name="description" rows="8" cols="80"></textarea><br><br>
+                    <label for="content">Description:</label><br>
+                    <textarea name="content" rows="8" cols="80"></textarea><br><br>
                     <button type="submit" name="button">Send</button>
                   </form>
               </div>
