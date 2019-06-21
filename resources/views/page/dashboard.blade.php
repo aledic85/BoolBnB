@@ -5,11 +5,8 @@
   <div class="container dashB">
     <div class="boxAddNew">
       <h2>Benvenuto nella tua dashboard {{ Auth::user() -> name }}</h2>
-      <form class="" action="{{ route('new.apart') }}" method="get">
-        @csrf
-        @method('POST')
-        <button type="submit" name="create">AGGIUNGI APPARTAMENTO</button>
-      </form>
+      <a href="{{ route('new.apart') }}"><button type="submit" name="create">AGGIUNGI APPARTAMENTO</button></a>
+      <a href="{{ route('received.messages') }}"><button type="submit" name="create">VISUALIZZA MESSAGGI RICEVUTI</button></a>
     </div>
     <div class="box-apartments">
       @foreach ($apartments as $apartment)

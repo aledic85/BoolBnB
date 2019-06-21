@@ -25,3 +25,4 @@ Route::post('/dashboard/store', 'HomeController@storeApartment')->name('store.ne
 Route::delete('/dashboard/delete/{id}', 'HomeController@deleteApartment')->name('delete.apart');
 Route::get('/dashboard/edit/{id}', 'HomeController@editApartment')->name('edit.apart');
 Route::post('/dashboard/update/{id}', 'HomeController@updateApartment')->name('update.apart');
+Route::get('/dashboard/received_messages', 'HomeController@receivedMessages')->name('received.messages');
