@@ -121,6 +121,13 @@ div.wrapper {
     border-radius: 10px;
     margin-bottom: 30px;
 
+    label.error {
+        width: 100%;
+        text-align: right;
+        color: red;
+        font-size: 8px;
+      }
+
     form {
       text-align: center;
 
