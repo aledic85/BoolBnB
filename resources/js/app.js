@@ -1,8 +1,6 @@
 require('./bootstrap');
 // var $ = require('jquery');
 
-
-
 function trimString(titleText) {
 
   var length = 3;
@@ -89,7 +87,8 @@ function validationJQuery() {
         return Number(value) > 0;
     }, 'INSERISCI UN NUMERO POSITIVO');
 
-  $('#form').validate({
+$('form').each(function() {
+  $(this).validate({
     rules: {
       img_path: {
         required: true,
@@ -100,7 +99,7 @@ function validationJQuery() {
         required: true,
         minlength: 10
       },
-      indirizzo: {
+      address: {
         required: true
       },
       rooms: {
@@ -137,9 +136,8 @@ function validationJQuery() {
         required: "QUESTO CAMPO È OBBLIGATORIO",
         minlength: jQuery.validator.format("INSERISCI ALMENO {0} CARATTERI")
       },
-      indirizzo: {
-        required: "QUESTO CAMPO È OBBLIGATORIO",
-        number: "INSERISCI UN NUMERO VALIDO"
+      address: {
+        required: "QUESTO CAMPO È OBBLIGATORIO"
       },
       rooms: {
         required: "QUESTO CAMPO È OBBLIGATORIO",
@@ -160,16 +158,11 @@ function validationJQuery() {
       },
     }
   });
+  });
 }
 
 
-function fadeOutSuccessMess() {
 
-  var successMess = $('.alert.alert-success');
-  setTimeout(function() {
-    successMess.fadeOut();
-  }, 3000);
-}
 
 function init() {
 

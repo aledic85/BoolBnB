@@ -7,19 +7,20 @@
       <p>compila i seguenti campi, inserendo una tua proprietà da mettere in affitto. Inizia a guadagnare da oggi!</p>
 
       <div class="boxForm">
-        <form id="fform" action="{{ route('update.apart', $apartment->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('update.apart', $apartment->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('POST')
           <label for="img_path">Immagine</label>
-          <input type="file" name="img_path" value=""><br>
+          <input type="file" name="img_path" value="{{$apartment->img_path}}"><br>
           <label for="title">Nome Appartamento</label>
           <input type="text" name="title" value="{{$apartment->title}}"><br>
           <label for="description">Descrizione</label>
           <input type="text" name="description" value="{{$apartment->description}}"><br>
-          <label for="latitude">Latitudine</label>
-          <input type="text" name="latitude" value="{{$apartment->latitude}}"><br>
-          <label for="">Longitudine</label>
-          <input type="text" name="longitude" value="{{$apartment->longitude}}"><br>
+          <label for="address">Indirizzo</label>
+          <input type="search" id="address-input" name="address" placeholder="Inserisci indirizzo" />
+          <p id="location-output">Luogo Selezionato: <strong id="address-value">Nessuno</strong></p>
+          <input id="latval" type="hidden" name="latitude" value="">
+          <input id="lonval" type="hidden" name="longitude" value="">
           <label for="rooms">Numero stanze</label>
           <input type="text" name="rooms" value="{{$apartment->rooms}}"><br>
           <label for="beds">Numero letti</label>
@@ -58,11 +59,19 @@
             <option value="0">No</option>
             <option value="1">Sì</option>
           </select><br>
-          <button type="submit" name="">INSERISCI</button>
+          <button type="submit" name="" class="btn-insert">INSERISCI</button>
         </form>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.min.js"></script>
       </div>
     </div>
   </div>
+
+  <script>
+  $(document).on('click', '.btn-insert', function() {
+
+    setTimeout(function() {
+      console.log("hello");
+      $('.alert.alert-success').fadeOut();
+    }, 6000);
+  });
+  </script>
 @stop

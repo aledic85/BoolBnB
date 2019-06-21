@@ -10870,7 +10870,8 @@ div.wrapper .boxForm form label.error {
   width: 100%;
   text-align: right;
   color: red;
-  font-size: 8px;
+  font-size: 9px;
+  font-weight: bold;
 }
 
 div.wrapper .boxForm form label {

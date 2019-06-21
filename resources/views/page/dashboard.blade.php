@@ -60,6 +60,11 @@
     }
   });
 
+  $(window).load(function(){//fade out flash success message
+   setTimeout(function(){ $('.alert-success').fadeOut() }, 3000);
+});
+
 </script>
+
 
 @stop
