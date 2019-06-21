@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Apartment;
+use App\Message;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailSender;
@@ -35,9 +36,13 @@ class GeneralController extends Controller
     $lastname = $request->lastname;
     $email = $request->email;
     $title = $request->title;
-    $content = $request->description;
+    $content = $request->content;
 
     $user = User::findORFail($id);
+
+    $message = Message::make($request->all());
+    $message->user()->associate($user)->save();
+
 
     Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content));
 
