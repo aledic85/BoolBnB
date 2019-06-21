@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\Message;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ApartmentRequest;
 
@@ -87,5 +88,14 @@ class HomeController extends Controller
        $apartment = Apartment::findORFail($id)->delete();
 
        return redirect('dashboard')->with('success','Appartamento eliminato con successo!');
+     }
+
+     public function receivedMessages() {
+
+       $user = Auth::user();
+
+       $messages = Message::where('user_id', $user->id)->get();
+
+       return view('page.received-messages', compact('messages'));
      }
 }
