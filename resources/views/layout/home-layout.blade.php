@@ -9,6 +9,7 @@
      <link rel='stylesheet' type='text/css' href='{{ asset('/sdk/map.css') }}'/>
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
      <script src='{{ asset('/sdk/tomtom.min.js')}}'></script>
+     <script src="https://js.braintreegateway.com/web/dropin/1.8.1/js/dropin.min.js"></script>
      <title>@yield('title', 'BoolBnB')</title>
    </head>
    <body>

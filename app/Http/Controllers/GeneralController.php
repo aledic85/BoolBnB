@@ -17,8 +17,7 @@ class GeneralController extends Controller
 
     $sponsoredApartments = Apartment::select('apartments.id','title','img_path', 'description')
                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                          ->active()
-                          ->take(6)->get();
+                          ->active()->get();
 
     return view('page.home', compact('sponsoredApartments'));
   }

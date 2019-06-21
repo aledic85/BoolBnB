@@ -6,8 +6,8 @@
   @foreach ($messages as $message)
     <p>Name: {{ $message->name }}</p>
     <p>Lastname: {{$message->lastname}}</p>
-    <p>Lastname: {{$message->email}}</p>
-    <p>Lastname: {{$message->title}}</p>
-    <p>Lastname: {{$message->content}}</p>
+    <p>Email: {{$message->email}}</p>
+    <p>Title: {{$message->title}}</p>
+    <p>Content: {{$message->content}}</p>
   @endforeach
 @endsection

@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Message;
+use App\Sponsored;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ApartmentRequest;
+use Braintree_Transaction;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -97,5 +100,60 @@ class HomeController extends Controller
        $messages = Message::where('user_id', $user->id)->get();
 
        return view('page.received-messages', compact('messages'));
+     }
+
+     public function sponsorizeApartment($id) {
+
+       return view('page.sponsorize-apartment', compact('id'));
+     }
+
+     public function paymentProcess(Request $request) {
+
+       $payload = $request->input('payload', false);
+       $nonce = $payload['nonce'];
+
+       $status = Braintree_Transaction::sale([
+	        'amount' => '10.00',
+	        'paymentMethodNonce' => $nonce,
+	        'options' => [
+	          'submitForSettlement' => True
+	         ]
+        ]);
+
+        return response()->json($status);
+     }
+
+     public function paymentSuccess(Request $request, $id) {
+
+      $hours = $request->hours;
+      $apartment = Apartment::findOrFail($id);
+      $now = new Carbon();
+
+      if ($hours == 24) {
+
+        $title = "Un giorno - 8 euro";
+        $price = 8;
+        $end_sponsored = $now->add(1, 'day');
+      } elseif ($hours == 168) {
+
+        $title = "Una settimana - 40 euro";
+        $price = 40;
+        $end_sponsored = $now->add(7, 'day');
+      } elseif ($hours == 672) {
+
+        $title = "Un mese - 150 euro";
+        $price = 150;
+        $end_sponsored = $now->add(30, 'day');
+      }
+
+       $sponsored = new Sponsored;
+       $sponsored->title = $title;
+       $sponsored->price = $price;
+       $sponsored->end_sponsored = $end_sponsored;
+       $sponsored->save();
+       $sponsored->apartments()->attach($apartment);
+       
+       return redirect('/dashboard')->with('success','Appartamento sponsorizzato con successo!');;
+
      }
 }

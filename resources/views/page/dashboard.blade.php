@@ -38,6 +38,7 @@
               <span>Sauna: </span><span>{{$apartment->sauna}}&nbsp;&nbsp;</span>
               <span class="activeApp">Annuncio attivo: </span><span>{{$apartment->active}}</span>
             </div>
+            <a href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
             <a class="ed" href="{{route('edit.apart', $apartment->id)}}"><button type="submit" name="edit"><i class="fas fa-edit popup">
               <span class="popuptext">modifica appartamento</span>
             </i></button></a>
