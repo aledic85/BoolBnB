@@ -10,6 +10,35 @@
      <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
      <script src='{{ asset('/sdk/tomtom.min.js')}}'></script>
      <script src="https://js.braintreegateway.com/web/dropin/1.8.1/js/dropin.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
+     <script id="template" type="text/x-handlebars-template">
+
+       <div class="box-apartments">
+           <div class="box-apartment rounded-bottom">
+             <div class="box-image">
+               <img src="/storage/images/@{{ img_path }}">
+             </div>
+             <div class="box-data">
+               <h3>@{{ title }}</h3>
+               <p class="descr">@{{ description }}</p>
+               <p class="addr">@{{ address }}</p>
+               <ul>
+                 <li>Numero stanze: @{{ rooms }}</li>
+                 <li>Numero letti: @{{ beds }}</li>
+                 <li>Numero bagni: @{{ bathrooms }}</li>
+                 <li>Metri quadrati: @{{ mq }}</li>
+               </ul>
+               <div class="char-wrapper">
+                 <span>Wi-Fi: </span><span>@{{ wi_fi }} - </span>
+                 <span>Parking space: </span><span>@{{ parking_space }} - </span>
+                 <span>Pool: </span><span>@{{ pool }} - </span>
+                 <span>Sauna: </span><span>@{{ sauna }}&nbsp;&nbsp;</span>
+               </div>
+             </div>
+           </div>
+       </div>
+
+     </script>
      <title>@yield('title', 'BoolBnB')</title>
    </head>
    <body>

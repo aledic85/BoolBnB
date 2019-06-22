@@ -56,20 +56,20 @@ class GeneralController extends Controller
     return view('page.search-form', compact('lat', 'long'));
   }
 
-  public function resultsApartments() {
+  public function resultsApartments(Request $request) {
 
-    $title = Input::get('title');
-    $description = Input::get('description');
-    $latitude = Input::get('latitude');
-    $longitude = Input::get('longitude');
-    $rooms = Input::get('rooms');
-    $beds = Input::get('beds');
-    $bathrooms = Input::get('bathrooms');
-    $mq = Input::get('mq');
-    $wi_fi = Input::get('wi_fi');
-    $parking_space = Input::get('parking_space');
-    $pool = Input::get('pool');
-    $sauna = Input::get('sauna');
+    $title = $request->title;
+    $description = $request->description;
+    $latitude = $request->latitude;
+    $longitude = $request->longitude;
+    $rooms = $request->rooms;
+    $beds = $request->beds;
+    $bathrooms = $request->bathrooms;
+    $mq = $request->mq;
+    $wi_fi = $request->wi_fi;
+    $parking_space = $request->parking_space;
+    $pool = $request->pool;
+    $sauna = $request->sauna;
 
     $query = Apartment::query();
 
@@ -112,6 +112,6 @@ class GeneralController extends Controller
 
       $apartments = $query->active()->get();
 
-      return view('page.search-results', compact('apartments'));
+      return response()->json($apartments);
   }
 }
