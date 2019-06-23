@@ -9,14 +9,17 @@ use App\Message;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailSender;
+use Carbon\Carbon;
 
 class GeneralController extends Controller
 {
   public function index()
   {
-
-    $sponsoredApartments = Apartment::select('apartments.id','title','img_path', 'description')
+    $now = new Carbon();
+    $sponsoredApartments = Apartment::select('apartments.id','apartments.title','apartments.img_path', 'apartments.description')
                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
+                          ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
+                          ->where('end_sponsored', '>', $now)
                           ->active()->get();
 
     return view('page.home', compact('sponsoredApartments'));
