@@ -17,7 +17,7 @@
         <div class="featured_apartments mt-50">
           @foreach ($sponsoredApartments as $sponsoredApartment)
           <div class="apartament-container">
-              <img src="{{$sponsoredApartment->img_path}}">
+              <img src="{{ URL::to('/storage') }}/images/{{ $sponsoredApartment->img_path }}">
               <h6>{{$sponsoredApartment->title}}</h6>
               <p>{{$sponsoredApartment->description}}</p>
               <a href="{{route('show.apart', $sponsoredApartment->id)}}"><button type="button" name="button">DETTAGLI APPARTAMENTO</button></a>

@@ -12,8 +12,8 @@
      <script src="https://js.braintreegateway.com/web/dropin/1.8.1/js/dropin.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
      <script id="template" type="text/x-handlebars-template">
-
-       <div class="box-apartments">
+       <div class="dashB">
+         <div class="box-apartments">
            <div class="box-apartment rounded-bottom">
              <div class="box-image">
                <img src="/storage/images/@{{ img_path }}">
@@ -36,6 +36,7 @@
                </div>
              </div>
            </div>
+         </div>
        </div>
 
      </script>

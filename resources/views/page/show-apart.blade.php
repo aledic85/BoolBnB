@@ -3,7 +3,7 @@
 
       <div class="details">
           <div class="img-container">
-              <img src="{{$apartment->img_path}}">
+            <img src="{{ URL::to('/storage') }}/images/{{ $apartment->img_path }}">
           </div>
           <div class="details-middle">
               <div class="middle-left">
