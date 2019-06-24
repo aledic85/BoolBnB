@@ -50,7 +50,18 @@
         }
     }
     // dashboard utente loggato
-    div.dashB {
+    div.homeP {
+      padding: 50px !important;
+
+      .title {
+
+        h2 {
+          padding: 20px 0;
+        }
+      }
+    }
+
+    div.dashB, div.homeP {
       padding: 0 50px;
 
       button {
@@ -91,9 +102,11 @@
           margin-bottom: 30px;
           transition: all .3s;
 
+
           &:hover {
             margin-top: -7px;
             box-shadow: 2px 2px 15px grey;
+            cursor: pointer;
           }
 
           .box-image {
@@ -110,14 +123,14 @@
             .del {
               position: absolute;
               border-radius: 50%;
-              bottom: 10px;
-              right: 10px;
+              bottom: 4px;
+              right: 6px;
               font-size: 14px;
 
               button {
                 border-radius: 50%;
-                width: 28px;
-                height: 28px;
+                width: 26px;
+                height: 26px;
               }
 
               i.popup {
@@ -208,14 +221,14 @@
             .ed {
               position: absolute;
               border-radius: 5px;;
-              top: 10px;
-              right: 10px;
+              top: 4px;
+              right: 6px;
               font-size: 13px;
 
               button {
                 border-radius: 50%;
-                width: 28px;
-                height: 28px;
+                width: 26px;
+                height: 26px;
               }
             }
 

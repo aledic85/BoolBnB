@@ -10836,18 +10836,29 @@ div.nav-bar div.nav-bar-right #long {
   background: white;
 }
 
-.container-fluid div.wrapper div.dashB {
+.container-fluid div.wrapper div.homeP {
+  padding: 50px !important;
+}
+
+.container-fluid div.wrapper div.homeP .title h2 {
+  padding: 20px 0;
+}
+
+.container-fluid div.wrapper div.dashB,
+.container-fluid div.wrapper div.homeP {
   padding: 0 50px;
 }
 
-.container-fluid div.wrapper div.dashB button {
+.container-fluid div.wrapper div.dashB button,
+.container-fluid div.wrapper div.homeP button {
   background: #fc5c63;
   color: #fff;
   border: none;
   border-radius: 6px;
 }
 
-.container-fluid div.wrapper div.dashB .boxAddNew {
+.container-fluid div.wrapper div.dashB .boxAddNew,
+.container-fluid div.wrapper div.homeP .boxAddNew {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10855,28 +10866,33 @@ div.nav-bar div.nav-bar-right #long {
 }
 
 @media screen and (max-width: 900px) {
-  .container-fluid div.wrapper div.dashB .boxAddNew {
+  .container-fluid div.wrapper div.dashB .boxAddNew,
+  .container-fluid div.wrapper div.homeP .boxAddNew {
     flex-direction: column;
   }
 }
 
-.container-fluid div.wrapper div.dashB .boxAddNew h2 {
+.container-fluid div.wrapper div.dashB .boxAddNew h2,
+.container-fluid div.wrapper div.homeP .boxAddNew h2 {
   text-align: center;
 }
 
 @media screen and (max-width: 900px) {
-  .container-fluid div.wrapper div.dashB .boxAddNew h2 {
+  .container-fluid div.wrapper div.dashB .boxAddNew h2,
+  .container-fluid div.wrapper div.homeP .boxAddNew h2 {
     margin-bottom: 30px;
   }
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments {
+.container-fluid div.wrapper div.dashB .box-apartments,
+.container-fluid div.wrapper div.homeP .box-apartments {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment {
   width: 400px;
   margin: 6px;
   border: 1px solid #ddd;
@@ -10886,43 +10902,51 @@ div.nav-bar div.nav-bar-right #long {
   transition: all 0.3s;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment:hover {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment:hover,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment:hover {
   margin-top: -7px;
   box-shadow: 2px 2px 15px grey;
+  cursor: pointer;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image {
   width: 100%;
   height: 80%;
   margin-top: -20%;
   position: relative;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image img {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image img,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image img {
   width: 100%;
   height: 100%;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image .del {
   position: absolute;
   border-radius: 50%;
-  bottom: 10px;
-  right: 10px;
+  bottom: 4px;
+  right: 6px;
   font-size: 14px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del button {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del button,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image .del button {
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image .del i.popup {
   position: relative;
   display: inline-block;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup .popuptext {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup .popuptext,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image .del i.popup .popuptext {
   visibility: hidden;
   width: 150px;
   background-color: #aaa;
@@ -10938,11 +10962,13 @@ div.nav-bar div.nav-bar-right #long {
   z-index: 1;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup:hover .popuptext {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image .del i.popup:hover .popuptext,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-image .del i.popup:hover .popuptext {
   visibility: visible;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data {
   width: 100%;
   height: 50%;
   padding: 6px;
@@ -10950,24 +10976,28 @@ div.nav-bar div.nav-bar-right #long {
   position: relative;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data h3 {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data h3,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data h3 {
   margin-bottom: 0;
   font-size: 16px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data p.descr {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data p.descr,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data p.descr {
   margin-bottom: 0;
   color: #aaa;
   font-size: 14px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data p.addr {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data p.addr,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data p.addr {
   font-size: 12px;
   margin-bottom: 5px;
   color: #aaa;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data ul {
   width: 100%;
   padding: 0;
   text-align: center;
@@ -10975,52 +11005,61 @@ div.nav-bar div.nav-bar-right #long {
   margin: 6px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul li {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul li,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data ul li {
   list-style: none;
   width: 49%;
   display: inline-block;
   font-weight: 500;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .char-wrapper {
   margin-bottom: 0;
   text-align: center;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper span {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper span,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .char-wrapper span {
   margin-bottom: 20px;
   font-size: 11.5px;
   font-weight: 500;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper .activeApp {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper .activeApp,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .char-wrapper .activeApp {
   color: #ff5a5f;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper .activeApp + span {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper .activeApp + span,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .char-wrapper .activeApp + span {
   color: #ff5a5f;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .ed {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .ed,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .ed {
   position: absolute;
   border-radius: 5px;
-  top: 10px;
-  right: 10px;
+  top: 4px;
+  right: 6px;
   font-size: 13px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .ed button {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .ed button,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .ed button {
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data i.popup {
   position: relative;
   display: inline-block;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup .popuptext {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup .popuptext,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data i.popup .popuptext {
   visibility: hidden;
   width: 150px;
   background-color: #aaa;
@@ -11036,7 +11075,8 @@ div.nav-bar div.nav-bar-right #long {
   z-index: 1;
 }
 
-.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup:hover .popuptext {
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data i.popup:hover .popuptext,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data i.popup:hover .popuptext {
   visibility: visible;
 }
 

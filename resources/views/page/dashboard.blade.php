@@ -6,7 +6,7 @@
     <div class="boxAddNew">
       <h2>Benvenuto nella tua dashboard {{ Auth::user() -> name }}</h2>
       <a href="{{ route('new.apart') }}"><button type="submit" name="create">AGGIUNGI APPARTAMENTO</button></a>
-      <a href="{{ route('received.messages') }}"><button type="submit" name="create">VISUALIZZA MESSAGGI RICEVUTI</button></a>
+      {{-- <a href="{{ route('received.messages') }}"><button type="submit" name="create">VISUALIZZA MESSAGGI RICEVUTI</button></a> --}}
     </div>
     <div class="box-apartments">
       @foreach ($apartments as $apartment)
@@ -36,7 +36,7 @@
               <span>Parking space: </span><span>{{$apartment->parking_space}} - </span>
               <span>Pool: </span><span>{{$apartment->pool}} - </span>
               <span>Sauna: </span><span>{{$apartment->sauna}}&nbsp;&nbsp;</span>
-              <span class="activeApp">Annuncio attivo: </span><span>{{$apartment->active}}</span>
+              <span class="activeApp">Annuncio attivo: </span><span class="textactive">{{$apartment->active}}</span>
             </div>
             <a href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
             <a class="ed" href="{{route('edit.apart', $apartment->id)}}"><button type="submit" name="edit"><i class="fas fa-edit popup">
@@ -64,10 +64,12 @@
     }
   });
 
-  $(window).load(function(){
+  $(document).ready(function(){
+    setTimeout(function(){
+       $("div.alert").fadeOut();
+    }, 3000 );
 
-   setTimeout(function(){ $('.alert-success').fadeOut() }, 3000);
-  });
+});
 
 </script>
 
