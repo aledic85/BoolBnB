@@ -41,4 +41,16 @@ class Apartment extends Model
   {
     return $query->where('active', 1);
   }
+
+  public function getPathAttribute() {
+
+    $url = $this->img_path;
+
+    if (stristr($this->img_path, 'http')=== false) {
+
+      $url = '/storage/images/'.$this->img_path;
+    }
+
+    return $url;
+  }
 }

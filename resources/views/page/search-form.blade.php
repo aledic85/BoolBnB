@@ -249,7 +249,25 @@
               pool: pool,
               sauna: sauna
             }
+            Handlebars.registerHelper('containsHttp', function(img_path){
 
+              if(img_path.includes('https')) {
+
+                var result = '<img src="' + img_path +'">';
+
+                console.log(result);
+
+                return new Handlebars.SafeString(result);
+
+              }else {
+                var result2 = '<img src="/storage/images/' + img_path+ '">';
+
+                console.log(result2);
+                return new Handlebars.SafeString(result2);
+
+              }
+
+            });
             var template = $("#template").html();
             var compiled = Handlebars.compile(template);
             var finalHTML = compiled(outData);
