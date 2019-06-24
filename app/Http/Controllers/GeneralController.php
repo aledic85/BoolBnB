@@ -55,16 +55,16 @@ class GeneralController extends Controller
 
     $lat = Apartment::select('latitude')->get();
     $long = Apartment::select('longitude')->get();
+    $ids = Apartment::select('id')->get();
 
-    return view('page.search-form', compact('lat', 'long'));
+    return view('page.search-form', compact('lat', 'long', 'ids'));
   }
 
   public function resultsApartments(Request $request) {
 
     $title = $request->title;
     $description = $request->description;
-    $latitude = $request->latitude;
-    $longitude = $request->longitude;
+    $ids = $request->ids;
     $rooms = $request->rooms;
     $beds = $request->beds;
     $bathrooms = $request->bathrooms;
@@ -76,44 +76,43 @@ class GeneralController extends Controller
 
     $query = Apartment::query();
 
-      if ($title != null) {
-        $query = $query->where('title', 'LIKE','%'.$title.'%');
-      }
-      if ($description != null) {
-        $query = $query->where('description', 'LIKE', '%'.$description.'%');
-      }
-      if ($latitude != null) {
-        $query = $query->where('latitude', $latitude);
-      }
-      if ($longitude != null) {
-        $query = $query->where('longitude', $longitude);
-      }
-      if ($rooms != null) {
-        $query = $query->where('rooms', $rooms);
-      }
-      if ($beds != null) {
-        $query = $query->where('beds', $beds);
-      }
-      if ($bathrooms != null) {
-        $query = $query->where('bathrooms', $bathrooms);
-      }
-      if ($mq != null) {
-        $query = $query->where('mq', $mq);
-      }
-      if ($wi_fi != null) {
-        $query = $query->where('wi_fi', $wi_fi);
-      }
-      if ($parking_space != null) {
-        $query = $query->where('parking_space', $parking_space);
-      }
-      if ($pool != null) {
-        $query = $query->where('pool', $pool);
-      }
-      if ($sauna != null) {
-        $query = $query->where('sauna', $sauna);
-      }
+    if ($ids != null) {
 
-      $apartments = $query->active()->get();
+      $query = $query->whereIn('id', $ids);
+    }
+    if ($title != null) {
+      $query = $query->where('title', 'LIKE','%'.$title.'%');
+    }
+    if ($description != null) {
+      $query = $query->where('description', 'LIKE', '%'.$description.'%');
+    }
+    if ($rooms != null) {
+      $query = $query->where('rooms', $rooms);
+    }
+    if ($beds != null) {
+      $query = $query->where('beds', $beds);
+    }
+    if ($bathrooms != null) {
+      $query = $query->where('bathrooms', $bathrooms);
+    }
+    if ($mq != null) {
+      $query = $query->where('mq', $mq);
+    }
+    if ($wi_fi != null) {
+      $query = $query->where('wi_fi', $wi_fi);
+    }
+    if ($parking_space != null) {
+      $query = $query->where('parking_space', $parking_space);
+    }
+    if ($pool != null) {
+      $query = $query->where('pool', $pool);
+    }
+    if ($sauna != null) {
+      $query = $query->where('sauna', $sauna);
+    }
+
+    $apartments = $query->active()->get();
+
 
       return response()->json($apartments);
   }
