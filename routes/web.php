@@ -25,3 +25,7 @@ Route::post('/dashboard/store', 'HomeController@storeApartment')->name('store.ne
 Route::delete('/dashboard/delete/{id}', 'HomeController@deleteApartment')->name('delete.apart');
 Route::get('/dashboard/edit/{id}', 'HomeController@editApartment')->name('edit.apart');
 Route::post('/dashboard/update/{id}', 'HomeController@updateApartment')->name('update.apart');
+Route::get('/dashboard/received_messages', 'HomeController@receivedMessages')->name('received.messages');
+Route::get('/dashboard/sponsorize/{id}', 'HomeController@sponsorizeApartment')->name('spons.apart');
+Route::get('/dashboard/payment/process', 'HomeController@paymentProcess')->name('payment.process');
+Route::post('/dashboard/payment/success/{id}', 'HomeController@paymentSuccess')->name('payment.success');

@@ -5,7 +5,8 @@
   <div class="wrapper">
     <div class="container dashB">
       <div class="boxForm">
-        <form class="" action="{{ route('search.results')}}">
+        <form class="search-form" action="">
+          @csrf
           <label for="title">Nome Appartamento</label>
           <input type="text" name="title" value="">
           <label for="description">Descrizione</label>
@@ -123,5 +124,69 @@
   // Fine Funzion tomtom
     getQuery();
 
+// Stampa dinamica risultati ricerca
+
+    $( "form" ).submit(function( event ) {
+
+      event.preventDefault();
+      $('.box-apartments').remove();
+
+      var dataArr = $( 'form' ).serializeArray();
+
+      var data = dataArr.reduce(function ( total, current ) {
+        total[ current.name ] = current.value;
+        return total;
+      }, {});
+
+      $.ajax({
+
+        url: '/search/results',
+        method: 'GET',
+        data: data,
+        success: function(inData) {
+
+          for (var i = 0; i < inData.length; i++) {
+
+            var res = inData[i];
+            var img_path = res.img_path;
+            var title = res.title;
+            var description = res.description;
+            var address = res.address;
+            var rooms = res.rooms;
+            var beds = res.beds;
+            var bathrooms = res.bathrooms;
+            var mq = res.mq;
+            var wi_fi = res.wi_fi;
+            var parking_space = res.parking_space;
+            var pool = res.pool;
+            var sauna = res.sauna;
+
+            var outData = {
+
+              img_path: img_path,
+              title: title,
+              description: description,
+              address: address,
+              rooms: rooms,
+              beds: beds,
+              bathrooms: bathrooms,
+              mq: mq,
+              wi_fi: wi_fi,
+              parking_space: parking_space,
+              pool: pool,
+              sauna: sauna
+            }
+
+            var template = $("#template").html();
+            var compiled = Handlebars.compile(template);
+            var finalHTML = compiled(outData);
+
+            $(".wrapper").append(finalHTML);
+          }
+        }
+      });
+
+    });
+// Fine stampa dinamica risultati ricerca
   </script>
 @endsection

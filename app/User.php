@@ -42,4 +42,9 @@ class User extends Authenticatable
 
       return $this->hasMany(Apartment::class);
     }
+
+    function messages() {
+
+      return $this->hasMany(Message::class);
+    }
 }

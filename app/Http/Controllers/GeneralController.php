@@ -5,19 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Apartment;
+use App\Message;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailSender;
+use Carbon\Carbon;
 
 class GeneralController extends Controller
 {
   public function index()
   {
-
-    $sponsoredApartments = Apartment::select('apartments.id','title','img_path', 'description')
+    $now = new Carbon();
+    $sponsoredApartments = Apartment::select('apartments.id','apartments.title','apartments.img_path', 'apartments.description')
                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                          ->active()
-                          ->take(6)->get();
+                          ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
+                          ->where('end_sponsored', '>', $now)
+                          ->active()->get();
 
     return view('page.home', compact('sponsoredApartments'));
   }
@@ -35,9 +38,13 @@ class GeneralController extends Controller
     $lastname = $request->lastname;
     $email = $request->email;
     $title = $request->title;
-    $content = $request->description;
+    $content = $request->content;
 
     $user = User::findORFail($id);
+
+    $message = Message::make($request->all());
+    $message->user()->associate($user)->save();
+
 
     Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content));
 
@@ -52,20 +59,20 @@ class GeneralController extends Controller
     return view('page.search-form', compact('lat', 'long'));
   }
 
-  public function resultsApartments() {
+  public function resultsApartments(Request $request) {
 
-    $title = Input::get('title');
-    $description = Input::get('description');
-    $latitude = Input::get('latitude');
-    $longitude = Input::get('longitude');
-    $rooms = Input::get('rooms');
-    $beds = Input::get('beds');
-    $bathrooms = Input::get('bathrooms');
-    $mq = Input::get('mq');
-    $wi_fi = Input::get('wi_fi');
-    $parking_space = Input::get('parking_space');
-    $pool = Input::get('pool');
-    $sauna = Input::get('sauna');
+    $title = $request->title;
+    $description = $request->description;
+    $latitude = $request->latitude;
+    $longitude = $request->longitude;
+    $rooms = $request->rooms;
+    $beds = $request->beds;
+    $bathrooms = $request->bathrooms;
+    $mq = $request->mq;
+    $wi_fi = $request->wi_fi;
+    $parking_space = $request->parking_space;
+    $pool = $request->pool;
+    $sauna = $request->sauna;
 
     $query = Apartment::query();
 
@@ -108,6 +115,6 @@ class GeneralController extends Controller
 
       $apartments = $query->active()->get();
 
-      return view('page.search-results', compact('apartments'));
+      return response()->json($apartments);
   }
 }

@@ -9,6 +9,7 @@
       <div class="boxForm">
         <form action="{{ route('store.new.apart') }}" method="post" enctype="multipart/form-data">
           @csrf
+          @method('POST')
           <label for="img_path">Immagine</label>
           <input type="file" name="img_path" value=""><br>
           <label for="title">Nome Appartamento</label>
