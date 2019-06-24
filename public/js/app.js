@@ -36848,11 +36848,25 @@ function validationJQuery() {
   });
 }
 
+function activeAppColor() {
+  console.log('ciao');
+  var activeApp = $('.activeApp');
+  var text = activeApp.text();
+  console.log(text);
+
+  if (activeApp == "si") {
+    activeApp.css('color', 'green');
+  } else {
+    activeApp.css('color', 'red');
+  }
+}
+
 function init() {
   var title = $(".appartments_container > h3");
   var titleText = title.text();
   trimString(titleText);
   validationJQuery();
+  activeAppColor();
 }
 
 $(document).ready(init);
