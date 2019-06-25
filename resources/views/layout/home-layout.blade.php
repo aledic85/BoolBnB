@@ -16,7 +16,7 @@
          <div class="box-apartments">
            <div class="box-apartment rounded-bottom">
              <div class="box-image">
-               <img src="/storage/images/@{{ img_path }}">
+                @{{containsHttp img_path}}
              </div>
              <div class="box-data">
                <h3>@{{ title }}</h3>

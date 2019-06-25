@@ -1,0 +1,8 @@
+{
+	"poiList": [],
+	"geometryList": [{
+		"type": "CIRCLE",
+		"position": "0000000,1111111",
+		"radius": 20000
+	}]
+}
