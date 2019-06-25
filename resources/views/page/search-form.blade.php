@@ -207,7 +207,7 @@
     $( "form" ).submit(function( event ) {
 
       event.preventDefault();
-      $('.box-apartments').remove();
+      $('.homeP').remove();
 
       var dataArr = $( 'form' ).serializeArray();
 
@@ -221,33 +221,19 @@
           for (var i = 0; i < inData.length; i++) {
 
             var res = inData[i];
+            var id = res.id;
             var img_path = res.img_path;
             var title = res.title;
             var description = res.description;
             var address = res.address;
-            var rooms = res.rooms;
-            var beds = res.beds;
-            var bathrooms = res.bathrooms;
-            var mq = res.mq;
-            var wi_fi = res.wi_fi;
-            var parking_space = res.parking_space;
-            var pool = res.pool;
-            var sauna = res.sauna;
 
             var outData = {
 
+              id: id,
               img_path: img_path,
               title: title,
               description: description,
               address: address,
-              rooms: rooms,
-              beds: beds,
-              bathrooms: bathrooms,
-              mq: mq,
-              wi_fi: wi_fi,
-              parking_space: parking_space,
-              pool: pool,
-              sauna: sauna
             }
             Handlebars.registerHelper('containsHttp', function(img_path){
 
@@ -255,18 +241,19 @@
 
                 var result = '<img src="' + img_path +'">';
 
-                console.log(result);
-
                 return new Handlebars.SafeString(result);
-
               }else {
                 var result2 = '<img src="/storage/images/' + img_path+ '">';
 
-                console.log(result2);
                 return new Handlebars.SafeString(result2);
-
               }
+            });
 
+            Handlebars.registerHelper('showApart', function(id) {
+
+              var url = '/show/' + id;
+
+              return url;
             });
             var template = $("#template").html();
             var compiled = Handlebars.compile(template);
