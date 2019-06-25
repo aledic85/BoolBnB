@@ -22,6 +22,7 @@ class GeneralController extends Controller
                           ->where('end_sponsored', '>', $now)
                           ->active()->get();
 
+// $sponsoredApartments = Apartment::all();
     return view('page.home', compact('sponsoredApartments'));
   }
 

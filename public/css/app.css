@@ -10656,11 +10656,21 @@ div.nav-bar {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  background-color: #e4e4e4;
+  background-color: rgba(228, 228, 228, 0.8);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+div.nav-bar .fas.fa-bars {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  div.nav-bar .fas.fa-bars {
+    display: block;
+  }
 }
 
 div.nav-bar div.nav-bar-left a {
@@ -10672,14 +10682,43 @@ div.nav-bar div.nav-bar-left a h1 {
   margin: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  div.nav-bar div.nav-bar-left a h1 {
+    font-size: 1.6rem;
+  }
+}
+
 div.nav-bar div.nav-bar-left a h1:hover {
   color: #f30007;
 }
 
 div.nav-bar div.nav-bar-right {
+  height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  div.nav-bar div.nav-bar-right > span {
+    display: none;
+  }
+}
+
+div.nav-bar div.nav-bar-right > span > a {
+  color: #555;
+}
+
+div.nav-bar div.nav-bar-right > span > a:hover {
+  text-decoration: none;
+}
+
+div.nav-bar div.nav-bar-right .diventa_login {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  text-align: right;
 }
 
 div.nav-bar div.nav-bar-right li.nav-item.dropdown {
@@ -10691,45 +10730,66 @@ div.nav-bar div.nav-bar-right li.nav-item.dropdown .caret {
 }
 
 div.nav-bar div.nav-bar-right span {
-  height: 60px;
-  width: 100px;
+  height: 80px;
+  width: 120px;
   text-align: center;
   text-decoration: none;
   margin: auto;
-  color: #7d7d7d;
-  padding: 20px;
+  color: #555;
+  padding: 27px;
+  font-size: 14px;
 }
 
 div.nav-bar div.nav-bar-right span:hover {
-  background: #e4e4e4;
-  border-bottom: 1px solid #ff5a5f;
+  border-bottom: 2px solid #ff5a5f;
   color: #ff5a5f;
 }
 
 div.nav-bar div.nav-bar-right a.nav-link {
-  height: 60px;
-  width: 100px;
+  height: 80px;
+  width: 120px;
   text-align: center;
   text-decoration: none;
   margin: auto;
-  color: #7d7d7d;
-  padding: 20px;
+  color: #555;
+  padding: 27px;
+  font-size: 14px;
 }
 
 div.nav-bar div.nav-bar-right a.nav-link:hover {
-  background: #e4e4e4;
-  border-bottom: 1px solid #ff5a5f;
+  border-bottom: 2px solid #ff5a5f;
   color: #ff5a5f;
 }
 
-div.nav-bar div.nav-bar-right #long {
-  width: 140px;
-  padding: 20px 0;
+div.nav-bar div.nav-bar-right #newHost,
+div.nav-bar div.nav-bar-right #login {
+  height: 80px;
+  padding: 25px 0;
+  margin-left: 15px;
+}
+
+div.nav-bar div.nav-bar-right #newHost:hover,
+div.nav-bar div.nav-bar-right #login:hover {
+  text-decoration: none !important;
+}
+
+div.nav-bar div.nav-bar-right #newHost span,
+div.nav-bar div.nav-bar-right #login span {
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+div.nav-bar div.nav-bar-right #newHost span:hover,
+div.nav-bar div.nav-bar-right #login span:hover {
+  background: #7d7d7d;
+  border: 2px solid transparent;
+  color: #fff;
 }
 
 .container-fluid {
   min-height: calc(100vh - 80px);
-  padding: 40px 0 !important;
 }
 
 .container-fluid div.wrapper {
@@ -10738,35 +10798,164 @@ div.nav-bar div.nav-bar-right #long {
 }
 
 .container-fluid div.wrapper div.search {
-  margin-top: 8px;
   position: relative;
   color: #ff5a5f;
 }
 
-.container-fluid div.wrapper div.search img {
+.container-fluid div.wrapper div.search .trisImg {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  border-bottom: 0.5px solid #eee;
+}
+
+@media screen and (max-width: 1160px) {
+  .container-fluid div.wrapper div.search .trisImg {
+    height: 42vh;
+  }
+}
+
+.container-fluid div.wrapper div.search .trisImg img {
+  position: absolute;
+  display: block;
+  width: 72%;
+  box-shadow: 20px 0 100px 45px #ccc;
+}
+
+@media screen and (max-width: 1160px) {
+  .container-fluid div.wrapper div.search .trisImg img {
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+.container-fluid div.wrapper div.search .trisImg .headertitle {
+  position: absolute;
+  width: 28%;
+  height: 100%;
+  right: 0;
+}
+
+@media screen and (max-width: 1160px) {
+  .container-fluid div.wrapper div.search .trisImg .headertitle {
+    display: none;
+  }
+}
+
+.container-fluid div.wrapper div.search .trisImg .headertitle h1 {
   width: 100%;
-  height: 575px;
+  height: 100%;
+  text-align: right;
+  transform: translateY(25%);
+  padding-right: 10px;
+  color: #fff;
+  text-shadow: 5px 1px 10px grey;
+  font-family: "PT Serif", sans-serif;
+  font-size: 55px;
+}
+
+@media screen and (max-width: 1260px) {
+  .container-fluid div.wrapper div.search .trisImg .headertitle h1 {
+    font-size: 48px;
+  }
+}
+
+.container-fluid div.wrapper div.search .trisImg .headertitle img {
+  box-shadow: none;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.container-fluid div.wrapper div.search .trisImg .headertitle img:nth-child(2) {
+  margin-top: 100px;
+  height: 50%;
+  z-index: -2;
+}
+
+.container-fluid div.wrapper div.search .trisImg .headertitle img:nth-child(3) {
+  margin-top: 350px;
+  z-index: -3;
 }
 
 .container-fluid div.wrapper div.search div.search-items {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
+  width: 35%;
+}
+
+@media screen and (max-width: 1160px) {
+  .container-fluid div.wrapper div.search div.search-items {
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .container-fluid div.wrapper div.search div.search-items {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-fluid div.wrapper div.search div.search-items {
+    width: 60%;
+  }
 }
 
 .container-fluid div.wrapper div.search div.search-items input {
   height: 50px;
-  width: 370px;
+  width: 85%;
   border-radius: 5px;
   position: relative;
-  text-indent: 40px;
+  text-indent: 10px;
+  border: none;
 }
 
 .container-fluid div.wrapper div.search div.search-items i {
   position: absolute;
   left: 10px;
   top: 40%;
+}
+
+.container-fluid div.wrapper div.search div.search-items .box-search-items {
+  display: flex;
+  align-items: center;
+}
+
+.container-fluid div.wrapper div.search div.search-items .box-search-items .goSearch {
+  display: block;
+  width: 15%;
+  height: 50px;
+  background: dodgerblue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.container-fluid div.wrapper div.search div.search-items .advSearch {
+  color: #ff5a5f;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 15px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.container-fluid div.wrapper div.search div.search-items .advSearch:hover {
+  color: #fff;
+  background: #ff5a5f;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .container-fluid div.wrapper div.search div.search-items .advSearch:hover {
+    color: #ff5a5f;
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .container-fluid div.wrapper div.main {
@@ -10844,11 +11033,6 @@ div.nav-bar div.nav-bar-right #long {
   padding: 20px 0;
 }
 
-.container-fluid div.wrapper div.dashB,
-.container-fluid div.wrapper div.homeP {
-  padding: 0 50px;
-}
-
 .container-fluid div.wrapper div.dashB button,
 .container-fluid div.wrapper div.homeP button {
   background: #fc5c63;
@@ -10884,6 +11068,30 @@ div.nav-bar div.nav-bar-right #long {
   }
 }
 
+.container-fluid div.wrapper div.dashB .boxAddNew .boxButtons,
+.container-fluid div.wrapper div.homeP .boxAddNew .boxButtons {
+  text-align: center;
+  font-size: 14px;
+}
+
+.container-fluid div.wrapper div.dashB .boxAddNew .boxButtons a:nth-child(1),
+.container-fluid div.wrapper div.homeP .boxAddNew .boxButtons a:nth-child(1) {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.container-fluid div.wrapper div.dashB .boxAddNew .boxButtons button,
+.container-fluid div.wrapper div.homeP .boxAddNew .boxButtons button {
+  border: 2px solid transparent;
+}
+
+.container-fluid div.wrapper div.dashB .boxAddNew .boxButtons button:hover,
+.container-fluid div.wrapper div.homeP .boxAddNew .boxButtons button:hover {
+  border: 2px solid #ff5a5f;
+  color: #ff5a5f;
+  background: transparent;
+}
+
 .container-fluid div.wrapper div.dashB .box-apartments,
 .container-fluid div.wrapper div.homeP .box-apartments {
   display: flex;
@@ -10893,11 +11101,11 @@ div.nav-bar div.nav-bar-right #long {
 
 .container-fluid div.wrapper div.dashB .box-apartments .box-apartment,
 .container-fluid div.wrapper div.homeP .box-apartments .box-apartment {
-  width: 400px;
+  width: 420px;
   margin: 6px;
   border: 1px solid #ddd;
   overflow: hidden;
-  height: 340px;
+  height: 400px;
   margin-bottom: 30px;
   transition: all 0.3s;
 }
@@ -10907,6 +11115,34 @@ div.nav-bar div.nav-bar-right #long {
   margin-top: -7px;
   box-shadow: 2px 2px 15px grey;
   cursor: pointer;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment a.dets,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment a.dets {
+  text-decoration: none;
+  font-size: 32px;
+  color: #404040;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment a.dets .box-data h3,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment a.dets .box-data h3 {
+  font-size: 23px;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment a.dets .box-data .descr,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment a.dets .box-data .descr {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: #999;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment a.dets .box-data .addr,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment a.dets .box-data .addr {
+  font-size: 14px;
+  text-align: right;
+  padding-right: 7px;
+  color: #999;
 }
 
 .container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-image,
@@ -10976,6 +11212,22 @@ div.nav-bar div.nav-bar-right #long {
   position: relative;
 }
 
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data a.spns,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data a.spns {
+  display: block;
+  margin: auto;
+  width: 50%;
+  font-size: 10px;
+  text-align: center;
+}
+
+.container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data a.spns button:hover,
+.container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data a.spns button:hover {
+  background: transparent;
+  color: #ff5a5f;
+  border: 1px solid;
+}
+
 .container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data h3,
 .container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data h3 {
   margin-bottom: 0;
@@ -11002,7 +11254,7 @@ div.nav-bar div.nav-bar-right #long {
   padding: 0;
   text-align: center;
   font-size: 13px;
-  margin: 6px;
+  margin: 6px auto;
 }
 
 .container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data ul li,
@@ -11015,7 +11267,8 @@ div.nav-bar div.nav-bar-right #long {
 
 .container-fluid div.wrapper div.dashB .box-apartments .box-apartment .box-data .char-wrapper,
 .container-fluid div.wrapper div.homeP .box-apartments .box-apartment .box-data .char-wrapper {
-  margin-bottom: 0;
+  margin-top: -10px;
+  margin-bottom: 6px;
   text-align: center;
 }
 
@@ -11080,6 +11333,10 @@ div.nav-bar div.nav-bar-right #long {
   visibility: visible;
 }
 
+.container-fluid div.wrapper div.dashB {
+  padding: 40px;
+}
+
 .container-fluid div.wrapper .boxForm {
   margin: auto;
   padding: 50px 0;
@@ -11099,6 +11356,14 @@ div.nav-bar div.nav-bar-right #long {
 
 .container-fluid div.wrapper .boxForm form {
   text-align: center;
+}
+
+.container-fluid div.wrapper .boxForm form img {
+  max-width: 100%;
+  display: block;
+  padding: 50px;
+  border-radius: 65px;
+  margin: auto;
 }
 
 .container-fluid div.wrapper .boxForm form label {

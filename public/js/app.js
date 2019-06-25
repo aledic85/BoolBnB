@@ -36846,27 +36846,29 @@ function validationJQuery() {
       }
     });
   });
-}
+} // function activeAppColor() {
+//
+//   var activeApp = $('.textactive');
+//   var text = activeApp.text();
+//
+//   console.log(text);
+//
+//   if (text == "sì") {
+//
+//     activeApp.css('color', 'green');
+//   }else {
+//
+//     activeApp.css('color', 'red');
+//   }
+// }
 
-function activeAppColor() {
-  console.log('ciao');
-  var activeApp = $('.activeApp');
-  var text = activeApp.text();
-  console.log(text);
-
-  if (activeApp == "si") {
-    activeApp.css('color', 'green');
-  } else {
-    activeApp.css('color', 'red');
-  }
-}
 
 function init() {
   var title = $(".appartments_container > h3");
   var titleText = title.text();
-  trimString(titleText);
+  trimString(titleText); // activeAppColor();
+
   validationJQuery();
-  activeAppColor();
 }
 
 $(document).ready(init);

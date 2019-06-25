@@ -19,26 +19,48 @@ $main_margin: 100px;
 }
 
 @mixin navbar-right {
-
+  height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  > span {
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+
+    > a {
+      color: #555;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .diventa_login {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    text-align: right;
+  }
 }
 
 @mixin navbar-right_span {
 
-  height: 60px;
-  width: 100px;
+  height: 80px;
+  width: 120px;
   text-align: center;
   text-decoration: none;
   margin: auto;
-  color: $Span_font_color;
-  padding: 20px;
+  color: #555;
+  padding: 27px;
+  font-size: 14px;
 
   &:hover {
-
-    background: $color_light_grey;
-    border-bottom: 1px solid $Logo_font_color;
+    border-bottom: 2px solid $Logo_font_color;
     color: $Logo_font_color;
   }
 }
@@ -47,8 +69,18 @@ $main_margin: 100px;
 
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
+  width: 35%;
+  @media screen and (max-width: 1160px) {
+    left: 50%;
+  }
+  @media screen and (max-width: 1080px) {
+    width: 45%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 60%;
+  }
 
   input {
 
@@ -63,7 +95,6 @@ $main_margin: 100px;
 }
 
 @mixin search_image {
-
   width: 100%;
   height: 575px;
 }
@@ -71,10 +102,11 @@ $main_margin: 100px;
 @mixin input {
 
   height: 50px;
-  width: 370px;
+  width: 85%;
   border-radius: 5px;
   position: relative;
-  text-indent: 40px;
+  text-indent: 10px;
+  border: none;
 }
 
 @mixin featured_apartments {
