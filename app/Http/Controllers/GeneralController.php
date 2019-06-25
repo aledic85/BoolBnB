@@ -102,7 +102,7 @@ class GeneralController extends Controller
 
     $query = Apartment::query();
 
-    if ($ids) {
+    if ($ids != null) {
 
       $query = $query->whereIn('id', $ids);
     }
@@ -149,7 +149,7 @@ class GeneralController extends Controller
 
     $query = Apartment::query();
 
-    if ($ids != null) {
+    if ($ids) {
 
       $query = $query->whereIn('id', $ids);
     }

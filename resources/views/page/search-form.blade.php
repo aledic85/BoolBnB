@@ -12,6 +12,7 @@
           <input type="text" name="description" value=""><br>
           <label for="address">Indirizzo</label>
           <input type="search" id="city" name="address" placeholder="Inserisci indirizzo" />
+          <input type="hidden" name="ids[]" value="null">
           <label for='radius'>Distanza in Km</label>
           <input type="number" id="radius" value="20">
           <label for="rooms">Numero stanze</label>

@@ -16,6 +16,7 @@
         <form class="" action="{{ route('search.by.city')}}">
           <div class="box-search-items">
             <input type="search" id="city" name="address" placeholder="Inserisci indirizzo" />
+            <input type="hidden" name="ids[]" value="null">
             <button type="submit" class="goSearch">Vai!</button>
           </div>
         </form>
