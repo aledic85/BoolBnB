@@ -13,7 +13,9 @@ class MessageSeeder extends Seeder
     {
       factory(App\Message::class, 20)->make()->each(function($message) {
           $user = App\User::inRandomOrder()->first();
+          $apartment = App\Apartment::inRandomOrder()->first();
           $message->user()->associate($user);
+          $message->apartment()->associate($apartment);
           $message->save();
         });
     }

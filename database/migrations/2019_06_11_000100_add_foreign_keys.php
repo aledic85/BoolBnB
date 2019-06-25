@@ -19,6 +19,11 @@ class AddForeignKeys extends Migration
 
       Schema::table('messages', function(Blueprint $table) {
         $table->foreign('user_id', 'owner')->references('id')->on('users')->onDelete('cascade');
+        $table->foreign('apartment_id', 'apt_id')->references('id')->on('apartments')->onDelete('cascade');
+      });
+
+      Schema::table('views', function(Blueprint $table) {
+        $table->foreign('apartment_id', 'aptView')->references('id')->on('apartments')->onDelete('cascade');
       });
 
       Schema::table('apartment_sponsored', function(Blueprint $table) {
@@ -40,6 +45,11 @@ class AddForeignKeys extends Migration
 
       Schema::table('messages', function(Blueprint $table) {
       $table->dropForeign('owner');
+      $table->dropForeign('apt_id');
+      });
+
+      Schema::table('views', function(Blueprint $table) {
+      $table->dropForeign('aptView');
       });
 
       Schema::table('apartment_sponsored', function(Blueprint $table) {

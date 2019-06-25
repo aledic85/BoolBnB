@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\Apartment;
 use App\Message;
 use App\User;
+use App\View;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailSender;
 use Carbon\Carbon;
@@ -15,6 +16,9 @@ class GeneralController extends Controller
 {
   public function index()
   {
+    $lat = Apartment::select('latitude')->get();
+    $long = Apartment::select('longitude')->get();
+    $ids = Apartment::select('id')->get();
     $now = new Carbon();
     $sponsoredApartments = Apartment::select('apartments.id','apartments.title','apartments.img_path', 'apartments.description', 'apartments.address')
                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
@@ -23,17 +27,35 @@ class GeneralController extends Controller
                           ->active()->get();
 
 // $sponsoredApartments = Apartment::all();
-    return view('page.home', compact('sponsoredApartments'));
+    return view('page.home', compact('sponsoredApartments', 'lat', 'long', 'ids'));
   }
 
   public function showApartment($id) {
 
     $apartment = Apartment::findORFail($id);
 
+    $allIpsCollection = View::select('ip')->where('apartment_id', $id)->get()->all();
+    $allIps = [];
+
+    foreach ($allIpsCollection as $singleIp) {
+
+      $allIps[] = $singleIp['ip'];
+    }
+    $clientIP = \Request::ip();
+
+    if (in_array($clientIP, $allIps) == false) {
+
+      $newView = View::make();
+      $newView->ip = $clientIP;
+      $newView->apartment_id = $id;
+      $newView->save();
+    }
+
+
     return view('page.show-apart', compact('apartment'));
   }
 
-  public function sendMail(Request $request, $id) {
+  public function sendMail(Request $request, $userId, $apartId) {
 
     $name = $request->name;
     $lastname = $request->lastname;
@@ -41,10 +63,13 @@ class GeneralController extends Controller
     $title = $request->title;
     $content = $request->content;
 
-    $user = User::findORFail($id);
+    $user = User::findORFail($userId);
+    $apartment = Apartment::findORFail($apartId);
 
     $message = Message::make($request->all());
-    $message->user()->associate($user)->save();
+    $message->user()->associate($user);
+    $message->apartment()->associate($apartment)->save();
+
 
 
     Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content));
@@ -77,7 +102,7 @@ class GeneralController extends Controller
 
     $query = Apartment::query();
 
-    if ($ids != null) {
+    if ($ids) {
 
       $query = $query->whereIn('id', $ids);
     }
@@ -116,5 +141,21 @@ class GeneralController extends Controller
 
 
       return response()->json($apartments);
+  }
+
+  public function searchByCityResults(Request $request) {
+
+    $ids = $request->ids;
+
+    $query = Apartment::query();
+
+    if ($ids != null) {
+
+      $query = $query->whereIn('id', $ids);
+    }
+
+    $apartments = $query->active()->get();
+
+    return view('page.search-by-city-results', compact('apartments'));
   }
 }
