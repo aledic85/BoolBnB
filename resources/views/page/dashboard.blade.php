@@ -5,8 +5,10 @@
   <div class="dashB">
     <div class="boxAddNew">
       <h2>Benvenuto nella tua dashboard {{ Auth::user() -> name }}</h2>
-      <a href="{{ route('new.apart') }}"><button type="submit" name="create">AGGIUNGI APPARTAMENTO</button></a>
-      {{-- <a href="{{ route('received.messages') }}"><button type="submit" name="create">VISUALIZZA MESSAGGI RICEVUTI</button></a> --}}
+      <div class="boxButtons">
+        <a href="{{ route('new.apart') }}"><button type="submit" name="create">AGGIUNGI APPARTAMENTO</button></a>
+        <a href="{{ route('received.messages') }}"><button type="submit" name="create">VISUALIZZA MESSAGGI RICEVUTI</button></a>
+      </div>
     </div>
     <div class="box-apartments">
       @foreach ($apartments as $apartment)
@@ -38,10 +40,14 @@
               <span>Sauna: </span><span>{{$apartment->sauna}}&nbsp;&nbsp;</span>
               <span class="activeApp">Annuncio attivo: </span><span class="textactive">{{$apartment->active}}</span>
             </div>
-            <a href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
-            <a class="ed" href="{{route('edit.apart', $apartment->id)}}"><button type="submit" name="edit"><i class="fas fa-edit popup">
-              <span class="popuptext">modifica appartamento</span>
-            </i></button></a>
+            <a class="ed" href="{{route('edit.apart', $apartment->id)}}">
+              <button type="submit" name="edit">
+                <i class="fas fa-edit popup">
+                  <span class="popuptext">modifica appartamento</span>
+                </i>
+              </button>
+            </a>
+            <a class="spns" href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
           </div>
         </div>
       @endforeach

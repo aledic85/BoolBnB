@@ -45,19 +45,20 @@
    <body>
 
      <div class="nav-bar">
+        <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
          <div class="nav-bar-left">
              <a href="{{route('home')}}"><h1>BoolBnB</h1></a>
          </div>
          <div class="nav-bar-right">
-             <span>Salvati</span>
-             <span>Viaggi</span>
-             <span>Messaggi</span>
-             <span>Aiuto</span>
-             <a href="{{ route('search.apart') }}">Ricerca avanzata</a>
+           <span><a href="{{route('home')}}">HOME</a></span>
+           <span>MARE</span>
+           <span>MONTAGNA</span>
+           <span>ESPERIENZE</span>
+           <div class="diventa_login">
              @guest
-               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+               <a id="login" href="{{ route('login') }}"><span>{{ __('Login') }}</span></a>
                @if (Route::has('register'))
-                 <a id="long" class="nav-link" href="{{ route('register') }}">{{ __('Diventa un Host') }}</a>
+                 <a id="newHost" href="{{ route('register') }}"><span>{{ __('Diventa un Host') }}</span></a>
                @endif
              @else
                <li class="nav-item dropdown">
@@ -70,17 +71,18 @@
                    onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();">
                    {{ __('Logout') }}
-                  </a>
-                  <a class="dropdown-item" href="{{ route('dashboard') }}">
-                    {{ __('Dashboard') }}
-                  </a>
+                 </a>
+                 <a class="dropdown-item" href="{{ route('dashboard') }}">
+                   {{ __('Dashboard') }}
+                 </a>
 
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                    @csrf
                  </form>
                </div>
              </li>
-           @endguest
+            @endguest
+           </div>
          </div>
      </div>
 
@@ -104,8 +106,10 @@
           @endif
 
           @yield('content')
+
         </div>
       </div>
+
       <div class="footer">
         <div class="footer-left">
             <p class ="footer">© 2019 BoolBnB.com, Inc.<a href="#">Terms and Conditions</a><a href="#">Privacy</a></p>

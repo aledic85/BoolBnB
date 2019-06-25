@@ -10,6 +10,8 @@
         <form action="{{ route('update.apart', $apartment->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('POST')
+          <h3 style="color:#ff5a5f;">{{ $apartment->title }}</h3>
+          <img src="{{ URL::to('/storage') }}/images/{{ $apartment->img_path }}">
           <label for="img_path">Immagine</label>
           <input type="file" name="img_path" value=""><br>
           <label for="title">Nome Appartamento</label>
