@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Message;
 use App\Sponsored;
+use App\View;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ApartmentRequest;
 use Braintree_Transaction;
@@ -152,8 +153,15 @@ class HomeController extends Controller
        $sponsored->end_sponsored = $end_sponsored;
        $sponsored->save();
        $sponsored->apartments()->attach($apartment);
-       
-       return redirect('/dashboard')->with('success','Appartamento sponsorizzato con successo!');;
 
+       return redirect('/dashboard')->with('success','Appartamento sponsorizzato con successo!');
+     }
+
+     public function showStats($id) {
+       
+       $totalMessages = Message::where('apartment_id', $id)->count();
+       $totalViews = View::where('apartment_id', $id)->count();
+
+       return view('page.show-stats', compact('totalViews', 'totalMessages'));
      }
 }

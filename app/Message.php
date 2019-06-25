@@ -20,4 +20,9 @@ class Message extends Model
 
     return $this->belongsTo(User::class);
   }
+
+  function apartment() {
+
+    return $this->belongsTo(Apartment::class);
+  }
 }

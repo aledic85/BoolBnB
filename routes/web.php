@@ -13,9 +13,10 @@
 
 Route::get('/', 'GeneralController@index')->name('home');
 Route::get('/show/{id}', 'GeneralController@showApartment')->name('show.apart');
-Route::post('/contactUser/{id}', 'GeneralController@sendMail')->name('send.mail');
+Route::post('/contactUser/{userId}/apartment/{apartId}', 'GeneralController@sendMail')->name('send.mail');
 Route::get('/search', 'GeneralController@searchApartments')->name('search.apart');
 Route::get('/search/results', 'GeneralController@resultsApartments')->name('search.results');
+Route::get('/search_by_city', 'GeneralController@searchByCityResults')->name('search.by.city');
 
 Auth::routes();
 
@@ -29,3 +30,4 @@ Route::get('/dashboard/received_messages', 'HomeController@receivedMessages')->n
 Route::get('/dashboard/sponsorize/{id}', 'HomeController@sponsorizeApartment')->name('spons.apart');
 Route::get('/dashboard/payment/process', 'HomeController@paymentProcess')->name('payment.process');
 Route::post('/dashboard/payment/success/{id}', 'HomeController@paymentSuccess')->name('payment.success');
+Route::get('/dashboard/apartment/stats/{id}', 'HomeController@showStats')->name('apart.stats');

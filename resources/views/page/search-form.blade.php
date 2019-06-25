@@ -12,6 +12,9 @@
           <input type="text" name="description" value=""><br>
           <label for="address">Indirizzo</label>
           <input type="search" id="city" name="address" placeholder="Inserisci indirizzo" />
+          <input type="hidden" name="ids[]" value="null">
+          <label for='radius'>Distanza in Km</label>
+          <input type="number" id="radius" value="20">
           <label for="rooms">Numero stanze</label>
           <input type="text" name="rooms" value=""><br>
           <label for="beds">Numero letti</label>
@@ -109,6 +112,7 @@
     $.getJSON('body.json', function(data) {
       // Inserisco lat e lon di epicentro ricerca
       data.geometryList[0].position = float1 + "," + float2;
+      data.geometryList[0].radius = ($('#radius').val() * 1000);
       // Prendo l'array della lista di appartamenti che è vuoto
       var appartmentsList = data.poiList;
       // Prendo il model del JSON e Simulo il push di altri elementi oltre al primo già presente
@@ -164,7 +168,14 @@
             }
           }
           else {
-            searchForm.children("input.id").remove;
+            var searchForm = $('.search-form');
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "ids[]";
+            input.className = "id";
+            input.value = 0;
+
+            searchForm.append(input);
           }
         }
       },

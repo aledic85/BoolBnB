@@ -37,6 +37,16 @@ class Apartment extends Model
     return $this->belongsToMany(Sponsored::class);
   }
 
+  function views() {
+
+    return $this->hasMany(View::class);
+  }
+
+  function messages() {
+
+    return $this->hasMany(Message::class);
+  }
+
   public function scopeActive($query)
   {
     return $query->where('active', 1);

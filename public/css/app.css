@@ -11027,6 +11027,7 @@ div.nav-bar div.nav-bar-right #login span:hover {
 
 .container-fluid div.wrapper div.homeP {
   padding: 50px !important;
+  display: inline-block;
 }
 
 .container-fluid div.wrapper div.homeP .title h2 {
