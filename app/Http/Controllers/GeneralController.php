@@ -16,7 +16,7 @@ class GeneralController extends Controller
   public function index()
   {
     $now = new Carbon();
-    $sponsoredApartments = Apartment::select('apartments.id','apartments.title','apartments.img_path', 'apartments.description')
+    $sponsoredApartments = Apartment::select('apartments.id','apartments.title','apartments.img_path', 'apartments.description', 'apartments.address')
                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
                           ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
                           ->where('end_sponsored', '>', $now)
