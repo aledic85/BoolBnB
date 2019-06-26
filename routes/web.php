@@ -29,5 +29,5 @@ Route::post('/dashboard/update/{id}', 'HomeController@updateApartment')->name('u
 Route::get('/dashboard/received_messages', 'HomeController@receivedMessages')->name('received.messages');
 Route::get('/dashboard/sponsorize/{id}', 'HomeController@sponsorizeApartment')->name('spons.apart');
 Route::get('/dashboard/payment/process', 'HomeController@paymentProcess')->name('payment.process');
-Route::post('/dashboard/payment/success/{id}', 'HomeController@paymentSuccess')->name('payment.success');
+Route::get('/dashboard/payment/success/{id}', 'HomeController@paymentSuccess')->name('payment.success');
 Route::get('/dashboard/apartment/stats/{id}', 'HomeController@showStats')->name('apart.stats');

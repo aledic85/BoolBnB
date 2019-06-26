@@ -2,9 +2,8 @@
 
 @section('content')
 
-  <form class="" action="{{ route('payment.success', $id) }}" method="post">
+  <form class="" method="post">
     @csrf
-    @method('POST')
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center mt-5">
@@ -14,6 +13,7 @@
             <option value="168">Una settimana - 40 euro</option>
             <option value="672">Un mese - 150 euro</option>
           </select>
+          <input type="hidden" name="id" value="{{$id}}">
         </div>
       </div>
       <div class="row">
@@ -38,11 +38,24 @@
     container: '#dropin-container'
    },
    function (createErr, instance) {
-     button.addEventListener('click', function () {
+     button.addEventListener('click', function (event) {
+       event.preventDefault();
        instance.requestPaymentMethod(function (err, payload) {
          $.get('{{ route('payment.process') }}', {payload}, function (response) {
            if (response.success) {
 
+             var dataArr = $( 'form' ).serializeArray();
+             console.log(dataArr);
+             $.ajax({
+               url: '/dashboard/payment/success/{id}',
+               method: 'GET',
+               data: dataArr,
+               success: function(inData) {
+
+                 window.location.replace("http://localhost/dashboard");
+               }
+
+             });
            } else {
              alert('Payment failed');
            }
