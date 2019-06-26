@@ -7,43 +7,43 @@
         <form class="search-form" action="">
           @csrf
           <label for="title">Nome Appartamento</label>
-          <input type="text" name="title" value="">
+          <input type="text" name="title" value="" class="input-form">
           <label for="description">Descrizione</label>
-          <input type="text" name="description" value=""><br>
+          <input type="text" name="description" value="" class="input-form"><br>
           <label for="address">Indirizzo</label>
-          <input type="search" id="city" name="address" placeholder="Inserisci indirizzo" />
-          <input type="hidden" name="ids[]" value="null">
+          <input type="search" id="city" class="input-form" name="address" placeholder="Inserisci indirizzo" />
+          <input type="hidden" name="ids" value="">
           <label for='radius'>Distanza in Km</label>
           <input type="number" id="radius" value="20">
           <label for="rooms">Numero stanze</label>
-          <input type="text" name="rooms" value=""><br>
+          <input type="text" name="rooms" value="" class="input-form"><br>
           <label for="beds">Numero letti</label>
-          <input type="text" name="beds" value=""><br>
+          <input type="text" name="beds" value="" class="input-form"><br>
           <label for="bathrooms">Numero bagni</label>
-          <input type="text" name="bathrooms" value=""><br>
+          <input type="text" name="bathrooms" value="" class="input-form"><br>
           <label for="mq">Metri quadrati</label>
-          <input type="text" name="mq" value="">
+          <input type="text" name="mq" value="" class="input-form">
           <div class="opt-services">
             <label for="wi-fi">Wi-Fi</label>
-            <select name="wi_fi">
+            <select name="wi_fi" class="input-form">
               <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="parking_space">Parking_space</label>
-            <select name="parking_space">
+            <select name="parking_space" class="input-form">
               <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="pool">Pool</label>
-            <select name="pool">
+            <select name="pool" class="input-form">
               <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="sauna">Sauna</label>
-            <select name="sauna">
+            <select name="sauna" class="input-form">
               <option value="">--</option>
               <option value="">No</option>
               <option value="1">Sì</option>
@@ -220,61 +220,80 @@
       event.preventDefault();
       $('.homeP').remove();
 
-      var dataArr = $( 'form' ).serializeArray();
+      var hasInput=false;
 
-      $.ajax({
+         $('.input-form').each(function () {
+           var val = $(this).val();
 
-        url: '/search/results',
-        method: 'GET',
-        data: dataArr,
-        success: function(inData) {
-
-          for (var i = 0; i < inData.length; i++) {
-
-            var res = inData[i];
-            var id = res.id;
-            var img_path = res.img_path;
-            var title = res.title;
-            var description = res.description;
-            var address = res.address;
-
-            var outData = {
-
-              id: id,
-              img_path: img_path,
-              title: title,
-              description: description,
-              address: address,
-            }
-            Handlebars.registerHelper('containsHttp', function(img_path){
-
-              if(img_path.includes('https')) {
-
-                var result = '<img src="' + img_path +'">';
-
-                return new Handlebars.SafeString(result);
-              }else {
-                var result2 = '<img src="/storage/images/' + img_path+ '">';
-
-                return new Handlebars.SafeString(result2);
-              }
-            });
-
-            Handlebars.registerHelper('showApart', function(id) {
-
-              var url = '/show/' + id;
-
-              return url;
-            });
-            var template = $("#template").html();
-            var compiled = Handlebars.compile(template);
-            var finalHTML = compiled(outData);
-
-            $(".wrapper").append(finalHTML);
+          if(val !== ""){
+           hasInput = true;
           }
-        }
-      });
 
+          console.log(val);
+         });
+
+         if(!hasInput){
+
+           alert("Devi inserire almeno un campo per la ricerca!");
+          }else{
+
+             var dataArr = $( 'form' ).serializeArray();
+
+             $.ajax({
+
+               url: '/search/results',
+               method: 'GET',
+               data: dataArr,
+               success: function(inData) {
+
+                 for (var i = 0; i < inData.length; i++) {
+
+                   var res = inData[i];
+                   var id = res.id;
+                   var img_path = res.img_path;
+                   var title = res.title;
+                   var description = res.description;
+                   var address = res.address;
+
+                   var outData = {
+
+                     id: id,
+                     img_path: img_path,
+                     title: title,
+                     description: description,
+                     address: address,
+                   }
+                   Handlebars.registerHelper('containsHttp', function(img_path){
+
+                     if(img_path.includes('https')) {
+
+                       var result = '<img src="' + img_path +'">';
+
+                       return new Handlebars.SafeString(result);
+                     }else {
+                       var result2 = '<img src="/storage/images/' + img_path+ '">';
+
+                       return new Handlebars.SafeString(result2);
+                     }
+                   });
+
+                   Handlebars.registerHelper('showApart', function(id) {
+
+                     var url = '/show/' + id;
+
+                     return url;
+                   });
+                   var template = $("#template").html();
+                   var compiled = Handlebars.compile(template);
+                   var finalHTML = compiled(outData);
+
+                   $(".wrapper").append(finalHTML);
+                 }
+
+                 console.log(inData);
+               }
+             });
+          }
     });
 // Fine stampa dinamica risultati ricerca
 
