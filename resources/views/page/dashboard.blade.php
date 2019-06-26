@@ -15,7 +15,7 @@
         <a href="{{route('apart.stats', $apartment->id)}}">
           <div class="box-apartment rounded-bottom">
             <div class="box-image">
-              <img src="{{ URL::to('/storage') }}/images/{{ $apartment->img_path }}">
+              <img src="{{ asset($apartment->path) }}">
               <form class="del" action="{{route('delete.apart', $apartment-> id)}}" method="post">
                 @csrf
                 @method('DELETE')
