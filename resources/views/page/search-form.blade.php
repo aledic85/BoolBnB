@@ -6,51 +6,54 @@
       <div class="boxForm">
         <form class="search-form" action="">
           @csrf
+          <span class="genErr">DEVI COMPILARE ALMENO UN CAMPO</span>
           <label for="title">Nome Appartamento</label>
-          <input type="text" name="title" value="" class="input-form">
+          <input type="text" name="title" value="" class="input-form aprt_group">
           <label for="description">Descrizione</label>
-          <input type="text" name="description" value="" class="input-form"><br>
+          <input type="text" name="description" value="" class="input-form aprt_group"><br>
           <label for="address">Indirizzo</label>
-          <input type="search" id="city" class="input-form" name="address" placeholder="Inserisci indirizzo" />
+          <input type="search" id="city" class="input-form aprt_group" name="address" placeholder="Inserisci indirizzo" />
           <input type="hidden" name="ids" value="">
           <label for='radius'>Distanza in Km</label>
           <input type="number" id="radius" value="20">
           <label for="rooms">Numero stanze</label>
-          <input type="text" name="rooms" value="" class="input-form"><br>
+          <input type="text" name="rooms" value="" class="input-form aprt_group"><br>
           <label for="beds">Numero letti</label>
-          <input type="text" name="beds" value="" class="input-form"><br>
+          <input type="text" name="beds" value="" class="input-form aprt_group"><br>
           <label for="bathrooms">Numero bagni</label>
-          <input type="text" name="bathrooms" value="" class="input-form"><br>
+          <input type="text" name="bathrooms" value="" class="input-form aprt_group"><br>
           <label for="mq">Metri quadrati</label>
-          <input type="text" name="mq" value="" class="input-form">
+          <input type="text" name="mq" value="" class="input-form aprt_group">
           <div class="opt-services">
-            <label for="wi-fi">Wi-Fi</label>
-            <select name="wi_fi" class="input-form">
+            <label for="wi_fi">Wi-Fi</label>
+            <select name="wi_fi" class="input-form aprt_group">
               <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="parking_space">Parking_space</label>
-            <select name="parking_space" class="input-form">
+            <select name="parking_space" class="input-form aprt_group">
               <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="pool">Pool</label>
-            <select name="pool" class="input-form">
+            <select name="pool" class="input-form aprt_group">
               <option value="">--</option>
               <option value="0">No</option>
               <option value="1">Sì</option>
             </select><br>
             <label for="sauna">Sauna</label>
-            <select name="sauna" class="input-form">
+            <select name="sauna" class="input-form aprt_group">
               <option value="">--</option>
               <option value="">No</option>
               <option value="1">Sì</option>
             </select><br>
-            <button type="submit">Search!</button>
+            <button type="submit" class="searchBtn">Search!</button>
           </div>
         </form>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.min.js"></script>
       </div>
     </div>
   </div>
@@ -232,7 +235,13 @@
 
          if(!hasInput){
 
-           alert("Devi inserire almeno un campo per la ricerca!");
+           $('.genErr').css('display', 'block');
+
+           setTimeout(function() {
+
+               $('.genErr').fadeOut();
+             }, 10000);
+             
           }else{
 
              var dataArr = $( 'form' ).serializeArray();

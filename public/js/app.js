@@ -36766,6 +36766,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // var $ 
 function trimString(titleText) {
   var length = 3;
   var trimmedString = titleText.substring(0, length);
+}
+
+function atLeastOne() {
+  var form = $('form.search-form');
+  var input = form.find('input');
+
+  if (input.val(' ')) {
+    $('.genErr').show();
+  }
 } // validazione client-side
 
 
@@ -36773,7 +36782,7 @@ function validationJQuery() {
   $.validator.addMethod('positiveNumber', function (value) {
     return Number(value) > 0;
   }, 'INSERISCI UN NUMERO POSITIVO');
-  $('form').each(function () {
+  $('form:not(.search-form)').each(function () {
     $(this).validate({
       rules: {
         img_path: {
@@ -36784,6 +36793,9 @@ function validationJQuery() {
         description: {
           required: true,
           minlength: 10
+        },
+        radius: {
+          required: true
         },
         address: {
           required: true
@@ -36822,6 +36834,9 @@ function validationJQuery() {
           required: "QUESTO CAMPO È OBBLIGATORIO",
           minlength: jQuery.validator.format("INSERISCI ALMENO {0} CARATTERI")
         },
+        radius: {
+          required: "QUESTO CAMPO È OBBLIGATORIO"
+        },
         address: {
           required: "QUESTO CAMPO È OBBLIGATORIO",
           number: "INSERISCI UN NUMERO VALIDO"
@@ -36846,28 +36861,16 @@ function validationJQuery() {
       }
     });
   });
-} // function activeAppColor() {
-//
-//   var activeApp = $('.textactive');
-//   var text = activeApp.text();
-//
-//   console.log(text);
-//
-//   if (text == "sì") {
-//
-//     activeApp.css('color', 'green');
-//   }else {
-//
-//     activeApp.css('color', 'red');
-//   }
-// }
-
+}
 
 function init() {
   var title = $(".appartments_container > h3");
   var titleText = title.text();
   trimString(titleText); // activeAppColor();
 
+  $('.searchBtn').click(function () {
+    validationSearchForm();
+  });
   validationJQuery();
 }
 
