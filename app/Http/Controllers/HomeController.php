@@ -145,9 +145,10 @@ class HomeController extends Controller
         return response()->json($status);
      }
 
-     public function paymentSuccess(Request $request, $id) {
+     public function paymentSuccess(Request $request) {
 
       $hours = $request->hours;
+      $id = $request->id;
       $apartment = Apartment::findOrFail($id);
       $now = new Carbon();
 
@@ -175,7 +176,7 @@ class HomeController extends Controller
        $sponsored->save();
        $sponsored->apartments()->attach($apartment);
 
-       return redirect('/dashboard')->with('success','Appartamento sponsorizzato con successo!');
+       return response()->json('sponsorizzazione avvenuta con successo!');
      }
 
      public function showStats($id) {
