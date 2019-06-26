@@ -604,3 +604,42 @@ div.details {
     color: #ff454c
   }
 }
+
+.paybox{
+  margin: auto;
+
+  .braintree-card{
+    padding: 5%;
+    border-radius: 10px;
+    background-color: #f0f0ee;
+
+    .braintree-form__hosted-field{
+      border: 3px solid #d0d0ce!important;
+      background-color: white;
+      }
+    .braintree-form__hosted-field.braintree-hosted-fields-focused {
+        outline: none!important;
+        border-color: #fdde60!important;
+      }
+
+
+    .braintree-form__icon-container{
+
+      margin-top: -18px!important;
+      right: -13px!important;
+    }
+  }
+
+  #submit-button{
+    background: #ff5a5f;
+    color: white;
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    &:hover{
+      background-color: darken(#ff5a5f, 10%);
+    }
+  }
+}
