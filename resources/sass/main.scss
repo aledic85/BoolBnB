@@ -421,6 +421,8 @@
           }
         }
       }
+
+
     }
 
     div.dashB {
@@ -591,5 +593,14 @@ div.details {
 
       @include button;
     }
+  }
+}
+
+.sponsored {
+  background: rgba(255, 90, 95, .5);
+
+  h3, p {
+
+    color: #ff454c
   }
 }

@@ -36,7 +36,7 @@
               <div class="box-image">
                 <img src="{{ URL::to('/storage') }}/images/{{ $sponsoredApartment->img_path }}">
               </div>
-              <div class="box-data">
+              <div class="box-data sponsored">
                 <h3>{{ $sponsoredApartment -> title }}</h3>
                 <p class="descr">{{ $sponsoredApartment -> description }}</p>
                 <p class="addr">{{ $sponsoredApartment -> address }}</p>

@@ -19,7 +19,7 @@
                <div class="box-image">
                  @{{containsHttp img_path}}
                </div>
-               <div class="box-data">
+               <div class="box-data @{{isSponsored now sponsored}}">
                  <h3>@{{ title }}</h3>
                  <p class="descr">@{{ description }}</p>
                  <p class="addr">@{{ address }}</p>

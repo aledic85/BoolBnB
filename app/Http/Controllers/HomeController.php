@@ -158,7 +158,7 @@ class HomeController extends Controller
      }
 
      public function showStats($id) {
-       
+
        $totalMessages = Message::where('apartment_id', $id)->count();
        $totalViews = View::where('apartment_id', $id)->count();
 

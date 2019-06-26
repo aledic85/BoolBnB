@@ -54,7 +54,7 @@
       </div>
     </div>
   </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script type="text/javascript">
   function getPosition(string) {
 
@@ -228,8 +228,6 @@
           if(val !== ""){
            hasInput = true;
           }
-
-          console.log(val);
          });
 
          if(!hasInput){
@@ -254,6 +252,11 @@
                    var title = res.title;
                    var description = res.description;
                    var address = res.address;
+                   var sponsored = res.end_sponsored;
+                   var now = moment().format('YYYY-MM-DD HH:MM:SS');
+
+                   console.log(now);
+                   console.log(sponsored);
 
                    var outData = {
 
@@ -262,6 +265,8 @@
                      title: title,
                      description: description,
                      address: address,
+                     now: now,
+                     sponsored : sponsored
                    }
                    Handlebars.registerHelper('containsHttp', function(img_path){
 
@@ -277,6 +282,14 @@
                      }
                    });
 
+                   Handlebars.registerHelper('isSponsored', function(now, sponsored) {
+
+                     if (sponsored > now) {
+
+                       return "sponsored";
+                     }
+                   });
+
                    Handlebars.registerHelper('showApart', function(id) {
 
                      var url = '/show/' + id;
@@ -289,8 +302,6 @@
 
                    $(".wrapper").append(finalHTML);
                  }
-
-                 console.log(inData);
                }
              });
           }

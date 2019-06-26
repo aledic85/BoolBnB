@@ -26,7 +26,6 @@ class GeneralController extends Controller
                           ->where('end_sponsored', '>', $now)
                           ->active()->get();
 
-// $sponsoredApartments = Apartment::all();
     return view('page.home', compact('sponsoredApartments', 'lat', 'long', 'ids'));
   }
 
@@ -136,7 +135,11 @@ class GeneralController extends Controller
       $query = $query->where('sauna', $sauna);
     }
 
-    $apartments = $query->active()->get();
+    $apartments = $query->select('apartments.id','apartments.title','apartments.img_path', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')
+                        ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
+                        ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
+                        ->orderBy('end_sponsored', 'desc')
+                        ->active()->get();
 
 
       return response()->json($apartments);

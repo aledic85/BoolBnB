@@ -11514,6 +11514,15 @@ div.details div.details-down div.down-right button:hover {
   background: white;
 }
 
+.sponsored {
+  background: rgba(255, 90, 95, 0.5);
+}
+
+.sponsored h3,
+.sponsored p {
+  color: #ff454c;
+}
+
 div.footer {
   display: flex;
   align-items: center;
