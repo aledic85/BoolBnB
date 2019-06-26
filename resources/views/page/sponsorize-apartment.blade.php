@@ -5,17 +5,25 @@
   <form class="" action="{{ route('payment.success', $id) }}" method="post">
     @csrf
     @method('POST')
-    <label for="title">Tipo di sponsorizzazione</label>
-    <select class="payment" name="hours">
-      <option value="24">Un giorno - 8 euro</option>
-      <option value="168">Una settimana - 40 euro</option>
-      <option value="672">Un mese - 150 euro</option>
-    </select>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 text-center mt-5">
+          <label for="title">Tipo di sponsorizzazione</label>
+          <select class="payment" name="hours">
+            <option value="24">Un giorno - 8 euro</option>
+            <option value="168">Una settimana - 40 euro</option>
+            <option value="672">Un mese - 150 euro</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 paybox">
           <div id="dropin-container"></div>
-          <button id="submit-button">Paga ora!</button>
+          <div class="row">
+            <div class="col-md-12 text-center mb-5">
+              <button id="submit-button">Paga ora!</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
