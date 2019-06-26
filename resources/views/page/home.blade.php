@@ -20,6 +20,8 @@
             <button type="submit" class="goSearch">Vai!</button>
           </div>
         </form>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.min.js"></script>
         <a class="advSearch" href="{{ route('search.apart') }}">Ricerca avanzata</a>
       </div>
     </div>

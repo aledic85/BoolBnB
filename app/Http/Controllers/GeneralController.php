@@ -102,15 +102,14 @@ class GeneralController extends Controller
 
     $query = Apartment::query();
 
-    if ($ids != null) {
-
-      $query = $query->whereIn('id', $ids);
-    }
     if ($title != null) {
       $query = $query->where('title', 'LIKE','%'.$title.'%');
     }
     if ($description != null) {
       $query = $query->where('description', 'LIKE', '%'.$description.'%');
+    }
+    if ($ids != null) {
+      $query = $query->whereIn('id', $ids);
     }
     if ($rooms != null) {
       $query = $query->where('rooms', $rooms);

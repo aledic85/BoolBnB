@@ -35,10 +35,10 @@
                 <li>Metri quadrati: {{ $apartment -> mq }}</li>
               </ul>
               <div class="char-wrapper">
-                <span>Wi-Fi: </span><span>{{$apartment->wi_fi}} - </span>
-                <span>Parking space: </span><span>{{$apartment->parking_space}} - </span>
-                <span>Pool: </span><span>{{$apartment->pool}} - </span>
-                <span>Sauna: </span><span>{{$apartment->sauna}}&nbsp;&nbsp;</span>
+                <span>Wi-Fi: </span><span>{{$apartment->wi_fi}}</span>
+                <span>Parking space: </span><span>{{$apartment->parking_space}}</span>
+                <span>Pool: </span><span>{{$apartment->pool}}</span>
+                <span>Sauna: </span><span>{{$apartment->sauna}}</span>
                 <span class="activeApp">Annuncio attivo: </span><span class="textactive">{{$apartment->active}}</span>
               </div>
               <a class="ed" href="{{route('edit.apart', $apartment->id)}}">
