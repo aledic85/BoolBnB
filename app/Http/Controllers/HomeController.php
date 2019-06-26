@@ -35,10 +35,31 @@ class HomeController extends Controller
      public function dashboard() {
 
        $userId = Auth::user()->id;
+       $now = new Carbon();
 
        $apartments = Apartment::where('user_id', $userId)->get();
+       //
+       // $sponsoredApartments = Apartment::where('user_id', $userId)
+       //                      ->select('apartments.id', 'sponsoreds.end_sponsored')
+       //                      ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
+       //                      ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
+       //                      ->orderBy('end_sponsored', 'desc')
+       //                      ->active()->get();
 
-       return view('page.dashboard', compact('apartments'));
+       $sponsoreds = Apartment::where('user_id', $userId)->select('apartment_sponsored.apartment_id')
+                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
+                           ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
+                           ->where('sponsoreds.end_sponsored', '>', $now)
+                           ->get();
+
+       $sponsoredIDs = [];
+
+       foreach ($sponsoreds as $sponsored) {
+
+         $sponsoredIDs[] = $sponsored->apartment_id;
+       }
+
+       return view('page.dashboard', compact('apartments', 'sponsoredIDs', 'now'));
      }
 
      public function createApartment() {

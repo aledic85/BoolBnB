@@ -48,7 +48,11 @@
                   </i>
                 </button>
               </a>
-              <a class="spns" href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
+                @if(in_array($apartment->id, $sponsoredIDs))
+                  <a class="spns" href=""><button type="submit" name="edit">ANNUNCIO SPONSORIZZATO</button></a>
+                @else
+                  <a class="spns" href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>
+                @endif
             </div>
           </div>
         </a>
