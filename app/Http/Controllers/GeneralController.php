@@ -11,6 +11,7 @@ use App\View;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailSender;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class GeneralController extends Controller
 {
@@ -32,8 +33,13 @@ class GeneralController extends Controller
   public function showApartment($id) {
 
     $apartment = Apartment::findORFail($id);
+    $today = Carbon::today()->day;
+    $tomorrow = Carbon::tomorrow()->day;
 
-    $allIpsCollection = View::select('ip')->where('apartment_id', $id)->get()->all();
+    $allIpsCollection = View::select('ip')
+                              ->where('apartment_id', $id)
+                              ->whereBetween(DB::raw('DAY(created_at)'), [$today, $tomorrow])
+                              ->get()->all();
     $allIps = [];
 
     foreach ($allIpsCollection as $singleIp) {
@@ -50,8 +56,7 @@ class GeneralController extends Controller
       $newView->save();
     }
 
-
-    return view('page.show-apart', compact('apartment'));
+    return view('page.show-apart', compact('apartment', 'allIpsCollection'));
   }
 
   public function sendMail(Request $request, $userId, $apartId) {
@@ -108,7 +113,7 @@ class GeneralController extends Controller
       $query = $query->where('description', 'LIKE', '%'.$description.'%');
     }
     if ($ids != null) {
-      $query = $query->whereIn('id', $ids);
+      $query = $query->whereIn('apartments.id', $ids);
     }
     if ($rooms != null) {
       $query = $query->where('rooms', $rooms);

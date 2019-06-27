@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ApartmentRequest;
 use Braintree_Transaction;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -169,6 +170,8 @@ class HomeController extends Controller
         $end_sponsored = $now->add(30, 'day');
       }
 
+       $existingSponsorship = Apartment::where('apartments.id', $id)
+                              ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')->delete();
        $sponsored = new Sponsored;
        $sponsored->title = $title;
        $sponsored->price = $price;
@@ -181,9 +184,21 @@ class HomeController extends Controller
 
      public function showStats($id) {
 
+       $today = Carbon::today()->day;
+       $tomorrow = Carbon::tomorrow()->day;
        $totalMessages = Message::where('apartment_id', $id)->count();
        $totalViews = View::where('apartment_id', $id)->count();
+       $views = View::where('apartment_id', $id)
+                      ->whereBetween(DB::raw('DAY(created_at)'), [$today, $tomorrow])->count();
+       $dates = View::where('apartment_id', $id)
+                     ->select('created_at')->get();
 
-       return view('page.show-stats', compact('totalViews', 'totalMessages'));
+       $months = [];
+       foreach ($dates as $date) {
+
+         $months[] = $date['created_at']->englishMonth;
+       }
+
+       return view('page.show-stats', compact('totalViews', 'totalMessages', 'views', 'months'));
      }
 }

@@ -1,6 +1,5 @@
 @extends('layout.home-layout')
     @section('content')
-
       <div class="details">
           <div class="img-container">
             <img src="{{ asset($apartment->path) }}">
