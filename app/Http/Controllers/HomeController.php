@@ -170,8 +170,6 @@ class HomeController extends Controller
         $end_sponsored = $now->add(30, 'day');
       }
 
-       $existingSponsorship = Apartment::where('apartments.id', $id)
-                              ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')->delete();
        $sponsored = new Sponsored;
        $sponsored->title = $title;
        $sponsored->price = $price;
