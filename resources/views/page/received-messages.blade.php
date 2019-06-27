@@ -3,11 +3,24 @@
 @section('content')
 
 
-  @foreach ($messages as $message)
-    <p>Name: {{ $message->name }}</p>
-    <p>Lastname: {{$message->lastname}}</p>
-    <p>Email: {{$message->email}}</p>
-    <p>Title: {{$message->title}}</p>
-    <p>Content: {{$message->content}}</p>
-  @endforeach
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Apartment</th>
+        <th>Email</th>
+        <th>Message title</th>
+        <th>Message content</th>
+      </tr>
+      @foreach ($messages as $message)
+        <tr>
+          <td>{{ $message->name }}</td>
+          <td>{{$message->lastname}}</td>
+          <td>{{$message->description}}</td>
+          <td>{{$message->email}}</td>
+          <td>{{$message->title}}</td>
+          <td>{{$message->content}}</td>
+        </tr>
+      @endforeach
+    </table>
 @endsection

@@ -60,25 +60,25 @@ class GeneralController extends Controller
   }
 
   public function sendMail(Request $request, $userId, $apartId) {
+    $apartment = Apartment::findORFail($apartId);
 
     $name = $request->name;
     $lastname = $request->lastname;
+    $apartName = $apartment->title;
     $email = $request->email;
     $title = $request->title;
     $content = $request->content;
 
     $user = User::findORFail($userId);
-    $apartment = Apartment::findORFail($apartId);
-
     $message = Message::make($request->all());
     $message->user()->associate($user);
     $message->apartment()->associate($apartment)->save();
 
 
 
-    Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content));
+    Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content, $apartName));
 
-    return redirect('/');
+    return redirect('/')->with('Email inviata con successo!');
   }
 
   public function searchApartments() {
@@ -103,6 +103,7 @@ class GeneralController extends Controller
     $parking_space = $request->parking_space;
     $pool = $request->pool;
     $sauna = $request->sauna;
+    $now = new Carbon();
 
     $query = Apartment::query();
 
@@ -140,14 +141,17 @@ class GeneralController extends Controller
       $query = $query->where('sauna', $sauna);
     }
 
-    $apartments = $query->select('apartments.id','apartments.title','apartments.img_path', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')
+    $sponsoredApartments = $query->select('apartments.id','apartments.title','apartments.img_path', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')
                         ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
                         ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
                         ->orderBy('end_sponsored', 'desc')
                         ->active()->get();
 
+    $allApartments = $query->active()->get();
 
-      return response()->json($apartments);
+    $apartments = $allApartments->union($sponsoredApartments);
+
+    return response()->json($apartments);
   }
 
   public function searchByCityResults(Request $request) {

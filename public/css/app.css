@@ -11577,6 +11577,20 @@ div.details div.details-down div.down-right button:hover {
   background-color: #ff272e;
 }
 
+table {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  margin-top: 30px;
+}
+
+table tr,
+table td,
+table th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
 div.footer {
   display: flex;
   align-items: center;
