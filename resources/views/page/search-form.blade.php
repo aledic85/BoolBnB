@@ -78,7 +78,8 @@
             // console.log(position);
             var lat = position.lat;
             var lon = position.lon;
-
+            console.log(lat);
+            console.log(lon);
 
             postCompilerTomTom(lat,lon);
           }
@@ -128,6 +129,7 @@
             "lat": latValues[i],
             "lon": longValues[i]
           }
+
         };
         appartmentsList.push(newElement);
       }
@@ -139,6 +141,7 @@
   function getTomTomData(object) {
 
     var jsonForServer = JSON.stringify(object);
+
     $.ajax({
       url : "https://api.tomtom.com/search/2/geometryFilter.json?key=kvaWo21VAPIFQF2qQjTTzA2brbzqOTRy",
       type: "POST",
@@ -151,7 +154,6 @@
 
 
           var numResults = apiData.summary.numResults;
-
 
           if (numResults > 0) {
 
@@ -241,7 +243,7 @@
 
                $('.genErr').fadeOut();
              }, 10000);
-             
+
           }else{
 
              var dataArr = $( 'form' ).serializeArray();

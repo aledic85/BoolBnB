@@ -11,6 +11,7 @@ class MailSender extends Mailable
 {
     use Queueable, SerializesModels;
     public $title;
+    public $apartName;
     public $content;
     public $name;
     public $lastname;
@@ -20,13 +21,14 @@ class MailSender extends Mailable
      *
      * @return void
      */
-     public function __construct($name, $lastname, $email, $title, $content)
+     public function __construct($name, $lastname, $email, $title, $content, $apartName)
      {
          $this->name = $name;
          $this->lastname = $lastname;
          $this->email = $email;
          $this->title = $title;
          $this->content = $content;
+         $this->apartName = $apartName;
 
      }
 

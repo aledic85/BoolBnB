@@ -120,7 +120,7 @@ class HomeController extends Controller
 
        $user = Auth::user();
 
-       $messages = Message::where('user_id', $user->id)->get();
+       $messages = Message::select('apartments.description', 'messages.name', 'messages.lastname', 'messages.email', 'messages.title', 'messages.content')->join('apartments' , 'messages.apartment_id', '=', 'apartments.id')->where('messages.user_id', $user->id)->get();
 
        return view('page.received-messages', compact('messages'));
      }
