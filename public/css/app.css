@@ -11523,6 +11523,14 @@ div.details div.details-down div.down-right button:hover {
   color: #ff454c;
 }
 
+.chart-cont {
+  display: flex;
+  width: 40%;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
 .paybox {
   margin: auto;
 }

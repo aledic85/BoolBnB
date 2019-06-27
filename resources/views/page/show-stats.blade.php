@@ -2,28 +2,36 @@
 
 @section('content')
  <h1>Numero totale visualizzazioni appartamento = {{$totalViews}}</h1>
- <h1>NUmero totale messaggi ricevuti appartamento = {{$totalMessages}}</h1>
+ <h1>Numero totale messaggi ricevuti appartamento = {{$totalMessages}}</h1>
+ <div class="chart-cont">
+   <canvas id="myChart"></canvas>
+ </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
  <script type="text/javascript">
 
-//  var ctx = document.getElementById('myChart').getContext('2d');
-//  var chart = new Chart(ctx, {
-//
-//    type: 'line',
-//
-//    // The data for our dataset
-//    data: {
-//        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-//        datasets: [{
-//            label: 'My First dataset',
-//            backgroundColor: 'rgb(255, 99, 132)',
-//            borderColor: 'rgb(255, 99, 132)',
-//            data:
-//        }]
-//    },
-//
-//    // Configuration options go here
-//    options: {}
-// });
+  var views = [{{$views}}];
+  var months = {!! json_encode($months) !!};
+
+ var ctx = document.getElementById('myChart').getContext('2d');
+ var chart = new Chart(ctx, {
+
+   type: 'bar',
+
+   // The data for our dataset
+   data: {
+       labels: months,
+       datasets: [{
+           label: 'Visualizzazioni per mese',
+           backgroundColor: 'rgb(255, 99, 132)',
+           borderColor: 'rgb(255, 99, 132)',
+           data: views
+       }]
+   },
+
+   // Configuration options go here
+   options: {}
+});
 
  </script>
 @endsection

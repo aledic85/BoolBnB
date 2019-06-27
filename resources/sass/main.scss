@@ -605,6 +605,15 @@ div.details {
   }
 }
 
+.chart-cont {
+
+  display: flex;
+  width: 40%;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
 .paybox{
   margin: auto;
 
