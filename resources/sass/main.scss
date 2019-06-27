@@ -92,6 +92,7 @@
               align-items: center;
               justify-content: center;
               border-radius: 5px;
+              border: none;
             }
           }
 
@@ -435,6 +436,16 @@
       background-color: #cecece40;
       border-radius: 10px;
       margin-bottom: 30px;
+
+      .search-form {
+
+        .genErr {
+          display: none;
+          text-align: center;
+          margin-bottom: 20px;
+          color: red;
+        }
+      }
 
       label.error {
           width: 100%;
