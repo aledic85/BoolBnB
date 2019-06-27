@@ -16,7 +16,6 @@
         <form class="" action="{{ route('search.by.city')}}">
           <div class="box-search-items">
             <input type="search" id="city" name="address" placeholder="Inserisci indirizzo" />
-            <input type="hidden" name="ids[]" value="null">
             <button type="submit" class="goSearch">Vai!</button>
           </div>
         </form>
@@ -151,16 +150,32 @@
               var lat = apiData.results[i].position.lat;
               var lon = apiData.results[i].position.lon;
               var id = apiData.results[i].poi.id;
-              var input = document.createElement("input");
-              input.type = "hidden";
-              input.name = "ids[]";
-              input.className = "id";
-              input.value = id;
-              searchForm.append(input);
+              var latitude = document.createElement("input");
+              latitude.type = "hidden";
+              latitude.name = "latitude";
+              latitude.value = lat;
+              var longitude = document.createElement("input");
+              longitude.type = "hidden";
+              longitude.name = "longitude";
+              longitude.value = lon;
+
+              searchForm.append(latitude);
+              searchForm.append(longitude);
             }
           }
           else {
+            var searchForm = $('.box-search-items');
+            var latitude = document.createElement("input");
+            latitude.type = "hidden";
+            latitude.name = "latitude";
+            latitude.value = 0;
+            var longitude = document.createElement("input");
+            longitude.type = "hidden";
+            longitude.name = "longitude";
+            longitude.value = 0;
 
+            searchForm.append(latitude);
+            searchForm.append(longitude);
           }
         }
       },

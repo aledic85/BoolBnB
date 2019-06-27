@@ -13,7 +13,6 @@
           <input type="text" name="description" value="" class="input-form aprt_group"><br>
           <label for="address">Indirizzo</label>
           <input type="search" id="city" class="input-form aprt_group" name="address" placeholder="Inserisci indirizzo" />
-          <input type="hidden" name="ids" value="">
           <label for='radius'>Distanza in Km</label>
           <input type="number" id="radius" value="20">
           <label for="rooms">Numero stanze</label>
@@ -163,24 +162,33 @@
               var lat = apiData.results[i].position.lat;
               var lon = apiData.results[i].position.lon;
               var id = apiData.results[i].poi.id;
-              var input = document.createElement("input");
-              input.type = "hidden";
-              input.name = "ids[]";
-              input.className = "id";
-              input.value = id;
+              var latitude = document.createElement("input");
+              latitude.type = "hidden";
+              latitude.name = "latitude";
+              latitude.value = lat;
+              var longitude = document.createElement("input");
+              longitude.type = "hidden";
+              longitude.name = "longitude";
+              longitude.value = lon;
 
-              searchForm.append(input);
+              searchForm.append(latitude);
+              searchForm.append(longitude);
+
             }
           }
           else {
             var searchForm = $('.search-form');
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.name = "ids[]";
-            input.className = "id";
-            input.value = 0;
+            var latitude = document.createElement("input");
+            latitude.type = "hidden";
+            latitude.name = "latitude";
+            latitude.value = 0;
+            var longitude = document.createElement("input");
+            longitude.type = "hidden";
+            longitude.name = "longitude";
+            longitude.value = 0;
 
-            searchForm.append(input);
+            searchForm.append(latitude);
+            searchForm.append(longitude);
           }
         }
       },
@@ -255,9 +263,13 @@
                data: dataArr,
                success: function(inData) {
 
-                 for (var i = 0; i < inData.length; i++) {
+                 var AllApart = inData.reduce(function(arr, el){
+                   return arr.concat(el);
+                 }, []);
 
-                   var res = inData[i];
+                 for (var i = 0; i < AllApart.length; i++) {
+
+                   var res = AllApart[i];
                    var id = res.id;
                    var img_path = res.img_path;
                    var title = res.title;
@@ -265,9 +277,6 @@
                    var address = res.address;
                    var sponsored = res.end_sponsored;
                    var now = moment().format('YYYY-MM-DD HH:MM:SS');
-
-                   console.log(now);
-                   console.log(sponsored);
 
                    var outData = {
 

@@ -94,7 +94,8 @@ class GeneralController extends Controller
 
     $title = $request->title;
     $description = $request->description;
-    $ids = $request->ids;
+    $latitude = $request->latitude;
+    $longitude = $request->longitude;
     $rooms = $request->rooms;
     $beds = $request->beds;
     $bathrooms = $request->bathrooms;
@@ -113,8 +114,11 @@ class GeneralController extends Controller
     if ($description != null) {
       $query = $query->where('description', 'LIKE', '%'.$description.'%');
     }
-    if ($ids != null) {
-      $query = $query->whereIn('apartments.id', $ids);
+    if ($latitude != null) {
+      $query = $query->where('latitude', $latitude);
+    }
+    if ($longitude != null) {
+      $query = $query->where('longitude', $longitude);
     }
     if ($rooms != null) {
       $query = $query->where('rooms', $rooms);
@@ -141,32 +145,38 @@ class GeneralController extends Controller
       $query = $query->where('sauna', $sauna);
     }
 
-    $sponsoredApartments = $query->select('apartments.id','apartments.title','apartments.img_path', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')
-                        ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                        ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
-                        ->orderBy('end_sponsored', 'desc')
+    $apartments = $query->active()->get();
+
+    $sponsoredApartments = $query->select('apartments.id', 'apartments.img_path', 'apartments.title', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
+                        ->join('sponsoreds', 'apartment_sponsored.sponsored_id', '=', 'sponsoreds.id')
+                        ->where('sponsoreds.end_sponsored', '>', $now)
                         ->active()->get();
 
-    $allApartments = $query->active()->get();
 
-    $apartments = $allApartments->union($sponsoredApartments);
-
-    return response()->json($apartments);
+    return response()->json([$sponsoredApartments, $apartments]);
   }
 
   public function searchByCityResults(Request $request) {
 
-    $ids = $request->ids;
+    $latitude = $request->latitude;
+    $longitude = $request->longitude;
+    $now = new Carbon();
 
     $query = Apartment::query();
 
-    if ($ids) {
-
-      $query = $query->whereIn('id', $ids);
+    if ($latitude != null) {
+      $query = $query->where('latitude', $latitude);
     }
-
+    if ($longitude != null) {
+      $query = $query->where('longitude', $longitude);
+    }
     $apartments = $query->active()->get();
 
-    return view('page.search-by-city-results', compact('apartments'));
+    $sponsoredApartments = $query->select('apartments.id', 'apartments.img_path', 'apartments.title', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
+                        ->join('sponsoreds', 'apartment_sponsored.sponsored_id', '=', 'sponsoreds.id')
+                        ->where('sponsoreds.end_sponsored', '>', $now)
+                        ->active()->get();
+
+    return view('page.search-by-city-results', compact('sponsoredApartments', 'apartments'));
   }
 }
