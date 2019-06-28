@@ -69,6 +69,23 @@
     </div>
   </div>
   <script type="text/javascript">
+
+  var wrap = $('option');
+
+  wrap.each(function() {
+
+    if ($(this).text() == '0') {
+
+      $(this).text('No');
+    } else if ($(this).text() == '1') {
+
+      $(this).text('Sì');
+    }
+  });
+
+
+
+
   // Inizio Funzioni tomtom
   function getPosition(string) {
 
