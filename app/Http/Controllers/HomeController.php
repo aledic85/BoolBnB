@@ -39,27 +39,6 @@ class HomeController extends Controller
        $now = new Carbon();
 
        $apartments = Apartment::where('user_id', $userId)->get();
-       //
-       // $sponsoredApartments = Apartment::where('user_id', $userId)
-       //                      ->select('apartments.id', 'sponsoreds.end_sponsored')
-       //                      ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-       //                      ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
-       //                      ->orderBy('end_sponsored', 'desc')
-       //                      ->active()->get();
-
-       $sponsoreds = Apartment::where('user_id', $userId)->select('apartment_sponsored.apartment_id')
-                           ->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                           ->join('sponsoreds', 'sponsoreds.id', '=', 'apartment_sponsored.sponsored_id')
-                           ->where('sponsoreds.end_sponsored', '>', $now)
-                           ->get();
-
-       $sponsoredIDs = [];
-
-       foreach ($sponsoreds as $sponsored) {
-
-         $sponsoredIDs[] = $sponsored->apartment_id;
-       }
-
        return view('page.dashboard', compact('apartments', 'sponsoredIDs', 'now'));
      }
 
@@ -186,8 +165,6 @@ class HomeController extends Controller
        $tomorrow = Carbon::tomorrow()->day;
        $totalMessages = Message::where('apartment_id', $id)->count();
        $totalViews = View::where('apartment_id', $id)->count();
-       $views = View::where('apartment_id', $id)
-                      ->whereBetween(DB::raw('DAY(created_at)'), [$today, $tomorrow])->count();
        $dates = View::where('apartment_id', $id)
                      ->select('created_at')->get();
 
@@ -197,6 +174,6 @@ class HomeController extends Controller
          $months[] = $date['created_at']->englishMonth;
        }
 
-       return view('page.show-stats', compact('totalViews', 'totalMessages', 'views', 'months'));
+       return view('page.show-stats', compact('totalViews', 'totalMessages', 'months'));
      }
 }

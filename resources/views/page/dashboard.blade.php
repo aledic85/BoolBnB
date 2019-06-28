@@ -48,7 +48,7 @@
                   </i>
                 </button>
               </a>
-                @if(in_array($apartment->id, $sponsoredIDs))
+                @if($apartment->sponsoreds()->where('end_sponsored', '>', $now)->get()->isNotEmpty())
                   <a class="spns" href=""><button type="submit" name="edit">ANNUNCIO SPONSORIZZATO</button></a>
                 @else
                   <a class="spns" href="{{route('spons.apart', $apartment->id)}}"><button type="submit" name="edit">SPONSORIZZA ANNUNCIO</button></a>

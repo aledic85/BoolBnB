@@ -10797,6 +10797,13 @@ div.nav-bar div.nav-bar-right #login span:hover {
   width: 100%;
 }
 
+.container-fluid div.wrapper .sponsored-apart,
+.container-fluid div.wrapper .unsponsored-apart {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .container-fluid div.wrapper div.search {
   position: relative;
   color: #ff5a5f;
@@ -11024,11 +11031,6 @@ div.nav-bar div.nav-bar-right #login span:hover {
   border: 1px solid #ff5a5f;
   color: #ff5a5f;
   background: white;
-}
-
-.container-fluid div.wrapper div.homeP {
-  padding: 50px !important;
-  display: inline-block;
 }
 
 .container-fluid div.wrapper div.homeP .title h2 {
@@ -11528,7 +11530,7 @@ div.details div.details-down div.down-right button:hover {
 
 .sponsored h3,
 .sponsored p {
-  color: #ff454c;
+  color: black !important;
 }
 
 .chart-cont {
