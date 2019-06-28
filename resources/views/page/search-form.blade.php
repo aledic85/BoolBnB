@@ -55,6 +55,8 @@
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.min.js"></script>
       </div>
     </div>
+    <div class="sponsored-apart"></div>
+    <div class="unsponsored-apart"></div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script type="text/javascript">
@@ -263,13 +265,9 @@
                data: dataArr,
                success: function(inData) {
 
-                 var AllApart = inData.reduce(function(arr, el){
-                   return arr.concat(el);
-                 }, []);
+                 for (var i = 0; i < inData.length; i++) {
 
-                 for (var i = 0; i < AllApart.length; i++) {
-
-                   var res = AllApart[i];
+                   var res = inData[i];
                    var id = res.id;
                    var img_path = res.img_path;
                    var title = res.title;
@@ -320,7 +318,14 @@
                    var compiled = Handlebars.compile(template);
                    var finalHTML = compiled(outData);
 
-                   $(".wrapper").append(finalHTML);
+                   if (sponsored) {
+
+                     $(".sponsored-apart").append(finalHTML);
+                   }else {
+
+                     $(".unsponsored-apart").append(finalHTML);
+                   }
+
                  }
                }
              });

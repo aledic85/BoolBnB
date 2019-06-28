@@ -60,6 +60,7 @@ class GeneralController extends Controller
   }
 
   public function sendMail(Request $request, $userId, $apartId) {
+
     $apartment = Apartment::findORFail($apartId);
 
     $name = $request->name;
@@ -147,13 +148,20 @@ class GeneralController extends Controller
 
     $apartments = $query->active()->get();
 
-    $sponsoredApartments = $query->select('apartments.id', 'apartments.img_path', 'apartments.title', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                        ->join('sponsoreds', 'apartment_sponsored.sponsored_id', '=', 'sponsoreds.id')
-                        ->where('sponsoreds.end_sponsored', '>', $now)
-                        ->active()->get();
+    foreach ($apartments as $apartment) {
 
+      $sponsorships = $apartment->sponsoreds()->where('end_sponsored', '>', $now)->get();
 
-    return response()->json([$sponsoredApartments, $apartments]);
+      if($sponsorships->isNotEmpty()){
+
+        foreach ($sponsorships as $sponsorship) {
+
+          $apartment['end_sponsored'] = $sponsorship['end_sponsored'];
+        }
+      }
+    }
+
+    return response()->json($apartments);
   }
 
   public function searchByCityResults(Request $request) {
@@ -172,11 +180,7 @@ class GeneralController extends Controller
     }
     $apartments = $query->active()->get();
 
-    $sponsoredApartments = $query->select('apartments.id', 'apartments.img_path', 'apartments.title', 'apartments.description', 'apartments.address', 'sponsoreds.end_sponsored')->join('apartment_sponsored', 'apartments.id', '=', 'apartment_sponsored.apartment_id')
-                        ->join('sponsoreds', 'apartment_sponsored.sponsored_id', '=', 'sponsoreds.id')
-                        ->where('sponsoreds.end_sponsored', '>', $now)
-                        ->active()->get();
 
-    return view('page.search-by-city-results', compact('sponsoredApartments', 'apartments'));
+    return view('page.search-by-city-results', compact('apartments', 'now'));
   }
 }

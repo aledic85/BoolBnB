@@ -5,6 +5,13 @@
     background: transparent;
     width: 100%;
 
+    .sponsored-apart, .unsponsored-apart {
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     div.search {
         position: relative;
         color: $Logo_font_color;
@@ -148,10 +155,7 @@
     }
     // dashboard utente loggato
     div.homeP {
-      padding: 50px !important;
-
-      display: inline-block;
-
+      
       .title {
 
         h2 {
@@ -612,7 +616,7 @@ div.details {
 
   h3, p {
 
-    color: #ff454c
+    color: black !important;
   }
 }
 
