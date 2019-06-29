@@ -8,8 +8,8 @@
       </div>
       <div class="box-apartments">
         @foreach ($apartments as $apartment)
-          @if($apartment->sponsoreds()->where('end_sponsored', '>', $now)->get()->isEmpty())
-            <div class="box-apartment rounded-bottom">
+          @if($apartment->sponsoreds()->where('end_sponsored', '>', $now)->get()->isNotEmpty())
+            <div class="box-apartment rounded-bottom sponsored">
               <a class="dets" href="{{ route('show.apart', $apartment->id) }}">
                 <div class="box-image">
                   <img src="{{ asset($apartment->path) }}">
@@ -22,7 +22,7 @@
               </a>
             </div>
           @else
-            <div class="box-apartment rounded-bottom sponsored">
+            <div class="box-apartment rounded-bottom">
               <a class="dets" href="{{ route('show.apart', $apartment->id) }}">
                 <div class="box-image">
                   <img src="{{ asset($apartment->path) }}">

@@ -150,32 +150,23 @@
               var lat = apiData.results[i].position.lat;
               var lon = apiData.results[i].position.lon;
               var id = apiData.results[i].poi.id;
-              var latitude = document.createElement("input");
-              latitude.type = "hidden";
-              latitude.name = "latitude";
-              latitude.value = lat;
-              var longitude = document.createElement("input");
-              longitude.type = "hidden";
-              longitude.name = "longitude";
-              longitude.value = lon;
+              var input = document.createElement("input");
+              input.type = "hidden";
+              input.name = "id[]";
+              input.value = id;
 
-              searchForm.append(latitude);
-              searchForm.append(longitude);
+              searchForm.append(input);
+
             }
           }
           else {
             var searchForm = $('.box-search-items');
-            var latitude = document.createElement("input");
-            latitude.type = "hidden";
-            latitude.name = "latitude";
-            latitude.value = 0;
-            var longitude = document.createElement("input");
-            longitude.type = "hidden";
-            longitude.name = "longitude";
-            longitude.value = 0;
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "id[]";
+            input.value = 0;
 
-            searchForm.append(latitude);
-            searchForm.append(longitude);
+            searchForm.append(input);
           }
         }
       },

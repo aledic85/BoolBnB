@@ -95,8 +95,7 @@ class GeneralController extends Controller
 
     $title = $request->title;
     $description = $request->description;
-    $latitude = $request->latitude;
-    $longitude = $request->longitude;
+    $id = $request->id;
     $rooms = $request->rooms;
     $beds = $request->beds;
     $bathrooms = $request->bathrooms;
@@ -115,11 +114,8 @@ class GeneralController extends Controller
     if ($description != null) {
       $query = $query->where('description', 'LIKE', '%'.$description.'%');
     }
-    if ($latitude != null) {
-      $query = $query->where('latitude', $latitude);
-    }
-    if ($longitude != null) {
-      $query = $query->where('longitude', $longitude);
+    if ($id != null) {
+      $query = $query->whereIn('id', $id);
     }
     if ($rooms != null) {
       $query = $query->where('rooms', $rooms);
@@ -166,18 +162,15 @@ class GeneralController extends Controller
 
   public function searchByCityResults(Request $request) {
 
-    $latitude = $request->latitude;
-    $longitude = $request->longitude;
+    $id = $request->id;
     $now = new Carbon();
 
     $query = Apartment::query();
 
-    if ($latitude != null) {
-      $query = $query->where('latitude', $latitude);
+    if ($id != null) {
+      $query = $query->whereIn('id', $id);
     }
-    if ($longitude != null) {
-      $query = $query->where('longitude', $longitude);
-    }
+
     $apartments = $query->active()->get();
 
 
