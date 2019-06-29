@@ -19,7 +19,16 @@
           <td>{{$message->description}}</td>
           <td>{{$message->email}}</td>
           <td>{{$message->title}}</td>
-          <td>{{$message->content}}</td>
+          @php
+            $msg = $message->content;
+            $length = 25;
+            $fix = substr($msg, 0, $length);
+
+            if (strlen($msg) > $length) {
+            $msg = $fix . "...";
+            }
+          @endphp
+          <td>{{$msg}}</td>
         </tr>
       @endforeach
     </table>
