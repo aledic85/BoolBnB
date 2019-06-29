@@ -1,6 +1,60 @@
 .container-fluid {
   min-height: calc(100vh - 80px);
 
+ .stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @media all and (min-width: 500px) and (max-width: 1160px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    div.stats-left {
+
+      color: $Logo_font_color;
+      width: 50%;
+      height: 75%;
+      padding: 100px;
+      margin: 50px 20px 0 0;
+      border: 1px solid $color_light_grey;
+      border-radius: 5px;
+      position: relative;
+      top: 50px;
+      box-shadow: 10px 10px 10px $color_light_grey;
+
+      @media all and (min-width: 500px) and (max-width: 1160px) {
+        width: 80%;
+        font-size: 18px;
+      }
+    }
+
+    div.stats-right {
+
+      color: $Logo_font_color;
+      width: 50%;
+      height: 75%;
+      padding: 100px;
+      margin: 50px 0 20px 0;
+      border: 1px solid $color_light_grey;
+      position: relative;
+      top: 60px;
+      border-radius: 5px;
+      box-shadow: 10px 10px 10px $color_light_grey;
+
+      @media all and (min-width: 500px) and (max-width: 1160px) {
+        width: 80%;
+        margin-bottom: 100px;
+        margin-right: 0;
+        margin-top: 50px;
+      }
+    }
+  }
+
   div.wrapper {
     background: transparent;
     width: 100%;
@@ -117,10 +171,14 @@
               text-decoration: none;
             }
 
-            @media screen and (max-width: 600px) {
+            @media all and (min-width: 500px) and (max-width: 1160px) {
+              width: 100%;
+              padding: 15px;
+              margin-top: 20px;
+              text-align: center;
               &:hover {
                 color: #ff5a5f;
-                background: rgba(255, 255, 255, .8);
+                background: rgba(255, 255, 255, 0.8);
               }
             }
           }

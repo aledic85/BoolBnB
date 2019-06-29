@@ -10663,6 +10663,18 @@ div.nav-bar {
   z-index: 100;
 }
 
+@media screen and (max-width: 768px) {
+  div.nav-bar {
+    position: relative;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1100px) {
+  div.nav-bar {
+    position: relative;
+  }
+}
+
 div.nav-bar .fas.fa-bars {
   display: none;
 }
@@ -10670,6 +10682,167 @@ div.nav-bar .fas.fa-bars {
 @media screen and (max-width: 992px) {
   div.nav-bar .fas.fa-bars {
     display: block;
+  }
+}
+
+div.nav-bar .hidden-nav-bar {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: none;
+  min-width: 100vw;
+  min-height: 150vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  z-index: 100;
+  background-color: #ff5a5f;
+}
+
+div.nav-bar .hidden-nav-bar i.fa-times {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #e4e4e4;
+}
+
+div.nav-bar .hidden-nav-bar div.mm {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  bottom: 150px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  position: relative;
+  right: 45px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item {
+  position: relative;
+  left: 45px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item a {
+  color: #e4e4e4;
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item a:hover {
+  color: #4a4a4a;
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 200px;
+  color: #ff5a5f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+
+@media all and (min-width: 768px) {
+  div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown {
+    position: relative;
+    bottom: 50px;
+  }
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown a#dropdown-item1 {
+  color: #ff5a5f;
+  margin: 0 20px 0 0;
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  text-align: center;
+}
+
+div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown a#dropdown-item2 {
+  color: #ff5a5f;
+  margin: 0 20px 0 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  text-align: center;
+}
+
+div.nav-bar .hidden-nav-bar div.mm span {
+  margin: 100px 70px 0 70px;
+  text-align: center;
+  width: 200px;
+  color: #e4e4e4;
+}
+
+@media all and (min-width: 768px) {
+  div.nav-bar .hidden-nav-bar div.mm span {
+    margin: 80px 70px 0 70px;
+  }
+}
+
+div.nav-bar .hidden-nav-bar div.mm span:hover {
+  color: #4a4a4a;
+}
+
+div.nav-bar .hidden-nav-bar div.mm span a {
+  margin: 0 160px 0 0;
+  text-decoration: none;
+  color: #e4e4e4;
+  position: relative;
+  right: 10px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm span a:hover {
+  color: #4a4a4a;
+}
+
+div.nav-bar .hidden-nav-bar div.mm #home {
+  position: relative;
+  right: 8px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm span#mare {
+  margin-left: 23px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm span#mare a {
+  margin: 50px 70px 0 70px;
+}
+
+div.nav-bar .hidden-nav-bar div.mm a {
+  margin: 100px 70px 0 70px;
+  position: relative;
+  left: 62px;
+  color: #ff5a5f;
+}
+
+@media screen and (max-width: 600px) {
+  div.nav-bar div.nav-bar-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media all and (max-width: 800px) {
+  div.nav-bar div.nav-bar-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -10719,6 +10892,12 @@ div.nav-bar div.nav-bar-right .diventa_login {
   justify-content: space-around;
   height: 80px;
   text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  div.nav-bar div.nav-bar-right {
+    display: none;
+  }
 }
 
 div.nav-bar div.nav-bar-right li.nav-item.dropdown {
@@ -10788,8 +10967,71 @@ div.nav-bar div.nav-bar-right #login span:hover {
   color: #fff;
 }
 
+div.nav-bar .active {
+  display: block;
+  display: flex;
+}
+
 .container-fluid {
   min-height: calc(100vh - 80px);
+}
+
+.container-fluid .stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media all and (min-width: 500px) and (max-width: 1160px) {
+  .container-fluid .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.container-fluid .stats div.stats-left {
+  color: #ff5a5f;
+  width: 50%;
+  height: 75%;
+  padding: 100px;
+  margin: 50px 20px 0 0;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  position: relative;
+  top: 50px;
+  box-shadow: 10px 10px 10px #e4e4e4;
+}
+
+@media all and (min-width: 500px) and (max-width: 1160px) {
+  .container-fluid .stats div.stats-left {
+    width: 80%;
+    font-size: 18px;
+  }
+}
+
+.container-fluid .stats div.stats-right {
+  color: #ff5a5f;
+  width: 50%;
+  height: 75%;
+  padding: 100px;
+  margin: 50px 0 20px 0;
+  border: 1px solid #e4e4e4;
+  position: relative;
+  top: 60px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #e4e4e4;
+}
+
+@media all and (min-width: 500px) and (max-width: 1160px) {
+  .container-fluid .stats div.stats-right {
+    width: 80%;
+    margin-bottom: 100px;
+    margin-right: 0;
+    margin-top: 50px;
+  }
 }
 
 .container-fluid div.wrapper {
@@ -10959,7 +11201,14 @@ div.nav-bar div.nav-bar-right #login span:hover {
   text-decoration: none;
 }
 
-@media screen and (max-width: 600px) {
+@media all and (min-width: 500px) and (max-width: 1160px) {
+  .container-fluid div.wrapper div.search div.search-items .advSearch {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
   .container-fluid div.wrapper div.search div.search-items .advSearch:hover {
     color: #ff5a5f;
     background: rgba(255, 255, 255, 0.8);
@@ -11600,6 +11849,15 @@ div.footer {
   height: 80px;
   border-top: 1px solid #e4e4e4;
   padding: 0 20px;
+}
+
+@media all and (min-width: 500px) and (max-width: 1160px) {
+  div.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 div.footer div.footer-left p.footer {
