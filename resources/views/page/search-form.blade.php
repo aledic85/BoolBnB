@@ -265,7 +265,6 @@
                    var description = res.description;
                    var address = res.address;
                    var sponsored = res.end_sponsored;
-                   var now = moment().format('YYYY-MM-DD HH:MM:SS');
 
                    var outData = {
 
@@ -274,7 +273,6 @@
                      title: title,
                      description: description,
                      address: address,
-                     now: now,
                      sponsored : sponsored
                    }
                    Handlebars.registerHelper('containsHttp', function(img_path){
@@ -291,9 +289,9 @@
                      }
                    });
 
-                   Handlebars.registerHelper('isSponsored', function(now, sponsored) {
+                   Handlebars.registerHelper('isSponsored', function(sponsored) {
 
-                     if (sponsored > now) {
+                     if (sponsored) {
 
                        return "sponsored";
                      }
