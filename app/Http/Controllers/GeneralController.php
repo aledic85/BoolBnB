@@ -173,7 +173,19 @@ class GeneralController extends Controller
 
     $apartments = $query->active()->get();
 
+    foreach ($apartments as $apartment) {
 
-    return view('page.search-by-city-results', compact('apartments', 'now'));
+      $sponsorships = $apartment->sponsoreds()->where('end_sponsored', '>', $now)->get();
+
+      if($sponsorships->isNotEmpty()){
+
+        foreach ($sponsorships as $sponsorship) {
+
+          $apartment['end_sponsored'] = $sponsorship['end_sponsored'];
+        }
+      }
+    }
+
+    return view('page.search-by-city-results', compact('apartments'));
   }
 }
