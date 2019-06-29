@@ -53,6 +53,11 @@
         margin-top: 50px;
       }
     }
+
+    .chart-cont > #myChart {
+      position: relative;
+      top: 30px;
+    }
   }
 
   div.wrapper {

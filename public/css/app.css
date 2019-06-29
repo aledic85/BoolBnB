@@ -10837,7 +10837,7 @@ div.nav-bar .hidden-nav-bar div.mm a {
   }
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 990px) {
   div.nav-bar div.nav-bar-left {
     position: absolute;
     top: 50%;
@@ -10894,7 +10894,7 @@ div.nav-bar div.nav-bar-right .diventa_login {
   text-align: right;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   div.nav-bar div.nav-bar-right {
     display: none;
   }
@@ -11032,6 +11032,11 @@ div.nav-bar .active {
     margin-right: 0;
     margin-top: 50px;
   }
+}
+
+.container-fluid .stats .chart-cont > #myChart {
+  position: relative;
+  top: 30px;
 }
 
 .container-fluid div.wrapper {
