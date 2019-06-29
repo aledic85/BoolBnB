@@ -54,9 +54,15 @@
       }
     }
 
-    .chart-cont > #myChart {
+    .chart-cont {
+
+      display: flex;
+      width: 40%;
+      height: 400px;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      top: 30px;
+      top: 20px;
     }
   }
 
@@ -683,14 +689,6 @@ div.details {
   }
 }
 
-.chart-cont {
-
-  display: flex;
-  width: 40%;
-  height: 400px;
-  justify-content: center;
-  align-items: center;
-}
 
 .paybox{
   margin: auto;

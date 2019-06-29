@@ -10717,7 +10717,14 @@ div.nav-bar .hidden-nav-bar div.mm {
   align-items: center;
   margin: auto;
   position: relative;
-  bottom: 150px;
+  bottom: 90px;
+}
+
+@media screen and (max-width: 992px) {
+  div.nav-bar .hidden-nav-bar div.mm {
+    position: relative;
+    bottom: 90px;
+  }
 }
 
 div.nav-bar .hidden-nav-bar div.mm div.diventa_login {
@@ -10788,7 +10795,7 @@ div.nav-bar .hidden-nav-bar div.mm span {
 
 @media all and (min-width: 768px) {
   div.nav-bar .hidden-nav-bar div.mm span {
-    margin: 80px 70px 0 70px;
+    margin: 70px 70px 0 70px;
   }
 }
 
@@ -10822,10 +10829,16 @@ div.nav-bar .hidden-nav-bar div.mm span#mare a {
 }
 
 div.nav-bar .hidden-nav-bar div.mm a {
-  margin: 100px 70px 0 70px;
+  margin: 80px 70px 0 70px;
   position: relative;
   left: 62px;
   color: #ff5a5f;
+}
+
+@media all and (min-width: 1100px) {
+  div.nav-bar .hidden-nav-bar div.mm {
+    margin: 70px 70px 0 70px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -11034,9 +11047,14 @@ div.nav-bar .active {
   }
 }
 
-.container-fluid .stats .chart-cont > #myChart {
+.container-fluid .stats .chart-cont {
+  display: flex;
+  width: 40%;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  top: 30px;
+  top: 20px;
 }
 
 .container-fluid div.wrapper {
@@ -11785,14 +11803,6 @@ div.details div.details-down div.down-right button:hover {
 .sponsored h3,
 .sponsored p {
   color: black !important;
-}
-
-.chart-cont {
-  display: flex;
-  width: 40%;
-  height: 400px;
-  justify-content: center;
-  align-items: center;
 }
 
 .paybox {
