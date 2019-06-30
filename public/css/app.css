@@ -10716,14 +10716,12 @@ div.nav-bar .hidden-nav-bar div.mm {
   justify-content: flex-start;
   align-items: center;
   margin: auto;
-  position: relative;
-  bottom: 90px;
 }
 
 @media screen and (max-width: 992px) {
   div.nav-bar .hidden-nav-bar div.mm {
     position: relative;
-    bottom: 100px;
+    bottom: 150px;
   }
 }
 
@@ -10731,7 +10729,7 @@ div.nav-bar .hidden-nav-bar div.mm {
   div.nav-bar .hidden-nav-bar div.mm {
     padding-top: 10px;
     position: relative;
-    bottom: 50px;
+    bottom: 200px;
   }
 }
 

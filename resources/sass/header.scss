@@ -59,18 +59,16 @@ div.nav-bar {
        justify-content: flex-start;
        align-items: center;
        margin: auto;
-       position: relative;
-       bottom: 90px;
 
        @media screen and (max-width: 992px) {
          position: relative;
-         bottom: 100px;
+         bottom: 150px;
        }
 
        @media screen and (min-width: 992px) {
          padding-top: 10px;
          position: relative;
-         bottom: 50px;
+         bottom: 200px;
        }
 
        div.diventa_login {
