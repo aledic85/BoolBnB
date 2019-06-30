@@ -10747,6 +10747,11 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item {
   left: 45px;
 }
 
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item .dropdown-toggle::after {
+  position: relative;
+  right: 100px;
+}
+
 div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item a {
   color: #e4e4e4;
 }
@@ -10759,7 +10764,8 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item d
   width: 100px;
   height: 100px;
   position: relative;
-  left: 200px;
+  top: 10px;
+  left: 100px;
   color: #ff5a5f;
   display: flex;
   flex-direction: column;

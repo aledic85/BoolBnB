@@ -85,7 +85,12 @@ div.nav-bar {
            position: relative;
            left: 45px;
 
-           a {
+            .dropdown-toggle::after {
+              position: relative;
+              right: 100px;
+            }
+
+            a {
 
               color: $color_light_grey;
 
@@ -99,7 +104,8 @@ div.nav-bar {
               width: 100px;
               height: 100px;
               position: relative;
-              left: 200px;
+              top: 10px;
+              left: 100px;
               color: $Logo_font_color;
               display: flex;
               flex-direction: column;
@@ -219,7 +225,6 @@ div.nav-bar {
           &:hover {
             color: darken($Logo_font_color, 20%);
           }
-
         }
       }
     }
@@ -238,7 +243,6 @@ div.nav-bar {
         .caret {
           padding: 0;
         }
-
       }
 
       span {
