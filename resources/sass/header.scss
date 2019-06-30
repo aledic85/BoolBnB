@@ -51,7 +51,7 @@ div.nav-bar {
         color: $color_light_grey;
      }
 
-     div.mm {
+     div.hidden-container {
 
        display: flex;
        list-style: none;
@@ -68,7 +68,7 @@ div.nav-bar {
        @media screen and (min-width: 992px) {
          padding-top: 10px;
          position: relative;
-         bottom: 200px;
+         bottom: 160px;
        }
 
        div.diventa_login {

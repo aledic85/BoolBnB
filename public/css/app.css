@@ -10709,7 +10709,7 @@ div.nav-bar .hidden-nav-bar i.fa-times {
   color: #e4e4e4;
 }
 
-div.nav-bar .hidden-nav-bar div.mm {
+div.nav-bar .hidden-nav-bar div.hidden-container {
   display: flex;
   list-style: none;
   flex-direction: column;
@@ -10719,21 +10719,21 @@ div.nav-bar .hidden-nav-bar div.mm {
 }
 
 @media screen and (max-width: 992px) {
-  div.nav-bar .hidden-nav-bar div.mm {
+  div.nav-bar .hidden-nav-bar div.hidden-container {
     position: relative;
     bottom: 150px;
   }
 }
 
 @media screen and (min-width: 992px) {
-  div.nav-bar .hidden-nav-bar div.mm {
+  div.nav-bar .hidden-nav-bar div.hidden-container {
     padding-top: 10px;
     position: relative;
-    bottom: 200px;
+    bottom: 160px;
   }
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -10742,20 +10742,20 @@ div.nav-bar .hidden-nav-bar div.mm div.diventa_login {
   right: 45px;
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item {
   position: relative;
   left: 45px;
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item a {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item a {
   color: #e4e4e4;
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item a:hover {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item a:hover {
   color: #4a4a4a;
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item div#dropdown {
   width: 100px;
   height: 100px;
   position: relative;
@@ -10768,13 +10768,13 @@ div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown {
 }
 
 @media all and (min-width: 768px) {
-  div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown {
+  div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item div#dropdown {
     position: relative;
     bottom: 50px;
   }
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown a#dropdown-item1 {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item div#dropdown a#dropdown-item1 {
   color: #ff5a5f;
   margin: 0 20px 0 0;
   position: absolute;
@@ -10783,7 +10783,7 @@ div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown a#
   text-align: center;
 }
 
-div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown a#dropdown-item2 {
+div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item div#dropdown a#dropdown-item2 {
   color: #ff5a5f;
   margin: 0 20px 0 0;
   position: absolute;
@@ -10792,7 +10792,7 @@ div.nav-bar .hidden-nav-bar div.mm div.diventa_login li.nav-item div#dropdown a#
   text-align: center;
 }
 
-div.nav-bar .hidden-nav-bar div.mm span {
+div.nav-bar .hidden-nav-bar div.hidden-container span {
   margin: 100px 70px 0 70px;
   text-align: center;
   width: 200px;
@@ -10800,22 +10800,22 @@ div.nav-bar .hidden-nav-bar div.mm span {
 }
 
 @media all and (max-width: 1100px) {
-  div.nav-bar .hidden-nav-bar div.mm span {
+  div.nav-bar .hidden-nav-bar div.hidden-container span {
     margin: 85px 70px 0 70px;
   }
 }
 
 @media all and (min-width: 1100px) {
-  div.nav-bar .hidden-nav-bar div.mm span {
+  div.nav-bar .hidden-nav-bar div.hidden-container span {
     margin: 70px 70px 0 70px;
   }
 }
 
-div.nav-bar .hidden-nav-bar div.mm span:hover {
+div.nav-bar .hidden-nav-bar div.hidden-container span:hover {
   color: #4a4a4a;
 }
 
-div.nav-bar .hidden-nav-bar div.mm span a {
+div.nav-bar .hidden-nav-bar div.hidden-container span a {
   margin: 0 160px 0 0;
   text-decoration: none;
   color: #e4e4e4;
@@ -10823,24 +10823,24 @@ div.nav-bar .hidden-nav-bar div.mm span a {
   right: 10px;
 }
 
-div.nav-bar .hidden-nav-bar div.mm span a:hover {
+div.nav-bar .hidden-nav-bar div.hidden-container span a:hover {
   color: #4a4a4a;
 }
 
-div.nav-bar .hidden-nav-bar div.mm #home {
+div.nav-bar .hidden-nav-bar div.hidden-container #home {
   position: relative;
   right: 8px;
 }
 
-div.nav-bar .hidden-nav-bar div.mm span#mare {
+div.nav-bar .hidden-nav-bar div.hidden-container span#mare {
   margin-left: 23px;
 }
 
-div.nav-bar .hidden-nav-bar div.mm span#mare a {
+div.nav-bar .hidden-nav-bar div.hidden-container span#mare a {
   margin: 50px 70px 0 70px;
 }
 
-div.nav-bar .hidden-nav-bar div.mm a {
+div.nav-bar .hidden-nav-bar div.hidden-container a {
   margin: 80px 70px 0 70px;
   position: relative;
   left: 62px;
@@ -10848,7 +10848,7 @@ div.nav-bar .hidden-nav-bar div.mm a {
 }
 
 @media all and (min-width: 1100px) {
-  div.nav-bar .hidden-nav-bar div.mm a {
+  div.nav-bar .hidden-nav-bar div.hidden-container a {
     margin: 70px 70px 0 70px;
   }
 }

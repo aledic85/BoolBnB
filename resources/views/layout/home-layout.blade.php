@@ -37,7 +37,7 @@
          <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
          <div class="hidden-nav-bar">
           <i class="fas fa-times fa-2x"></i>
-          <div class="mm">
+          <div class="hidden-container">
             <span id="home" ><a href="{{route('home')}}">HOME</a></span>
             <span id="mare" >MARE</span>
             <span>MONTAGNA</span>
