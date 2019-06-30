@@ -10793,7 +10793,13 @@ div.nav-bar .hidden-nav-bar div.mm span {
   color: #e4e4e4;
 }
 
-@media all and (min-width: 768px) {
+@media all and (max-width: 1100px) {
+  div.nav-bar .hidden-nav-bar div.mm span {
+    margin: 85px 70px 0 70px;
+  }
+}
+
+@media all and (min-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.mm span {
     margin: 70px 70px 0 70px;
   }

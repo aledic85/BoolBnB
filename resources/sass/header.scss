@@ -134,7 +134,11 @@ div.nav-bar {
          width: 200px;
          color: $color_light_grey;
 
-         @media all and (min-width: 768px) {
+         @media all and (max-width: 1100px) {
+          margin: 85px 70px 0 70px;
+         }
+
+         @media all and (min-width: 1100px) {
           margin: 70px 70px 0 70px;
          }
 
