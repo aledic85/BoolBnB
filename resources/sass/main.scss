@@ -54,16 +54,7 @@
       }
     }
 
-    .chart-cont {
 
-      display: flex;
-      width: 40%;
-      height: 400px;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      top: 20px;
-    }
   }
 
   div.wrapper {
@@ -229,6 +220,8 @@
 
         h2 {
           padding: 20px 0;
+          text-align: center;
+          color: $Logo_font_color;
         }
       }
     }
@@ -583,6 +576,21 @@
           margin-top: 20px;
         }
       }
+    }
+  }
+
+  .chart-cont {
+
+    display: flex;
+    width: 40%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50px;
+
+    @media all and (max-width: 600px) {
+      display: none;
     }
   }
 }

@@ -11047,16 +11047,6 @@ div.nav-bar .active {
   }
 }
 
-.container-fluid .stats .chart-cont {
-  display: flex;
-  width: 40%;
-  height: 400px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 20px;
-}
-
 .container-fluid div.wrapper {
   background: transparent;
   width: 100%;
@@ -11307,6 +11297,8 @@ div.nav-bar .active {
 
 .container-fluid div.wrapper div.homeP .title h2 {
   padding: 20px 0;
+  text-align: center;
+  color: #ff5a5f;
 }
 
 .container-fluid div.wrapper div.dashB button,
@@ -11689,6 +11681,22 @@ div.nav-bar .active {
 
 .container-fluid div.wrapper .boxForm form .ap-dropdown-menu {
   margin-top: 20px;
+}
+
+.container-fluid .chart-cont {
+  display: flex;
+  width: 40%;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50px;
+}
+
+@media all and (max-width: 600px) {
+  .container-fluid .chart-cont {
+    display: none;
+  }
 }
 
 div.details {
