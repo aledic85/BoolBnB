@@ -10723,7 +10723,15 @@ div.nav-bar .hidden-nav-bar div.mm {
 @media screen and (max-width: 992px) {
   div.nav-bar .hidden-nav-bar div.mm {
     position: relative;
-    bottom: 90px;
+    bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  div.nav-bar .hidden-nav-bar div.mm {
+    padding-top: 10px;
+    position: relative;
+    bottom: 50px;
   }
 }
 
@@ -10842,7 +10850,7 @@ div.nav-bar .hidden-nav-bar div.mm a {
 }
 
 @media all and (min-width: 1100px) {
-  div.nav-bar .hidden-nav-bar div.mm {
+  div.nav-bar .hidden-nav-bar div.mm a {
     margin: 70px 70px 0 70px;
   }
 }

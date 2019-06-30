@@ -64,7 +64,13 @@ div.nav-bar {
 
        @media screen and (max-width: 992px) {
          position: relative;
-         bottom: 90px;
+         bottom: 100px;
+       }
+
+       @media screen and (min-width: 992px) {
+         padding-top: 10px;
+         position: relative;
+         bottom: 50px;
        }
 
        div.diventa_login {
@@ -178,10 +184,10 @@ div.nav-bar {
           position: relative;
           left: 62px;
           color: $Logo_font_color;
-        }
 
-        @media all and (min-width: 1100px) {
-         margin: 70px 70px 0 70px;
+          @media all and (min-width: 1100px) {
+           margin: 70px 70px 0 70px;
+          }
         }
      }
     }
