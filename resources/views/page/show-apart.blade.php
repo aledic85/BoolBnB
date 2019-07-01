@@ -30,7 +30,7 @@
                   </div>
               </div>
               <div class="down-right">
-                  <h1>Scrivi al Proprietario</h1>
+                  <h1>Scrivi a {{$apartment->user->name}} {{$apartment->user->lastname}}</h1>
                   <form class="" action="{{route('send.mail', ['contactUser' => $apartment->user_id, 'apartment' => $apartment->id])}}" method="post">
                     @csrf
                     @method('POST')

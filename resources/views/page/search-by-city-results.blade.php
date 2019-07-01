@@ -6,8 +6,8 @@
       <div class="title">
         <h2>Risultati della ricerca:</h2>
       </div>
-      <div class="box-apartments flex-column align-items-center">
-        <div class="apartments-sponsored d-flex">
+      <div class="box-apartments flex-column flex-nowrap align-items-center">
+        <div class="apartments-sponsored d-flex justify-content-start flex-wrap">
           @foreach ($apartments as $apartment)
             @if($apartment->end_sponsored)
             <div class="box-apartment rounded-bottom sponsored">
@@ -25,7 +25,7 @@
           @endif
           @endforeach
         </div>
-        <div class="apartments-unsponsored d-flex mt-5">
+        <div class="apartments-unsponsored d-flex flex-wrap mt-5">
           @foreach ($apartments as $apartment)
             @if(!$apartment->end_sponsored)
             <div class="box-apartment rounded-bottom">
