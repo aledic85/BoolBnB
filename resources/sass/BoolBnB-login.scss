@@ -1,0 +1,28 @@
+div#app {
+
+  main.py-4 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background-image: url('/img/stagione_estate_038.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @media screen and (max-width: 768px) {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+      padding: 40px;
+    }
+  }
+
+  .container {
+
+    .boxLogin {
+      padding-right: 0;
+      padding-left: 0;
+      box-shadow: 1px 1px 25px grey;
+    }
+  }
+}

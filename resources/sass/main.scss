@@ -598,7 +598,6 @@
 div.details {
 
   @include show-apart_img;
-  background: $color_light_grey;
 
   div.details-middle {
 
@@ -659,14 +658,24 @@ div.details {
     }
 
     div.down-right {
-
       display: flex;
       flex-direction: column;
+      padding: 40px;
 
-      h1 {
+      form {
 
+        label.error {
+          text-align: right;
+          font-size: .75rem;
+          color: red;
+          width: 100%;
+        }
+      }
+
+      h3 {
         margin-bottom: 20px;
-        color: $Logo_font_color;
+        color: #555;
+
       }
 
       #email {

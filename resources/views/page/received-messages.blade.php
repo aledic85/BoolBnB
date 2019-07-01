@@ -25,6 +25,7 @@
       margin-top: 150px;
     }
 
+<h3>I messaggi dai tuoi clienti</h3>
     #close{
       cursor: pointer;
       position: absolute;
@@ -57,7 +58,6 @@
       <p id="popup-text"></p>
     </div>
   </div>
-
     <table>
       <tr>
         <th>Name</th>

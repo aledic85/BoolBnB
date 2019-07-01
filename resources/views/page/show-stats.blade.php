@@ -41,8 +41,10 @@
    data: {
        labels: month,
        datasets: [{
-           label: 'Visualizzazioni per mese',
-           backgroundColor: ['red', 'blue'],
+
+           label: 'Visualizzazioni Mensili',
+           backgroundColor: 'rgb(255, 99, 132)',
+
            borderColor: 'rgb(255, 99, 132)',
            data: views
        }]
