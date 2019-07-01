@@ -130,6 +130,18 @@ function validationJQuery() {
   });
 }
 
+function hiddenNavShow() {
+
+  var hidden_nav = $("div.hidden-nav-bar");
+  hidden_nav.toggleClass("active");
+}
+
+function hiddenNavHide() {
+
+  var hidden_nav = $("div.hidden-nav-bar");
+  hidden_nav.removeClass("active");
+}
+
 function init() {
 
   var title = $(".appartments_container > h3");
@@ -143,6 +155,12 @@ function init() {
   });
 
   validationJQuery();
+
+  var menu = $("i.fa-bars");
+  menu.click(hiddenNavShow);
+  
+  var hiddenmenù =$("i.fa-times");
+  hiddenmenù.click(hiddenNavHide);
 }
 
 $(document).ready(init);

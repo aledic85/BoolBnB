@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form class="" method="post">
+  <form class="" method="get">
     @csrf
     <div class="container">
       <div class="row">
@@ -29,7 +29,7 @@
     </div>
   </form>
 
- <script type="text/javascript">
+<script type="text/javascript">
 
   var button = document.querySelector('#submit-button');
 
@@ -45,14 +45,13 @@
            if (response.success) {
 
              var dataArr = $( 'form' ).serializeArray();
-             console.log(dataArr);
              $.ajax({
                url: '/dashboard/payment/success/{id}',
                method: 'GET',
                data: dataArr,
                success: function(inData) {
 
-                 window.location.replace("http://localhost/dashboard");
+                 window.location.replace("http://localhost/dashboard/sponsorship-success");
                }
 
              });

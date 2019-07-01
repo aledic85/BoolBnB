@@ -161,14 +161,14 @@ class HomeController extends Controller
 
      public function showStats($id) {
 
-       $today = Carbon::today()->day;
-       $tomorrow = Carbon::tomorrow()->day;
        $totalMessages = Message::where('apartment_id', $id)->count();
        $totalViews = View::where('apartment_id', $id)->count();
+       
        $dates = View::where('apartment_id', $id)
-                     ->select('created_at')->get();
+                     ->select('created_at')->get()->all();
 
        $months = [];
+
        foreach ($dates as $date) {
 
          $months[] = $date['created_at']->englishMonth;
