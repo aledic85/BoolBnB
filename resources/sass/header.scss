@@ -4,6 +4,7 @@ div.nav-bar {
     padding: $padding_navbar_footer;
     @include flexNavbarAndFooter;
     background-color: rgba(228, 228, 228, .8);
+    border-bottom: .5px solid #ff5a5f;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -12,6 +13,29 @@ div.nav-bar {
       display: none;
       @media screen and (max-width: 992px) {
         display: block;
+      }
+    }
+
+    .menu-mobile {
+
+      .diventa_login {
+        margin-top: 40px;
+
+        a {
+          display: inline-block;
+          text-align: center;
+          text-decoration: none;
+          color: #7d7d7d;
+          border: 2px solid #7d7d7d;
+          padding: 3px 10px;
+          border-radius: 4px;
+          margin-left: 10px;
+
+          span {
+            display: inline;
+            color: #7d7d7d;
+          }
+        }
       }
     }
 

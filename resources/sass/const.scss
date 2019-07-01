@@ -158,24 +158,62 @@ $main_margin: 100px;
 }
 
 @mixin show-apart_img {
+  width: 100%;
+  padding: 30px;
+  background: $color_light_grey;
 
   .img-container {
-
       padding-bottom: 100px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      @media screen and (max-width: 850px) {
+        flex-direction: column;
+      }
 
       img {
-        width: 1350px;
-        height: 575px;
+        width: 65%;
+        border-bottom-right-radius: 25px;
+        @media screen and (max-width: 850px) {
+          width: 100%;
+        }
+      }
+
+      .infoDetails {
+        text-align: right;
+        padding: 0 10px;
+        width: 35%;
+        @media screen and (max-width: 850px) {
+          width: 100%;
+        }
+
+        h2 {
+          color: #ff5a5f;
+          font-size: 1.875rem;
+        }
+
+        span {
+          color: #7d7d7d;
+          font-size: .875rem;
+        }
+
+        p {
+          color: #7d7d7d;
+          font-size: 1.25rem;
+        }
+
+        ul {
+          text-align: left;
+          margin-top: 50px;
+        }
       }
    }
 }
 
 @mixin details-middle {
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding:100px;
+  width: 100%;
+  height: 600px;
+  background: #ff5a5f;
 }
 
 @mixin details-down {
@@ -183,7 +221,25 @@ $main_margin: 100px;
   display: flex;
   justify-content: space-around;
   width: 100%;
-  padding: 100px;
+
+  .down-right {
+
+    form {
+
+      input,  {
+        width: 80%;
+        margin-left: 7%;
+      }
+
+      label {
+        width: 10%;
+      }
+
+      textarea {
+          width: 98%;
+      }
+    }
+  }
 }
 
 @mixin button {
@@ -194,8 +250,11 @@ $main_margin: 100px;
     color: $color_white;
     border: none;
     height: 50px;
+    width: 30%;
+    margin: auto;
+    display: block;
+    font-size: 1.25rem;
     border-radius: 5px;
-
     &:hover {
 
       border : 1px solid $Logo_font_color;

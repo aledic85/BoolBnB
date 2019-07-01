@@ -36820,6 +36820,17 @@ function validationJQuery() {
           number: true,
           positiveNumber: true,
           min: 20
+        },
+        name: "required",
+        lastname: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        content: {
+          required: true,
+          minlength: 10,
+          maxlength: 100
         }
       },
       messages: {
@@ -36857,6 +36868,20 @@ function validationJQuery() {
           required: "QUESTO CAMPO È OBBLIGATORIO",
           number: "INSERISCI UN NUMERO VALIDO",
           min: "INSERISCI UNA METRATURA UGUALE O SUPERIORE A 20"
+        },
+        name: {
+          required: "INSERISCI IL TUO NOME"
+        },
+        lastname: {
+          required: "INSERISCI IL TUO COGNOME"
+        },
+        email: {
+          required: "INSERISCI LA TUA EMAIL"
+        },
+        content: {
+          required: "INSERISCI IL TESTO DEL TUO MESSAGGIO",
+          minlength: "INSERISCI ALMENO 10 CARATTERI",
+          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 100 CARATTERI"
         }
       }
     });

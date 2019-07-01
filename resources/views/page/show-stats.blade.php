@@ -27,7 +27,7 @@
    data: {
        labels: uniqueMonths,
        datasets: [{
-           label: 'Visualizzazioni per mese',
+           label: 'Visualizzazioni Mensili',
            backgroundColor: 'rgb(255, 99, 132)',
            borderColor: 'rgb(255, 99, 132)',
            data: [views]

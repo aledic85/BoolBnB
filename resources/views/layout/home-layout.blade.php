@@ -34,7 +34,7 @@
    </head>
    <body>
      <div class="nav-bar">
-        <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
+         <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
          <div class="nav-bar-left">
              <a href="{{route('home')}}"><h1>BoolBnB</h1></a>
          </div>

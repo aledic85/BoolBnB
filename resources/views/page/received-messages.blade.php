@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<h3>I messaggi dai tuoi clienti</h3>
     <table>
       <tr>
         <th>Name</th>

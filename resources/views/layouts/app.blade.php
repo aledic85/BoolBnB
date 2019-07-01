@@ -23,6 +23,12 @@
     <div id="app">
       <div class="nav-bar">
           <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
+          <div class="appM" style="display: none;">
+            <span><a href="{{route('home')}}">HOME</a></span>
+            <span>MARE</span>
+            <span>MONTAGNA</span>
+            <span>ESPERIENZE</span>
+          </div>
           <div class="nav-bar-left">
             <a href="{{route('home')}}"><h1>BoolBnB</h1></a>
           </div>
@@ -63,9 +69,32 @@
           </div>
       </div>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+      <main class="py-4">
+          @yield('content')
+      </main>
+
+      <div class="footer">
+        <div class="footer-left">
+            <p class ="footer">© 2019 BoolBnB.com, Inc.<a href="#">Terms and Conditions</a><a href="#">Privacy</a></p>
+        </div>
+        <div class="footer-rigth">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
     </div>
+    <script>
+
+      var hambIcon = $('.fas.fa-bars');
+      hambIcon.click(function() {
+
+        var menuMobile = $('.appM');
+        menuMobile.slideToggle();
+      });
+
+    </script>
 </body>
 </html>
