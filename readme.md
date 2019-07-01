@@ -1,10 +1,10 @@
-##BoolBnb
+# BoolBnb
 
 BoolBnB è il progetto finale del corso Boolean Careers Full Stack Web Developer (classe IV), ideato per poter utilizzare tutte le tecnologie e metodologie studiate durante il corso.
 
 Il progetto è stato sviluppato in circa 3 settimane da un team remoto di 4 persone.
 
-#Brief
+## Brief
 
 BoolBnB è una applicazione per trovare e gestire l’affitto di appartamenti.
 Attraverso BoolBnB i proprietari di appartamento possono inserire le informazioni degli appartamenti che vogliono affittare per cercare utenti interessati.
@@ -14,7 +14,7 @@ Una volta trovata l’appartamento desiderato, l’utente interessato può conta
 
 Inoltre, i proprietari di un appartamento possono decidere di pagare per sponsorizzare l’annuncio del proprio appartamento per fare in modo che il loro annuncio sia maggiormente in evidenza rispetto a quelli non sponsorizzati.
 
-#Tecnologie utilizzate
+## Tecnologie utilizzate
 
 - Stack LAMP
 - Laravel
