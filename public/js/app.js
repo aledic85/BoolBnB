@@ -36863,6 +36863,16 @@ function validationJQuery() {
   });
 }
 
+function hiddenNavShow() {
+  var hidden_nav = $("div.hidden-nav-bar");
+  hidden_nav.toggleClass("active");
+}
+
+function hiddenNavHide() {
+  var hidden_nav = $("div.hidden-nav-bar");
+  hidden_nav.removeClass("active");
+}
+
 function init() {
   var title = $(".appartments_container > h3");
   var titleText = title.text();
@@ -36872,6 +36882,10 @@ function init() {
     validationSearchForm();
   });
   validationJQuery();
+  var menu = $("i.fa-bars");
+  menu.click(hiddenNavShow);
+  var hiddenmenù = $("i.fa-times");
+  hiddenmenù.click(hiddenNavHide);
 }
 
 $(document).ready(init);
@@ -36954,8 +36968,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\Laravel\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
