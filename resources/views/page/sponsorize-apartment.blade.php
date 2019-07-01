@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form class="" method="post">
+  <form class="" method="get">
     @csrf
     <div class="container">
       <div class="row">
@@ -45,7 +45,6 @@
            if (response.success) {
 
              var dataArr = $( 'form' ).serializeArray();
-             console.log(dataArr);
              $.ajax({
                url: '/dashboard/payment/success/{id}',
                method: 'GET',
