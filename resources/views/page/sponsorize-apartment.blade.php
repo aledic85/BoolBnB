@@ -29,7 +29,7 @@
     </div>
   </form>
 
- <script type="text/javascript">
+<script type="text/javascript">
 
   var button = document.querySelector('#submit-button');
 
@@ -51,7 +51,7 @@
                data: dataArr,
                success: function(inData) {
 
-                 window.location.replace("http://localhost/dashboard");
+                 window.location.replace("http://localhost/dashboard/sponsorship-success");
                }
 
              });

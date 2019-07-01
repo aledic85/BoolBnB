@@ -753,3 +753,19 @@ table{
     padding: 8px;
   }
 }
+
+.succ-wrap {
+
+  margin-top: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+
+  i {
+
+    color: green;
+    font-size: 100px;
+  }
+}
