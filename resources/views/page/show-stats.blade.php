@@ -1,9 +1,16 @@
 @extends('layout.home-layout')
 
 @section('content')
-
- <h1>Numero totale visualizzazioni appartamento = {{$totalViews}}</h1>
- <h1>Numero totale messaggi ricevuti appartamento = {{$totalMessages}}</h1>
+ <div class="stats">
+      <div class="stats-left">
+          <i class="fas fa-eye fa-2x"></i>
+          <h2>Numero totale visualizzazioni appartamento = {{$totalViews}}</h1>
+      </div>
+      <div class="stats-right">
+          <i class="fas fa-inbox fa-2x"></i>
+          <h2>Numero totale messaggi ricevuti appartamento = {{$totalMessages}}</h1>
+      </div>
+  </div>
  <div class="chart-cont">
    <canvas id="myChart"></canvas>
  </div>

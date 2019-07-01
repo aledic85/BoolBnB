@@ -34,7 +34,46 @@
    </head>
    <body>
      <div class="nav-bar">
-        <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
+         <i class="fas fa-bars fa-2x" style="color:#7d7d7d;"></i>
+         <div class="hidden-nav-bar">
+          <i class="fas fa-times fa-2x"></i>
+          <div class="hidden-container">
+            <span id="home" ><a href="{{route('home')}}">HOME</a></span>
+            <span id="mare" >MARE</span>
+            <span>MONTAGNA</span>
+            <span>ESPERIENZE</span>
+            <div class="diventa_login">
+              @guest
+                <a id="login" href="{{ route('login') }}"><span>{{ __('Login') }}</span></a>
+                @if (Route::has('register'))
+                  <a id="newHost" href="{{ route('register') }}"><span>{{ __('Diventa un Host') }}</span></a>
+                @endif
+              @else
+                <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+
+                  <div id="dropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a id="dropdown-item1" class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                  </a>
+                  <a id="dropdown-item2" class="dropdown-item" href="{{ route('dashboard') }}">
+                    {{ __('Dashboard') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </div>
+              </li>
+             @endguest
+            </div>
+          </div>
+
+        </div>
          <div class="nav-bar-left">
              <a href="{{route('home')}}"><h1>BoolBnB</h1></a>
          </div>
