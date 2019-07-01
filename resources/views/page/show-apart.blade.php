@@ -19,15 +19,11 @@
               </ul>
             </div>
           </div>
-          <div class="details-middle">
-              <div class="middle-right">
-                <div class="down-left">
-                  <div class="map-container">
-                    <div id="map"></div>
-                  </div>
-                </div>
+            <div class="down-left">
+              <div class="map-container">
+                <div id="map"></div>
               </div>
-          </div>
+            </div>
           <div class="details-down">
               <div class="down-right">
 
