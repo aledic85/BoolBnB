@@ -214,7 +214,7 @@
            getPosition(e.suggestion.value);
         });
           placesAutocomplete.on('clear', function() {
-            $('input.id').remove();
+            $('input[type=hidden]').remove();
          });
          // Fine Aggiornamento in h1 in real time
       // Fine init
