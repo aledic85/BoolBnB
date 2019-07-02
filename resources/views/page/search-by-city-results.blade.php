@@ -25,7 +25,7 @@
           @endif
           @endforeach
         </div>
-        <div class="apartments-unsponsored d-flex flex-wrap mt-5">
+        <div class="apartments-unsponsored d-flex justify-content-center flex-wrap mt-5">
           @foreach ($apartments as $apartment)
             @if(!$apartment->end_sponsored)
             <div class="box-apartment rounded-bottom">
