@@ -10722,7 +10722,7 @@ div.nav-bar .hidden-nav-bar div.hidden-container {
 @media screen and (max-width: 992px) {
   div.nav-bar .hidden-nav-bar div.hidden-container {
     position: absolute;
-    top: 0;
+    top: 80px;
   }
 }
 
@@ -10730,7 +10730,7 @@ div.nav-bar .hidden-nav-bar div.hidden-container {
   div.nav-bar .hidden-nav-bar div.hidden-container {
     padding-top: 10px;
     position: absolute;
-    top: 0;
+    top: 80px;
   }
 }
 
@@ -10800,7 +10800,7 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item d
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span {
-  margin: 100px 70px 0 70px;
+  width: 70%;
   text-align: center;
   width: 200px;
   color: #e4e4e4;
@@ -10808,13 +10808,13 @@ div.nav-bar .hidden-nav-bar div.hidden-container span {
 
 @media all and (max-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.hidden-container span {
-    margin: 85px 70px 0 72px;
+    width: 70%;
   }
 }
 
 @media all and (min-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.hidden-container span {
-    margin: 80px 70px 0 72px;
+    width: 70%;
   }
 }
 
@@ -10836,11 +10836,12 @@ div.nav-bar .hidden-nav-bar div.hidden-container span a:hover {
 
 div.nav-bar .hidden-nav-bar div.hidden-container #home {
   position: relative;
-  right: 6px;
+  right: 28px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#mare {
-  margin-left: 26px;
+  position: relative;
+  right: 23px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#mare a {
@@ -10849,19 +10850,19 @@ div.nav-bar .hidden-nav-bar div.hidden-container span#mare a {
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#esperienze {
   position: relative;
-  right: 1px;
+  right: 2px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container a {
-  margin: 80px 70px 0 70px;
+  width: 100%;
   position: relative;
-  left: 62px;
+  left: 57px;
   color: #ff5a5f;
 }
 
 @media all and (min-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.hidden-container a {
-    margin: 80px 70px 0 70px;
+    width: 100%;
   }
 }
 

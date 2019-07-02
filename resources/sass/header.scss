@@ -63,13 +63,13 @@ div.nav-bar {
 
        @media screen and (max-width: 992px) {
          position: absolute;
-         top: 0;
+         top: 80px;
        }
 
        @media screen and (min-width: 992px) {
          padding-top: 10px;
          position: absolute;
-         top: 0;
+         top: 80px;
        }
 
        div.diventa_login {
@@ -140,17 +140,17 @@ div.nav-bar {
        }
 
        span {
-         margin: 100px 70px 0 70px;
+         width: 70%;
          text-align: center;
          width: 200px;
          color: $color_light_grey;
 
          @media all and (max-width: 1100px) {
-          margin: 85px 70px 0 72px;
+          width: 70%;
          }
 
          @media all and (min-width: 1100px) {
-          margin: 80px 70px 0 72px;
+          width: 70%;
          }
 
          &:hover {
@@ -172,12 +172,13 @@ div.nav-bar {
 
        #home {
          position: relative;
-         right: 6px;
+         right: 28px;
        }
 
        span#mare {
 
-         margin-left: 26px;
+          position: relative;
+          right: 23px;
 
          a {
            margin: 50px 70px 0 70px;
@@ -186,17 +187,21 @@ div.nav-bar {
 
        span#esperienze {
          position: relative;
-         right: 1px;
+         right: 2px;
        }
 
+       #login {}
+
+       #newHost {}
+
         a {
-          margin: 80px 70px 0 70px;
+          width: 100%;
           position: relative;
-          left: 62px;
+          left: 57px;
           color: $Logo_font_color;
 
           @media all and (min-width: 1100px) {
-           margin: 80px 70px 0 70px;
+           width: 100%;
           }
         }
       }
