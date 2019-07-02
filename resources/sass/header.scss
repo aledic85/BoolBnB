@@ -22,7 +22,7 @@ div.nav-bar {
         display: block;
       }
     }
-  
+
     .hidden-nav-bar {
 
      display: flex;
@@ -33,7 +33,7 @@ div.nav-bar {
      display: none;
 
      min-width: 100vw;
-     min-height: 150vh;
+     min-height: 700vh;
 
      position: absolute;
      top: 0;
@@ -62,14 +62,14 @@ div.nav-bar {
        margin: auto;
 
        @media screen and (max-width: 992px) {
-         position: relative;
-         bottom: 150px;
+         position: absolute;
+         top: 0;
        }
 
        @media screen and (min-width: 992px) {
          padding-top: 10px;
-         position: relative;
-         bottom: 160px;
+         position: absolute;
+         top: 0;
        }
 
        div.diventa_login {

@@ -10694,7 +10694,7 @@ div.nav-bar .hidden-nav-bar {
   align-items: center;
   display: none;
   min-width: 100vw;
-  min-height: 150vh;
+  min-height: 700vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -10721,16 +10721,16 @@ div.nav-bar .hidden-nav-bar div.hidden-container {
 
 @media screen and (max-width: 992px) {
   div.nav-bar .hidden-nav-bar div.hidden-container {
-    position: relative;
-    bottom: 150px;
+    position: absolute;
+    top: 0;
   }
 }
 
 @media screen and (min-width: 992px) {
   div.nav-bar .hidden-nav-bar div.hidden-container {
     padding-top: 10px;
-    position: relative;
-    bottom: 160px;
+    position: absolute;
+    top: 0;
   }
 }
 
