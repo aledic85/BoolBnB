@@ -79,7 +79,7 @@ div.nav-bar {
          align-items: flex-start;
          text-decoration: none;
          position: relative;
-         right: 45px;
+         right: 44px;
 
          li.nav-item {
 
@@ -144,6 +144,7 @@ div.nav-bar {
          text-align: center;
          width: 200px;
          color: $color_light_grey;
+         margin-bottom: 60px;
 
          @media all and (max-width: 1100px) {
           width: 70%;
@@ -172,7 +173,7 @@ div.nav-bar {
 
        #home {
          position: relative;
-         right: 28px;
+         right: 29px;
        }
 
        span#mare {
@@ -186,13 +187,20 @@ div.nav-bar {
        }
 
        span#esperienze {
-         position: relative;
-         right: 2px;
+
+        position: relative;
+        right: 2px;
        }
 
-       #login {}
+       #login {
 
-       #newHost {}
+         margin-bottom: 60px;
+       }
+
+       #newHost {
+
+         margin-bottom: 60px;
+       }
 
         a {
           width: 100%;
