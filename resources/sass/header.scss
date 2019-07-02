@@ -146,11 +146,11 @@ div.nav-bar {
          color: $color_light_grey;
 
          @media all and (max-width: 1100px) {
-          margin: 85px 70px 0 70px;
+          margin: 85px 70px 0 72px;
          }
 
          @media all and (min-width: 1100px) {
-          margin: 80px 70px 0 70px;
+          margin: 80px 70px 0 72px;
          }
 
          &:hover {
@@ -162,7 +162,7 @@ div.nav-bar {
            text-decoration: none;
            color: $color_light_grey;
            position: relative;
-           right: 10px;
+           right: 11px;
 
            &:hover {
              color: darken($Span_font_color, 20%);
@@ -172,16 +172,21 @@ div.nav-bar {
 
        #home {
          position: relative;
-         right: 8px;
+         right: 6px;
        }
 
        span#mare {
 
-         margin-left: 23px;
+         margin-left: 26px;
 
          a {
            margin: 50px 70px 0 70px;
          }
+       }
+
+       span#esperienze {
+         position: relative;
+         right: 1px;
        }
 
         a {
