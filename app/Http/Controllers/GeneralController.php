@@ -79,7 +79,7 @@ class GeneralController extends Controller
 
     Mail::to($user)->queue(new MailSender($name, $lastname, $email, $title, $content, $apartName));
 
-    return redirect('/')->with('Email inviata con successo!');
+    return redirect()->back()->with('success', 'Email inviata con successo!');
   }
 
   public function searchApartments() {

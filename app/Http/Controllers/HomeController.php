@@ -99,9 +99,16 @@ class HomeController extends Controller
 
        $user = Auth::user();
 
-       $messages = Message::select('apartments.description', 'messages.name', 'messages.lastname', 'messages.email', 'messages.title', 'messages.content')->join('apartments' , 'messages.apartment_id', '=', 'apartments.id')->where('messages.user_id', $user->id)->get();
+       $messages = Message::select('apartments.description', 'messages.name', 'messages.lastname', 'messages.email', 'messages.title', 'messages.content', 'messages.id')->join('apartments' , 'messages.apartment_id', '=', 'apartments.id')->where('messages.user_id', $user->id)->get();
 
        return view('page.received-messages', compact('messages'));
+     }
+
+     public function deleteMessages($id) {
+
+       Message::findORFail($id)->delete();
+
+       return redirect()->back()->with('success', 'Messaggio eliminato con successo!');
      }
 
      public function sponsorizeApartment($id) {
@@ -163,7 +170,7 @@ class HomeController extends Controller
 
        $totalMessages = Message::where('apartment_id', $id)->count();
        $totalViews = View::where('apartment_id', $id)->count();
-       
+
        $dates = View::where('apartment_id', $id)
                      ->select('created_at')->get()->all();
 

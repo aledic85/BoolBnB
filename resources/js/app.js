@@ -123,7 +123,7 @@ function validationJQuery() {
         content: {
           required: "INSERISCI IL TESTO DEL TUO MESSAGGIO",
           minlength: "INSERISCI ALMENO 10 CARATTERI",
-          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 100 CARATTERI"
+          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 400 CARATTERI"
         }
       }
     });
@@ -158,7 +158,7 @@ function init() {
 
   var menu = $("i.fa-bars");
   menu.click(hiddenNavShow);
-  
+
   var hiddenmenù =$("i.fa-times");
   hiddenmenù.click(hiddenNavHide);
 }

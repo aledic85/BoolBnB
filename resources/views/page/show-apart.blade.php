@@ -88,6 +88,13 @@
                   $(this).text('sì');
                 }
               });
+
+          $(document).ready(function(){
+            setTimeout(function(){
+               $("div.alert").fadeOut();
+            }, 3000 );
+          });
+            
       </script>
 
 
