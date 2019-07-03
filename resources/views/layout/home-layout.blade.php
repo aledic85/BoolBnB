@@ -41,7 +41,7 @@
             <span id="home" ><a href="{{route('home')}}">HOME</a></span>
             <span id="mare" >MARE</span>
             <span>MONTAGNA</span>
-            <span>ESPERIENZE</span>
+            <span id="esperienze">ESPERIENZE</span>
             <div class="diventa_login">
               @guest
                 <a id="login" href="{{ route('login') }}"><span>{{ __('Login') }}</span></a>

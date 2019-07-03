@@ -22,7 +22,7 @@ div.nav-bar {
         display: block;
       }
     }
-  
+
     .hidden-nav-bar {
 
      display: flex;
@@ -33,7 +33,7 @@ div.nav-bar {
      display: none;
 
      min-width: 100vw;
-     min-height: 150vh;
+     min-height: 700vh;
 
      position: absolute;
      top: 0;
@@ -62,14 +62,14 @@ div.nav-bar {
        margin: auto;
 
        @media screen and (max-width: 992px) {
-         position: relative;
-         bottom: 150px;
+         position: absolute;
+         top: 80px;
        }
 
        @media screen and (min-width: 992px) {
          padding-top: 10px;
-         position: relative;
-         bottom: 160px;
+         position: absolute;
+         top: 80px;
        }
 
        div.diventa_login {
@@ -79,21 +79,22 @@ div.nav-bar {
          align-items: flex-start;
          text-decoration: none;
          position: relative;
-         right: 45px;
+         right: 44px;
 
          li.nav-item {
 
            position: relative;
-           left: 45px;
+           left: 22px;
 
             .dropdown-toggle::after {
-              position: relative;
-              right: 100px;
+
             }
 
             a {
 
               color: $color_light_grey;
+              position: relative;
+              left: 45px;
 
               &:hover {
                 color: darken($Span_font_color, 20%);
@@ -106,7 +107,6 @@ div.nav-bar {
               height: 100px;
               position: relative;
               top: 10px;
-              left: 100px;
               color: $Logo_font_color;
               display: flex;
               flex-direction: column;
@@ -140,17 +140,18 @@ div.nav-bar {
        }
 
        span {
-         margin: 100px 70px 0 70px;
+         width: 70%;
          text-align: center;
          width: 200px;
          color: $color_light_grey;
+         margin-bottom: 70px;
 
          @media all and (max-width: 1100px) {
-          margin: 85px 70px 0 70px;
+          width: 70%;
          }
 
          @media all and (min-width: 1100px) {
-          margin: 70px 70px 0 70px;
+          width: 70%;
          }
 
          &:hover {
@@ -161,8 +162,6 @@ div.nav-bar {
            margin: 0 160px 0 0;
            text-decoration: none;
            color: $color_light_grey;
-           position: relative;
-           right: 10px;
 
            &:hover {
              color: darken($Span_font_color, 20%);
@@ -172,26 +171,44 @@ div.nav-bar {
 
        #home {
          position: relative;
-         right: 8px;
+         right: 29px;
        }
 
        span#mare {
 
-         margin-left: 23px;
+          position: relative;
+          right: 23px;
 
          a {
            margin: 50px 70px 0 70px;
          }
        }
 
+       span#esperienze {
+
+        position: relative;
+        right: 1px;
+       }
+
+       #login {
+
+         margin-bottom: 70px;
+       }
+
+       #newHost {
+
+         margin-bottom: 70px;
+        }
+
         a {
-          margin: 80px 70px 0 70px;
+          width: 100%;
           position: relative;
-          left: 62px;
+          left: 57px;
           color: $Logo_font_color;
 
           @media all and (min-width: 1100px) {
-           margin: 70px 70px 0 70px;
+
+             width: 100%;
           }
         }
       }
@@ -200,6 +217,7 @@ div.nav-bar {
     div.nav-bar-left {
 
       @media screen and (max-width: 600px) {
+
         position: absolute;
         top: 50%;
         left: 50%;
