@@ -84,16 +84,17 @@ div.nav-bar {
          li.nav-item {
 
            position: relative;
-           left: 43px;
+           left: 22px;
 
             .dropdown-toggle::after {
-              position: relative;
-              right: 100px;
+
             }
 
             a {
 
               color: $color_light_grey;
+              position: relative;
+              left: 45px;
 
               &:hover {
                 color: darken($Span_font_color, 20%);
@@ -106,7 +107,6 @@ div.nav-bar {
               height: 100px;
               position: relative;
               top: 10px;
-              left: 100px;
               color: $Logo_font_color;
               display: flex;
               flex-direction: column;
@@ -171,13 +171,13 @@ div.nav-bar {
 
        #home {
          position: relative;
-         right: 31px;
+         right: 29px;
        }
 
        span#mare {
 
           position: relative;
-          right: 24px;
+          right: 23px;
 
          a {
            margin: 50px 70px 0 70px;
@@ -187,7 +187,7 @@ div.nav-bar {
        span#esperienze {
 
         position: relative;
-        right: 2px;
+        right: 1px;
        }
 
        #login {
