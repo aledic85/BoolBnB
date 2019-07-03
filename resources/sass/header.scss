@@ -84,7 +84,7 @@ div.nav-bar {
          li.nav-item {
 
            position: relative;
-           left: 45px;
+           left: 43px;
 
             .dropdown-toggle::after {
               position: relative;
@@ -144,7 +144,7 @@ div.nav-bar {
          text-align: center;
          width: 200px;
          color: $color_light_grey;
-         margin-bottom: 60px;
+         margin-bottom: 70px;
 
          @media all and (max-width: 1100px) {
           width: 70%;
@@ -162,8 +162,6 @@ div.nav-bar {
            margin: 0 160px 0 0;
            text-decoration: none;
            color: $color_light_grey;
-           position: relative;
-           right: 11px;
 
            &:hover {
              color: darken($Span_font_color, 20%);
@@ -173,13 +171,13 @@ div.nav-bar {
 
        #home {
          position: relative;
-         right: 29px;
+         right: 31px;
        }
 
        span#mare {
 
           position: relative;
-          right: 23px;
+          right: 24px;
 
          a {
            margin: 50px 70px 0 70px;
@@ -194,13 +192,13 @@ div.nav-bar {
 
        #login {
 
-         margin-bottom: 60px;
+         margin-bottom: 70px;
        }
 
        #newHost {
 
-         margin-bottom: 60px;
-       }
+         margin-bottom: 70px;
+        }
 
         a {
           width: 100%;
@@ -209,7 +207,8 @@ div.nav-bar {
           color: $Logo_font_color;
 
           @media all and (min-width: 1100px) {
-           width: 100%;
+
+             width: 100%;
           }
         }
       }
@@ -218,6 +217,7 @@ div.nav-bar {
     div.nav-bar-left {
 
       @media screen and (max-width: 600px) {
+
         position: absolute;
         top: 50%;
         left: 50%;

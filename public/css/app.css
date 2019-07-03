@@ -10745,7 +10745,7 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login {
 
 div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item {
   position: relative;
-  left: 45px;
+  left: 43px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item .dropdown-toggle::after {
@@ -10804,7 +10804,7 @@ div.nav-bar .hidden-nav-bar div.hidden-container span {
   text-align: center;
   width: 200px;
   color: #e4e4e4;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 @media all and (max-width: 1100px) {
@@ -10827,8 +10827,6 @@ div.nav-bar .hidden-nav-bar div.hidden-container span a {
   margin: 0 160px 0 0;
   text-decoration: none;
   color: #e4e4e4;
-  position: relative;
-  right: 11px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span a:hover {
@@ -10837,12 +10835,12 @@ div.nav-bar .hidden-nav-bar div.hidden-container span a:hover {
 
 div.nav-bar .hidden-nav-bar div.hidden-container #home {
   position: relative;
-  right: 29px;
+  right: 31px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#mare {
   position: relative;
-  right: 23px;
+  right: 24px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#mare a {
@@ -10855,11 +10853,11 @@ div.nav-bar .hidden-nav-bar div.hidden-container span#esperienze {
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container #login {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container #newHost {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container a {
