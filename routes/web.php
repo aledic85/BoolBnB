@@ -32,3 +32,4 @@ Route::get('/dashboard/payment/process', 'HomeController@paymentProcess')->name(
 Route::get('/dashboard/payment/success/{id}', 'HomeController@paymentSuccess')->name('payment.success');
 Route::view('/dashboard/sponsorship-success', 'page.sponsorship-success');
 Route::get('/dashboard/apartment/stats/{id}', 'HomeController@showStats')->name('apart.stats');
+Route::delete('/dashboard/received_messages/delete/{id}', 'HomeController@deleteMessages')->name('delete.mess');

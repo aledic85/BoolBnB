@@ -25,7 +25,6 @@
       margin-top: 150px;
     }
 
-<h3>I messaggi dai tuoi clienti</h3>
     #close{
       cursor: pointer;
       position: absolute;
@@ -66,6 +65,7 @@
         <th>Email</th>
         <th>Message title</th>
         <th>Message content</th>
+        <th>Delete Message</th>
       </tr>
       @foreach ($messages as $message)
         <tr>
@@ -83,7 +83,13 @@
             $msg = $fix . "...";
             }
           @endphp
-          <td data-content="{{$message -> content}}">{{$msg}}</td>
+          <td data-content="{{$message ->content}}">{{$msg}}</td>
+          <td class="text-center"><form class="del" action="{{route('delete.mess', $message->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" name="delete"><i class="far fa-trash-alt popup">
+            </i></button>
+          </form></td>
         </tr>
       @endforeach
     </table>
@@ -103,6 +109,12 @@
 
       x.click(function() {
         box.fadeOut();
+      });
+
+      $(document).ready(function(){
+        setTimeout(function(){
+           $("div.alert").fadeOut();
+        }, 3000 );
       });
     </script>
 @endsection
