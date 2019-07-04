@@ -36876,12 +36876,13 @@ function validationJQuery() {
           required: "INSERISCI IL TUO COGNOME"
         },
         email: {
-          required: "INSERISCI LA TUA EMAIL"
+          required: "INSERISCI LA TUA EMAIL",
+          email: "INSERISCI UNA E-MAIL VALIDA"
         },
         content: {
           required: "INSERISCI IL TESTO DEL TUO MESSAGGIO",
           minlength: "INSERISCI ALMENO 10 CARATTERI",
-          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 100 CARATTERI"
+          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 400 CARATTERI"
         }
       }
     });
@@ -36993,8 +36994,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

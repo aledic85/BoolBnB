@@ -118,7 +118,8 @@ function validationJQuery() {
           required: "INSERISCI IL TUO COGNOME"
         },
         email: {
-          required: "INSERISCI LA TUA EMAIL"
+          required: "INSERISCI LA TUA EMAIL",
+          email: "INSERISCI UNA E-MAIL VALIDA"
         },
         content: {
           required: "INSERISCI IL TESTO DEL TUO MESSAGGIO",
