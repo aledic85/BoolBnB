@@ -36830,7 +36830,7 @@ function validationJQuery() {
         content: {
           required: true,
           minlength: 10,
-          maxlength: 100
+          maxlength: 250
         }
       },
       messages: {
@@ -36881,7 +36881,7 @@ function validationJQuery() {
         content: {
           required: "INSERISCI IL TESTO DEL TUO MESSAGGIO",
           minlength: "INSERISCI ALMENO 10 CARATTERI",
-          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 100 CARATTERI"
+          maxlength: "PUOI INSERIRE FINO AD UN MASSIMO DI 400 CARATTERI"
         }
       }
     });

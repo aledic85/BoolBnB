@@ -72,7 +72,7 @@ function validationJQuery() {
         content: {
           required: true,
           minlength: 10,
-          maxlength: 100
+          maxlength: 250
         }
       },
       messages: {
