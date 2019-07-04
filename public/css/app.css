@@ -10693,6 +10693,7 @@ div.nav-bar .hidden-nav-bar {
   justify-content: flex-start;
   align-items: center;
   display: none;
+
   min-width: 100%;
   height: 100vh;
   position: absolute;
@@ -10721,16 +10722,16 @@ div.nav-bar .hidden-nav-bar div.hidden-container {
 
 @media screen and (max-width: 992px) {
   div.nav-bar .hidden-nav-bar div.hidden-container {
-    position: relative;
-    bottom: 150px;
+    position: absolute;
+    top: 80px;
   }
 }
 
 @media screen and (min-width: 992px) {
   div.nav-bar .hidden-nav-bar div.hidden-container {
     padding-top: 10px;
-    position: relative;
-    bottom: 160px;
+    position: absolute;
+    top: 80px;
   }
 }
 
@@ -10740,21 +10741,18 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login {
   align-items: flex-start;
   text-decoration: none;
   position: relative;
-  right: 45px;
+  right: 44px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item {
   position: relative;
-  left: 45px;
-}
-
-div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item .dropdown-toggle::after {
-  position: relative;
-  right: 100px;
+  left: 22px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item a {
   color: #e4e4e4;
+  position: relative;
+  left: 45px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item a:hover {
@@ -10766,7 +10764,6 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item d
   height: 100px;
   position: relative;
   top: 10px;
-  left: 100px;
   color: #ff5a5f;
   display: flex;
   flex-direction: column;
@@ -10800,21 +10797,22 @@ div.nav-bar .hidden-nav-bar div.hidden-container div.diventa_login li.nav-item d
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span {
-  margin: 100px 70px 0 70px;
+  width: 70%;
   text-align: center;
   width: 200px;
   color: #e4e4e4;
+  margin-bottom: 70px;
 }
 
 @media all and (max-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.hidden-container span {
-    margin: 85px 70px 0 70px;
+    width: 70%;
   }
 }
 
 @media all and (min-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.hidden-container span {
-    margin: 70px 70px 0 70px;
+    width: 70%;
   }
 }
 
@@ -10826,8 +10824,6 @@ div.nav-bar .hidden-nav-bar div.hidden-container span a {
   margin: 0 160px 0 0;
   text-decoration: none;
   color: #e4e4e4;
-  position: relative;
-  right: 10px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span a:hover {
@@ -10836,27 +10832,41 @@ div.nav-bar .hidden-nav-bar div.hidden-container span a:hover {
 
 div.nav-bar .hidden-nav-bar div.hidden-container #home {
   position: relative;
-  right: 8px;
+  right: 29px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#mare {
-  margin-left: 23px;
+  position: relative;
+  right: 23px;
 }
 
 div.nav-bar .hidden-nav-bar div.hidden-container span#mare a {
   margin: 50px 70px 0 70px;
 }
 
-div.nav-bar .hidden-nav-bar div.hidden-container a {
-  margin: 80px 70px 0 70px;
+div.nav-bar .hidden-nav-bar div.hidden-container span#esperienze {
   position: relative;
-  left: 62px;
+  right: 1px;
+}
+
+div.nav-bar .hidden-nav-bar div.hidden-container #login {
+  margin-bottom: 70px;
+}
+
+div.nav-bar .hidden-nav-bar div.hidden-container #newHost {
+  margin-bottom: 70px;
+}
+
+div.nav-bar .hidden-nav-bar div.hidden-container a {
+  width: 100%;
+  position: relative;
+  left: 57px;
   color: #ff5a5f;
 }
 
 @media all and (min-width: 1100px) {
   div.nav-bar .hidden-nav-bar div.hidden-container a {
-    margin: 70px 70px 0 70px;
+    width: 100%;
   }
 }
 
