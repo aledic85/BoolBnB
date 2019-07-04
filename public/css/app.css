@@ -10693,10 +10693,11 @@ div.nav-bar .hidden-nav-bar {
   justify-content: flex-start;
   align-items: center;
   display: none;
-  min-width: 100vw;
-  min-height: 700vh;
+
+  min-width: 100%;
+  height: 100vh;
   position: absolute;
-  top: 0;
+  top: 80px;
   left: 0;
   text-align: left;
   z-index: 100;
@@ -10706,7 +10707,7 @@ div.nav-bar .hidden-nav-bar {
 div.nav-bar .hidden-nav-bar i.fa-times {
   position: absolute;
   top: 20px;
-  left: 20px;
+  right: 20px;
   color: #e4e4e4;
 }
 
@@ -10942,7 +10943,7 @@ div.nav-bar div.nav-bar-right .diventa_login {
 }
 
 div.nav-bar div.nav-bar-right li.nav-item.dropdown {
-  list-style: none;
+  list-style: none !important;
 }
 
 div.nav-bar div.nav-bar-right li.nav-item.dropdown .caret {
@@ -10958,6 +10959,7 @@ div.nav-bar div.nav-bar-right span {
   color: #555;
   padding: 27px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 div.nav-bar div.nav-bar-right span:hover {
@@ -11906,8 +11908,8 @@ div.details div.details-down div.down-right button:hover {
 }
 
 .sponsored {
-  background: #ff506e;
-  opacity: 0.9;
+  background: #ffc300;
+  opacity: 0.7;
 }
 
 .sponsored h3,

@@ -48,51 +48,86 @@
 
     table{
       box-shadow: #0009 12px 12px 25px;
+      margin: 30px auto;
+    }
+
+    .table-wrap {
+
+      width: 95%;
+      margin: auto;
+    }
+
+    .hover:hover {
+
+      background-color: #cecece;
+    }
+
+    @media all and (max-width: 620px) {
+
+      .box1 {
+
+        width: 350px;
+      }
+
+      .table-wrap {
+
+        overflow-x: auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      table {
+
+        box-shadow: none;
+      }
     }
   </style>
 
   <div class="prova">
     <div class="box1">
       <span id="close"><i class="fas fa-window-close"></i></span>
+      <h3>Corpo del messaggio:</h3>
       <p id="popup-text"></p>
     </div>
   </div>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Lastname</th>
-        <th>Apartment</th>
-        <th>Email</th>
-        <th>Message title</th>
-        <th>Message content</th>
-        <th>Delete Message</th>
-      </tr>
-      @foreach ($messages as $message)
+    <div class="table-wrap">
+      <table>
         <tr>
-          <td>{{ $message->name }}</td>
-          <td>{{$message->lastname}}</td>
-          <td>{{$message->description}}</td>
-          <td>{{$message->email}}</td>
-          <td>{{$message->title}}</td>
-          @php
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>Apartment</th>
+          <th>Email</th>
+          <th>Message title</th>
+          <th>Message content</th>
+          <th>Delete Message</th>
+        </tr>
+        @foreach ($messages as $message)
+          <tr>
+            <td>{{ $message->name }}</td>
+            <td>{{$message->lastname}}</td>
+            <td>{{$message->description}}</td>
+            <td>{{$message->email}}</td>
+            <td>{{$message->title}}</td>
+            @php
             $msg = $message->content;
             $length = 25;
             $fix = substr($msg, 0, $length);
 
             if (strlen($msg) > $length) {
-            $msg = $fix . "...";
+              $msg = $fix . "...";
             }
-          @endphp
-          <td data-content="{{$message ->content}}">{{$msg}}</td>
-          <td class="text-center"><form class="del" action="{{route('delete.mess', $message->id)}}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" name="delete"><i class="far fa-trash-alt popup">
-            </i></button>
-          </form></td>
-        </tr>
-      @endforeach
-    </table>
+            @endphp
+            <td class="hover" data-content="{{$message ->content}}">{{$msg}}</td>
+            <td class="text-center"><form class="del" action="{{route('delete.mess', $message->id)}}" method="post">
+              @csrf
+              @method('DELETE')
+              <button type="submit" name="delete"><i class="far fa-trash-alt popup">
+              </i></button>
+            </form></td>
+          </tr>
+        @endforeach
+      </table>
+    </div>
 
     <script type="text/javascript">
 
