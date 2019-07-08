@@ -2,7 +2,7 @@
 
 BoolBnB è il progetto finale del corso Boolean Careers Full Stack Web Developer (classe IV), ideato per poter utilizzare tutte le tecnologie e metodologie studiate durante il corso.
 
-Il progetto è stato sviluppato in circa 3 settimane da un team remoto di 4 persone.
+Il progetto è stato sviluppato in circa 3 settimane da un team remoto di 4 persone, dove io mi sono occupato principalmente della parte di back-end .
 
 ## Brief
 
